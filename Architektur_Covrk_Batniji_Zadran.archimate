@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Covrk_Batniji_Zadran" id="id-4fa520abf312414b9e7ec4eefe198207" version="5.0.0">
+  <folder name="Strategy" id="id-f86b0115f6f5438b96fcc447563fe55e" type="strategy"/>
+  <folder name="Business" id="id-5eccb30457b74d11a53ff52da3762f63" type="business">
+    <element xsi:type="archimate:BusinessActor" name="Examination Office" id="id-9101fb87a53b4d6794973d754255d103"/>
+    <element xsi:type="archimate:BusinessProcess" name="Student data management" id="id-df860b1816c4472d8db4a97fbfd2600e"/>
+    <element xsi:type="archimate:BusinessActor" name="HIS Administration" id="id-d75c40b4a10b409b9f229f35810af65b"/>
+    <element xsi:type="archimate:BusinessProcess" name="Manage Student Data" id="id-c9cd342ea64146e2b58e06d346a9fabc"/>
+    <element xsi:type="archimate:BusinessObject" name="Student Data" id="id-956a6ebe45de40e881c172d1ab2b3661"/>
+    <element xsi:type="archimate:BusinessActor" name="Student" id="id-69b9839333cf49bc95161675bdb68ab4">
+      <documentation>The student is the main charakter and provide use his/her student data.</documentation>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Examination Office " id="id-eb235323e27c4183a1c95cf822ddc107">
+      <documentation>The Examination Office is our Actor and is using the provided student data to work with.</documentation>
+    </element>
+    <element xsi:type="archimate:BusinessActor" name="Thesis Committee" id="id-aa4ceb4a05ff4178b34f96604a221f9f">
+      <documentation>The Thesis Committee is our Actor and is using the provided student data to work with.</documentation>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Manage student data" id="id-ee016677f19b4d788ea93e7b5f37fa6f"/>
+    <element xsi:type="archimate:BusinessProcess" name="Exam Application Processing " id="id-0ddbf7f729634ac0a2c59bb3798a4537"/>
+    <element xsi:type="archimate:BusinessProcess" name="Thesis Application Processing " id="id-07bd72925def4930b2c82b3ec03d315a">
+      <documentation>Manages the creation and submission of theis applications and provides necessayr administrations.</documentation>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Request process" id="id-0c140ca28e7c4e379c58e74455af8e8a">
+      <documentation>Manages the processing of submitted requests, ensuring they are handled apropriatetly.</documentation>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Create Request" id="id-9ad6f131aeb641eca582340ce28ca4c4">
+      <documentation>Handles the creation of request related to exams or administrative needs. </documentation>
+    </element>
+    <element xsi:type="archimate:BusinessActor" id="id-0482659044f040c5b5bb11e5a036b72e"/>
+    <element xsi:type="archimate:BusinessProcess" name="Process of Exam apllication-" id="id-687ead2afd3646d19aabb4cc52509a75">
+      <documentation>Manages exam applications including submitting and processing exam applications. </documentation>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Completion of Study certificate" id="id-6e27a4a772e54a22b02eaa35fe090448">
+      <documentation>Involves activities to obtain a study certificate, includign application, requirement verification. </documentation>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Management of deregistrated and registrated examination" id="id-15f0bd1f409f4238b54b51aa442e5798">
+      <documentation>Manages exam registrations and deregistrations, includign handlings student exam registrations, processing deregistrations and providign related information. </documentation>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Process of the visualization of written Examinations" id="id-f659540b249145df9fe6bfa4aa9c301a">
+      <documentation>Focuses on vizualizing written exam performance, ensuring current student performance data is available and accesible. </documentation>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Evaluation of Exams" id="id-7a64e3033fa74c5fb8e4eca0af41d720">
+      <documentation>Handles the evaluation of student examinations, including the assesment and recording of results.</documentation>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" id="id-5ff1c9a55e9044dc874e7a4cb50d6d74"/>
+    <element xsi:type="archimate:BusinessProcess" name="Feedback process" id="id-787808b110eb4436bfa98b71865fa29f"/>
+    <element xsi:type="archimate:BusinessProcess" name="Processing student data" id="id-e8f51008599540aa9000b8a0256c58c6">
+      <documentation>Involves the receipt, administration and storage of student data. </documentation>
+    </element>
+    <element xsi:type="archimate:BusinessProcess" name="Processing student data (copy)" id="id-41bcf956afb44d3c8eaeb267fadab83f">
+      <documentation>Involves receiving, administaring and saving student data, particulary copies of relevant information. </documentation>
+    </element>
+  </folder>
+  <folder name="Application" id="id-44526409c5ab4d4d938c7287a150adc7" type="application">
+    <element xsi:type="archimate:ApplicationComponent" name="HIS" id="id-22ec2a55f4b84ca587505aad5335a737"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Peregros" id="id-ff7a5e0765dd4e2a9324bef955b0d117"/>
+    <element xsi:type="archimate:ApplicationComponent" name="WyseFlow" id="id-9765e787a958434197c4cd81431861cb"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Manage student data" id="id-b47e6c3059e34369943120412a0a7b12"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Process examination requests" id="id-6774814b88d84084b281f4489be2b332"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Manage thesis applications" id="id-f3ae8510c01b4e4f92fe1672c0e51f41"/>
+    <element xsi:type="archimate:ApplicationComponent" name="HIS (Producer)" id="id-19b0ac5927bd421286dc9022262fca15">
+      <documentation>HIS is the central student data management system at the Frankfurt University of Applied Sciences, responsible for maintaining student records, managing study programs and tracking credits achieved by students. It generates and provides student data.&#xD;
+&#xD;
+The HIS aaplication receives the data from the user interface and processes it. After that HIS connects to RabbitMQ and sends the processed data as messages to RabbitMQ. &#xD;
+</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Peregos (Consumer)" id="id-4a8d4e6e815b4e4f9c56c619d41f01a6">
+      <documentation>Receives student data from RabbitMQ Middleware. It supports the examination council by managing examination requests and processing applications for exams and final thesis. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="WyseFlow (Consumer)" id="id-39660a162fdd4043a38b902297395c34">
+      <documentation>WyseFlow facilitates the examination process by allowing students to apply for their final thesis and provides tools for creating, delivering and evaluating exams. It receives student data from HIS. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Middleware (RabbitMQ)" id="id-f6fc78fb97574984bddc4c2b724a1795"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Send student data" id="id-76e47261c7fb47c18775f01b720b5418"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Route messages" id="id-a21c84cf7cb14cb58920a6a6af91bf1c"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Receive and process exam applications" id="id-90045a37520747c6a82031edb5bf3a12"/>
+    <element xsi:type="archimate:ApplicationFunction" name="provide feedback tools" id="id-768266497d4e47ec8442ed330cb05570"/>
+    <element xsi:type="archimate:ApplicationService" name="Database Management Service" id="id-cba1c7e454784a63a2208a6b6de6a1cb"/>
+    <element xsi:type="archimate:ApplicationService" name="Message routing service" id="id-c894afae735841bdb3928d094571c80b"/>
+    <element xsi:type="archimate:ApplicationService" name="Exam application processing" id="id-5928f5612c83441396cffcd1d0e2a484"/>
+    <element xsi:type="archimate:ApplicationService" name="Thesis application processing" id="id-974173cf613b4d088ea2b534d450e26e"/>
+    <element xsi:type="archimate:ApplicationInterface" id="id-f66f77cf76694027b0b0440555930ef6"/>
+    <element xsi:type="archimate:ApplicationInterface" name="HIS to RabbitMQ" id="id-05d5e618d9f34cf889ee18792c10681b"/>
+    <element xsi:type="archimate:ApplicationInterface" name="RabbitMQ receiving" id="id-6b1944e84d4c4deaa837b6dd4c5e4e98"/>
+    <element xsi:type="archimate:ApplicationInterface" name="RabbitMQ to Peregros" id="id-a992cd500a414d3dbe07b82d0b80ed22"/>
+    <element xsi:type="archimate:ApplicationInterface" name="Peregros receiving" id="id-aa8e11752fe34023a130d2b18eb45e22"/>
+    <element xsi:type="archimate:ApplicationInterface" name="RabbitMQ to WyseFlow" id="id-8220855d24784a338b74ed7616d9b3e0"/>
+    <element xsi:type="archimate:ApplicationInterface" name="WyseFlow receiving" id="id-62e029e579b9470a9e18ee7db5b3c9fd"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Notification Service" id="id-a2dd143842a041c4af36323fbb3c3c24"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Data Process" id="id-a480bf636eac482fbb63271bee7b8f02"/>
+    <element xsi:type="archimate:ApplicationService" name="Notification Service" id="id-a293b144047f42d6852e8403fb49237a"/>
+    <element xsi:type="archimate:ApplicationService" name="Exam application process" id="id-d3be73202a39438787ae6a018e927168"/>
+    <element xsi:type="archimate:ApplicationFunction" name="HIS Data management" id="id-4bb6e9391b624018a621bda88727ffba"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Enrollment Management" id="id-a268af0e442341cdb96b9c3cae9c028c"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Academic Records Management" id="id-e4401b88da4348a3b772124000915079"/>
+    <element xsi:type="archimate:ApplicationService" name="Enrollment Management Service" id="id-60e058264afb4f2488437be0e0b25c0f"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Course registration" id="id-736613be19d741f1ad067e99b6bbf19b"/>
+    <element xsi:type="archimate:ApplicationService" name="Data transfer service" id="id-5a480ea5d6994329b9868357ec78f795"/>
+    <element xsi:type="archimate:ApplicationService" name="Academic records management" id="id-509258fd4684431596a13eb133cb3f8a"/>
+    <element xsi:type="archimate:ApplicationService" name="Course registration service" id="id-017227c42d264fb081fdf247aa4a90bf"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Management and Submission of thesis Application" id="id-63a71dcd5dfa4ec5a1750d148c6ca406">
+      <documentation>WyseFlow provides the function &quot;Management of submission of thesis application&quot;. This function realizes one service. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="evaluate examinations" id="id-c3313c3cd95843b9969ea1f2e0e3e95b">
+      <documentation>WyseFlow provides the function &quot;evaluate examinations&quot;. This function realizes one service. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Notification Service" id="id-ceae4f9b3eb94954a578b6d917778b78"/>
+    <element xsi:type="archimate:ApplicationService" name="Thesis Application receiption and" id="id-af1a278c851a46c684a83b72c50686af"/>
+    <element xsi:type="archimate:ApplicationFunction" name="RabbitMQ Monitoring" id="id-eb11cbeed70246fba29060049c196f77"/>
+    <element xsi:type="archimate:ApplicationFunction" name="RabbitMQ Message Broker" id="id-cc6637b52e4743b9a5b5110f63a7db9c"/>
+    <element xsi:type="archimate:ApplicationService" name="Application Service" id="id-0cdb71bd844b4f62b2c00bdcdd184e1b"/>
+    <element xsi:type="archimate:ApplicationFunction" name="provide analytics tools" id="id-84566310a4634269940fc2f3f9f2836c"/>
+    <element xsi:type="archimate:ApplicationFunction" name="create and manage assessment schemes " id="id-239e261ee90a48d799be5f6766d71954"/>
+    <element xsi:type="archimate:ApplicationFunction" name="ensure security of examinations" id="id-e5b0c59bab174b69a3e6aeb2fda7009f"/>
+    <element xsi:type="archimate:ApplicationService" name="Create and Provide Examinations" id="id-1b2b8c3ed70247c09663438198f08232">
+      <documentation>The service &quot;Create and provide examinations&quot; is realized by the function &quot;Management of student data&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Examination evaluation service" id="id-9756e96dc3e94d4a805086cd3c56d66c">
+      <documentation>The service &quot;Examination evaluation service&quot; is realized by the function &quot;Evaluate examinations&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="feedback providing service" id="id-a5c3f8e6dab544f4ac1c57ab39c5ddf7"/>
+    <element xsi:type="archimate:ApplicationService" name="Analytics service" id="id-07047ad079c44cba803cf0369b6af88d"/>
+    <element xsi:type="archimate:ApplicationInterface" name="student_exchange" id="id-23eabd24eeea4f4389282ea4d731c16a"/>
+    <element xsi:type="archimate:ApplicationInterface" name="student_exchange" id="id-f9a3ca25a5a54d3dac25d9a49efdcfd4"/>
+    <element xsi:type="archimate:ApplicationComponent" name="RabbitMQ Middleware" id="id-45547ec3f3da4259bf2855b16b98b8ca">
+      <documentation>RabbitMQ acts as the message broker betweem HIS, Peregros and WyseFlow. It automatically distribute student data from HIS to Peregros and WyseFlow, ensuring synchronized and efficient data flow across systems. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="send student data" id="id-5f6f74e2c9514bc7ac0eb9c73969e4b7">
+      <documentation>His generates and sends student data to the middleware via student_exchange for distribution. Middleware receives the student data.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="distribute student data" id="id-878d103216264c15a78cdb72d8918876">
+      <documentation>The middleware provides student data to wiseflow via student_exchange</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="distribute student data" id="id-66e688af962f4e0bb57f20d8b84308b3">
+      <documentation>The middleware provides student data to peregros&#xD;
+</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="general administration" id="id-7e354225ddcf4728a4bb69812f1afe1e"/>
+    <element xsi:type="archimate:ApplicationFunction" name="study administration" id="id-adaf60d2756a45bba3aea8483f3e9524">
+      <documentation>HIS provides the function &quot;study adninistration&quot;. This function realizes one service. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="examination administration" id="id-1514f4d2b3db4c03a89a27c64a7e4d87">
+      <documentation>HIS provides the function &quot;examination adninistration&quot;. This function realizes three services. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="change password" id="id-92fc21bfba434ef08bd593238ee0c25b"/>
+    <element xsi:type="archimate:ApplicationService" name="allocate credits" id="id-1063231d86e94ad7afa141b526d88503">
+      <documentation>The service &quot;get certificate of study&quot; is realized by the function &quot;study administration&quot;</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="get certificate of study for all semesters" id="id-eb86416981f14beeab21f1ecbdf1f601"/>
+    <element xsi:type="archimate:ApplicationService" name="register and withdraw examination" id="id-daf97b97d42b4b7cb9bb70eab00fdd36">
+      <documentation>The service &quot;registrate and deregistrate for examination&quot; is realised by the function &quot;examination administration&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Info. about registrated and deregistrated examination" id="id-120ee4aa11a44d9bba6b1c2d2c278c1f">
+      <documentation>The service &quot;Information about registrated and deregistrated examination&quot; is realized by the function &quot;examination administration&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="number of credits " id="id-ed0439e0a5f44897830c493761da1434">
+      <documentation>The service &quot;current performance overview&quot; is realized by the function &quot;examination administration&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="examination certificate" id="id-d65ec5692bf941aba281415dc1e5f21c"/>
+    <element xsi:type="archimate:ApplicationService" name="performance overview for all courses of study" id="id-be0183fae92b4a81b6730a6b05522c9c"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Create an application for the examination committee" id="id-5d4aa622f62d4d8d9796492a3964d3fa"/>
+    <element xsi:type="archimate:ApplicationFunction" name="register final thesis" id="id-00142a3cc7fa4144a8f3b84da7a6353b"/>
+    <element xsi:type="archimate:ApplicationFunction" name="professors decide whether to supervise" id="id-dadfa7c425084ee28e0fc7becc978d1e"/>
+    <element xsi:type="archimate:ApplicationService" name="Application for examination service" id="id-16e823922a7f40d28ee58db6b5019cac"/>
+    <element xsi:type="archimate:ApplicationService" name="Final thesis service" id="id-46020926b45f4c3ba8c9faa8f5d2f204"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Monitoring" id="id-73435f55eac246b882d42add75522ccd"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Messaging management" id="id-cdc2f20bcb0a4fafa443375899b8f6b6"/>
+    <element xsi:type="archimate:ApplicationFunction" id="id-88d752c8dc914b548eeac4ef592f4428"/>
+    <element xsi:type="archimate:ApplicationService" name="Enter student data" id="id-87ce6af27de64a24ae756caf1d31431d"/>
+    <element xsi:type="archimate:ApplicationInterface" name="HIS Web UI" id="id-dd4dc58b29664867bb802c1af8ed5b61">
+      <documentation>The student interacts with the user interface to enter his/her data.&#xD;
+</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="send student data" id="id-9e59deae2ed64988a0dffbb126c1f72a"/>
+    <element xsi:type="archimate:ApplicationInterface" name="send student data" id="id-187eaeae006c4ef89a3d49a36fa80bf0"/>
+    <element xsi:type="archimate:ApplicationService" name="GET Message" id="id-68dee130eed34b84ba017a80bf8866d5"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Request Managing" id="id-ed0d0f6958bf44a29152764de1b5dfd8"/>
+    <element xsi:type="archimate:ApplicationService" name="Creating Request" id="id-a073c71de4e0436fbd5564bda2f48e35"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Support of the examination council" id="id-32f1aaaac96141608393d366404e958d">
+      <documentation>Peregos provides the function &quot;support of the examination council&quot;. This function realizes one service. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Request management" id="id-1ee123d687e04cb3afe247c1cfff47e2">
+      <documentation>Peregos provides the function &quot;Request management&quot;. This function realizes two services.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Management of student data" id="id-216a3cffb74d45cf98a2a05c2d5beb51">
+      <documentation>Peregos provides the function &quot;Management of student data&quot;. This function realizes two services.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Creating request " id="id-9007698c975541aa83381813ba4da8df">
+      <documentation>The service &quot;Creating request&quot; is realized by the function &quot;Request management&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Process request" id="id-c43a0ccb6d654f308b297942c98d4731">
+      <documentation>The service &quot;Process request&quot; is realized by the function &quot;Request management&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Application for Examination" id="id-53f77df418434f428a299904aa65e1c3">
+      <documentation>The service &quot;Application for Examination&quot; is realized by the function &quot;Support of the examination council&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Student data management" id="id-d51f14a65a574a69a73903de3bf47060"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Management of student data" id="id-2d59c0a9967d4617b3b1477b73dada15">
+      <documentation>WyseFlow provides the function &quot;Management of student data&quot;. This function realizes two services. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="receive student data" id="id-78188521b7284f79b5a7a9424910b740">
+      <documentation>The service &quot;receive student data&quot; is realized by the function &quot;Management of student data&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Administration and saving student data" id="id-20f736987038464e90893cac023ce9d7">
+      <documentation>The service &quot;Administration and saving student data&quot; is realized by the function &quot;Management of student data&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="receive student data from his" id="id-cf191f691329422997b60f3cb3365c4a">
+      <documentation>The service &quot;receive student data (copy)&quot; is realized by the function &quot;Management of student data&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Administration and saving student data (copy)" id="id-70da076df08a425fb2580c73878ef472">
+      <documentation>The service &quot;Administration and saving student data&quot; is realized by the function &quot;Management of student data&quot;. </documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Provide message" id="id-43871b8b6ee74aa99de6ef6e1d7fb4f3"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Fetch message" id="id-99b37a60b8cc473d8d975210a3878331"/>
+    <element xsi:type="archimate:ApplicationComponent" name="RabbitMQ (Message Broker)" id="id-c8db5cf1d5db4b449345b8c6125a4d14">
+      <documentation>The RabbitMQ application runs on the middleware server and handles the management of exchanges and queues.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Fetch message" id="id-cb92934e97be47bd9d18237f9206878b"/>
+    <element xsi:type="archimate:ApplicationService" name="Provide message" id="id-b27ec898ebe84c31be9d154c9e3fc18f"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Distribute student data" id="id-726679fca35244b0b72f49d675e6781e"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Get student data " id="id-d17e733a19ff4ac5846b3e3c070b80af"/>
+    <element xsi:type="archimate:ApplicationInterface" name="API Consumer" id="id-ff0462edbb584ab1bd3d54337925b118"/>
+    <element xsi:type="archimate:ApplicationInterface" name="API Producer" id="id-54af203b3ea14d439415eea7c69a6858"/>
+    <element xsi:type="archimate:ApplicationInterface" name="student exchange" id="id-49ca88ca5fcb4cc1b0eb6dcab955ced5"/>
+    <element xsi:type="archimate:ApplicationInterface" name="Message Queue" id="id-31fe006cf890498789e132e77ece8269"/>
+    <element xsi:type="archimate:ApplicationInterface" name="Message Queue (copy)" id="id-39d2fbc5ffd24d69b9269f7ca6af7ad8"/>
+    <element xsi:type="archimate:ApplicationInterface" name="HIS Web UI" id="id-3c86e78d6beb42b68b0ecc7941763dd0">
+      <documentation>The worker interact with the user interface for administration reasons.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Peregos Web UI" id="id-1be12a8abe874a1893f498ffcf6e613b">
+      <documentation>The worker uses a different UI for administration reasons.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="Peregos Web UI" id="id-3a7c84135270483291c4e12b8934c3c6">
+      <documentation>The student interacts over the Peregos UI to write down und send request.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationInterface" name="WyseFlow Web UI" id="id-bbd31f027c2e41a48e574c785d7c62b0">
+      <documentation>UI for the worker in the Thesis Committee for administration reason.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="RabbitMQ Exchange" id="id-7a9321c0fea94f5b8a55c71968c7e51d"/>
+    <element xsi:type="archimate:ApplicationService" name="Message Queue WyseFlow (Technology Service)" id="id-dcdac5e3264c4f9a813bd3ae8484c5a6">
+      <documentation>This message Queue receives, stores and provides messages for the WyseFlow application and acts as an interface between HIS and WyseFlow</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="RabbitMQ-Exchange" id="id-76a554ed74844571ada81fde335102f2">
+      <documentation>The RabbitMQ Exchange forwards the messages to the corresponding queues (peregos_queue and wyseflow_queue) useing the routing key.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationService" name="Message Queue Peregos (Technology Service)" id="id-ec183356bb0c4771901c1d0e4b4782d7">
+      <documentation>This message Queue receives, stores and provides messages for the Peregos application and acts as an interface between HIS and Peregos.&#xD;
+</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Routing Decision" id="id-3d4ac5d433c145bbb4ebb0f663107967">
+      <documentation>Based on the routing key, the Exchange decides where the messages should be routed.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Receiving Message" id="id-dc70bd3a9d6044d9bae5d96a64a76978">
+      <documentation>The Exchange receive messages from Producer (HIS).</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Managing Bindings" id="id-e558adc178704af2b0ce7e832d1b2a7d">
+      <documentation>The Exchange manages the rules for which queues receive which messages.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Binding" id="id-038e572c59a74f79b6712e69d4208166">
+      <documentation>Manages the connection and routeing of messages between the exchanges and the queues.</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Apply for thesis" id="id-d6c7490d54ed4e138a3d32ec4e7bb12b"/>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-2fb960a9e71748f795b6526ad09251e0" type="technology">
+    <element xsi:type="archimate:Path" id="id-24a53b22e698420294a301304ba75af1"/>
+    <element xsi:type="archimate:TechnologyService" name="Message Queue" id="id-1121a7dd297240cc974383fde208bbef"/>
+    <element xsi:type="archimate:Node" name="Middleware Server" id="id-7d51c1bbd8bd4c46b44596f5794c0a7a"/>
+    <element xsi:type="archimate:SystemSoftware" name="Rabbitmq" id="id-fc8832b80eba4149982070126cb68520"/>
+    <element xsi:type="archimate:SystemSoftware" name="RabbitMQ" id="id-3a277c52a359458bbb2f04ed87381294"/>
+    <element xsi:type="archimate:Node" name="HIS Server" id="id-204e18d6ae8c4aa78298422923f69369"/>
+    <element xsi:type="archimate:SystemSoftware" name="HIS" id="id-410135028ca94f97a240fdcb29ec9e16"/>
+    <element xsi:type="archimate:SystemSoftware" name="HIS" id="id-055077b8ecad483287509819201e58c1"/>
+    <element xsi:type="archimate:Node" name="Peregros Server" id="id-5ff7dff6a75f4d41861155d0491466b3"/>
+    <element xsi:type="archimate:SystemSoftware" name="Peregros Software" id="id-a04c4e7c53da4183b0632409363a162d"/>
+    <element xsi:type="archimate:Node" name="WyseFlow Server" id="id-0dc55ed574c34873b43919aac73f4c2b"/>
+    <element xsi:type="archimate:SystemSoftware" name="WyseFlow" id="id-ac2b27c14fa342c7b18e89ed5da6a579"/>
+    <element xsi:type="archimate:SystemSoftware" name="Rabbitmq" id="id-e97faf91af36499381ddc448707eaac9"/>
+    <element xsi:type="archimate:SystemSoftware" name="HIS" id="id-2160dde598734e44acab39f89cf55e0e"/>
+    <element xsi:type="archimate:SystemSoftware" name="WyseFlow" id="id-71cdf73ba061478dbc4d27d440b24298"/>
+    <element xsi:type="archimate:SystemSoftware" name="Peregros" id="id-19138e0a3ba84bf5829c971dfcf88418"/>
+    <element xsi:type="archimate:Device" name="RabbitMQ" id="id-32b5acb355ed4ddea69f9572ce67399f"/>
+    <element xsi:type="archimate:Device" name="Database" id="id-5c10215f70aa4e87b81f81f536d738f7"/>
+    <element xsi:type="archimate:Device" name="Peregros" id="id-3414e2f9405c4ef08213778c9ec16621"/>
+    <element xsi:type="archimate:Device" name="WyseFlow" id="id-241f805435594b78b2335d6840f5ac28"/>
+    <element xsi:type="archimate:SystemSoftware" name="Windows" id="id-0dce459a6d584f88a75b924fb881c790"/>
+    <element xsi:type="archimate:SystemSoftware" name="Windows" id="id-b6d58e250a9541e6bb531de21d7cf7bf"/>
+    <element xsi:type="archimate:SystemSoftware" name="Windows" id="id-da207c88585a48fa8419f07dac2914e7"/>
+    <element xsi:type="archimate:SystemSoftware" name="Windows" id="id-373787698fbd4d4986efb6d040e4fa75"/>
+    <element xsi:type="archimate:TechnologyInterface" name="HIS to Middleware" id="id-b248210e24f642f5a7b723d130abbaa8"/>
+    <element xsi:type="archimate:TechnologyInterface" name="Middleware to Peregros" id="id-9244152500d84e5d85bf2f0946901da0"/>
+    <element xsi:type="archimate:TechnologyInterface" name="Middleware to Peregros" id="id-c8b2093490f644f4994c71ab6bcf329b"/>
+    <element xsi:type="archimate:Path" name="Path" id="id-9d3ae3445a2d4ca7beb7a29dd1b036a0"/>
+    <element xsi:type="archimate:DistributionNetwork" id="id-24d8025cd2e24d509e55857ae4d89888"/>
+    <element xsi:type="archimate:Node" name="Database Server" id="id-66e06a2521064135b1922e833a9b30a4"/>
+    <element xsi:type="archimate:Node" name="Database Server" id="id-46cd2aa452c641d6a33962e64bedc5e6"/>
+    <element xsi:type="archimate:SystemSoftware" name="RDBMS" id="id-ae04278807824b0690e65cb2d7a920fa"/>
+    <element xsi:type="archimate:Artifact" name="Database" id="id-e9e3df154a4041c99b3a972f4a7529ec"/>
+    <element xsi:type="archimate:Node" name="HIS Server" id="id-c3ecdbba44f94137bb3d7dffed58988d">
+      <documentation>The HIS Server hosts the HIS software application, running on a Windows operating system. The Student data is saved in the HIS Database.</documentation>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Windows (System Software)" id="id-2316cc4104a448cbb563102e4a926bc7"/>
+    <element xsi:type="archimate:Node" name="Middleware Server" id="id-893c738909714061803a95f864d020bf">
+      <documentation>The middleware Server hosts the RabbitMQ software, running on a Windows operating system. </documentation>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="RabbitMQ (System Software)" id="id-6249646722354b67adc0c445b0297833"/>
+    <element xsi:type="archimate:SystemSoftware" name="Windows (System Software)" id="id-542fc5b79a124253b2c18c7fbd5264eb"/>
+    <element xsi:type="archimate:Node" name="WyseFlow Server" id="id-5548b09c24d744a0bbcd493c1d5655c6">
+      <documentation>The Wyseflow Server hosts the WyseFlow software application, running on a Windows operating system. &#xD;
+</documentation>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Windows (System Software)" id="id-45cea84d004b4e5d9c20c6d059cb104f"/>
+    <element xsi:type="archimate:Node" name="Peregos Server" id="id-af9130510964491794885f93a7a2b4b4">
+      <documentation>The Peregros Server hosts the Peregros Software application, runnin on a Windows operating system.</documentation>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="Windows (System Software)" id="id-713692c3860f4705acab8fa4bf452a7d"/>
+    <element xsi:type="archimate:Node" name="Database Server" id="id-2cad1915dc874cb0bc2bc10bcd501dff">
+      <documentation>The Database Server hosts the relational database management system and stores all relevant data. </documentation>
+    </element>
+    <element xsi:type="archimate:SystemSoftware" name="RDBMS" id="id-9749682eb7554c0495fbda108ff082d4"/>
+    <element xsi:type="archimate:Artifact" name="Database" id="id-97a1ee259f874ad1b25f8a4fc6efd2ef"/>
+    <element xsi:type="archimate:SystemSoftware" name="WyseFlow (System Sofftware)" id="id-da19dee1e00842c2ae859a1d47298063"/>
+    <element xsi:type="archimate:SystemSoftware" name="Peregos System Software)" id="id-b9db487d2e2444dd92348814677ddcb3"/>
+    <element xsi:type="archimate:SystemSoftware" name="HIS (System Software)" id="id-96415070094a42cc8435f06f63b5f239"/>
+    <element xsi:type="archimate:TechnologyFunction" id="id-9fce2f9d51244b5097556f7607d8940b"/>
+    <element xsi:type="archimate:TechnologyFunction" name="Fetch message" id="id-e5f22d84a32c44f882af2e38d8d02720"/>
+    <element xsi:type="archimate:TechnologyInterface" name="UI" id="id-8700543c56bc41d081b5f4810624d978"/>
+    <element xsi:type="archimate:Artifact" name="Database" id="id-6de089e50a0b47c89a0b2ba886c04638"/>
+    <element xsi:type="archimate:Artifact" name="Database" id="id-024186cea4384cad9b70114ab21096e5"/>
+    <element xsi:type="archimate:Artifact" name="Database" id="id-200a9dd0a909489b8a980f689d11a557"/>
+    <element xsi:type="archimate:TechnologyService" name="student exchange" id="id-984f4384115b43408a9adf6c88e96cf7"/>
+    <element xsi:type="archimate:TechnologyInterface" id="id-79e19454500e47f688319b631cabb372"/>
+    <element xsi:type="archimate:SystemSoftware" name="RabbitMQ (System Software)" id="id-2ac5dca9f61e49889dc61a252784cea0"/>
+  </folder>
+  <folder name="Motivation" id="id-c319921f96b94b85a227a38b7fa21586" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-a1aebd639ceb47ca93da2cc53acd7d9c" type="implementation_migration"/>
+  <folder name="Other" id="id-5d8cba0c51f443d1b7e05afcf9525675" type="other"/>
+  <folder name="Relations" id="id-3122a2df81e84b99861e41c5107f419d" type="relations">
+    <element xsi:type="archimate:AssignmentRelationship" id="id-dac2fba1888e43708436e57c9e118fc9" source="id-9101fb87a53b4d6794973d754255d103" target="id-df860b1816c4472d8db4a97fbfd2600e"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-ec942e3a7cad4b18ae57fb2554c6dd5f" source="id-ff7a5e0765dd4e2a9324bef955b0d117" target="id-6774814b88d84084b281f4489be2b332"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-b5dcee3b476244908700b4cbe9ae287a" source="id-22ec2a55f4b84ca587505aad5335a737" target="id-b47e6c3059e34369943120412a0a7b12"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-178ac8022efa4531a7d952ea1ab049ae" source="id-9765e787a958434197c4cd81431861cb" target="id-f3ae8510c01b4e4f92fe1672c0e51f41"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-6e77d77a167c40bb994a59dbbdd3b2ac" source="id-ff7a5e0765dd4e2a9324bef955b0d117" target="id-6774814b88d84084b281f4489be2b332"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-849b40aea7dc4c58996f06456b178d0f" source="id-22ec2a55f4b84ca587505aad5335a737" target="id-b47e6c3059e34369943120412a0a7b12"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-966723e62f70451487cbca19b7d47bc7" source="id-9765e787a958434197c4cd81431861cb" target="id-f3ae8510c01b4e4f92fe1672c0e51f41"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-aa4a53d813794733baac962a700d31ca" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-fc8832b80eba4149982070126cb68520"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-2522f75f3fc94614a09a38bf99547e04" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-3a277c52a359458bbb2f04ed87381294"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-e38fedd6e84249ee995b9fde84b0b91f" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-1121a7dd297240cc974383fde208bbef"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f9957135976c442f8be3dd269eb3deee" source="id-204e18d6ae8c4aa78298422923f69369" target="id-410135028ca94f97a240fdcb29ec9e16"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-3312842c63764bdc851b4f2496ba785d" source="id-204e18d6ae8c4aa78298422923f69369" target="id-055077b8ecad483287509819201e58c1"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-7a12f28131fb4761a5c190762a46e98c" source="id-5ff7dff6a75f4d41861155d0491466b3" target="id-a04c4e7c53da4183b0632409363a162d"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-c3b5e2a66c56400aa3b31c868ff5c8aa" source="id-0dc55ed574c34873b43919aac73f4c2b" target="id-ac2b27c14fa342c7b18e89ed5da6a579"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-eb9330436318436cb4b3467dda475d57" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-e97faf91af36499381ddc448707eaac9"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-50a2118ee2d147c694aa861b2acff9a2" source="id-204e18d6ae8c4aa78298422923f69369" target="id-2160dde598734e44acab39f89cf55e0e"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-b28ecc2f5b03409c9e5116b0fc4d5450" source="id-0dc55ed574c34873b43919aac73f4c2b" target="id-71cdf73ba061478dbc4d27d440b24298"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-7a265eb93f424cafb41e11a3d0032205" source="id-5ff7dff6a75f4d41861155d0491466b3" target="id-19138e0a3ba84bf5829c971dfcf88418"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-6aa1bd3a63eb42aeb63535a1d03707ba" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-32b5acb355ed4ddea69f9572ce67399f"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-7a7c1bc820a2495d9ca2beaaff1bdbf6" source="id-204e18d6ae8c4aa78298422923f69369" target="id-5c10215f70aa4e87b81f81f536d738f7"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-a2f0b486b03f4f11ac357b9671778580" source="id-5ff7dff6a75f4d41861155d0491466b3" target="id-3414e2f9405c4ef08213778c9ec16621"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-5e3fd9daf62d4e43ae79e822b21e1935" source="id-0dc55ed574c34873b43919aac73f4c2b" target="id-241f805435594b78b2335d6840f5ac28"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-e762f86697de4a3d86bb157f86378bb5" source="id-d75c40b4a10b409b9f229f35810af65b" target="id-c9cd342ea64146e2b58e06d346a9fabc"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-be27ce16649443399e802b5f01c25d86" source="id-d75c40b4a10b409b9f229f35810af65b" target="id-956a6ebe45de40e881c172d1ab2b3661"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-d189029909ba48449c19ad4276c6ad8f" source="id-204e18d6ae8c4aa78298422923f69369" target="id-0dce459a6d584f88a75b924fb881c790"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-b87d247a532941d4a8c81d18a8811ed9" source="id-0dc55ed574c34873b43919aac73f4c2b" target="id-b6d58e250a9541e6bb531de21d7cf7bf"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-10857d24a7f6423a85e8674eef8890ee" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-da207c88585a48fa8419f07dac2914e7"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-adbfff66ce0f455cb9730691731f0de9" source="id-5ff7dff6a75f4d41861155d0491466b3" target="id-373787698fbd4d4986efb6d040e4fa75"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-fcf3068b640349dd8cf4a7e66b9ffd56" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-b248210e24f642f5a7b723d130abbaa8"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-75391ab9fbcf4f3b84f960f8c791b652" source="id-204e18d6ae8c4aa78298422923f69369" target="id-b248210e24f642f5a7b723d130abbaa8"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-a7897fc55494424a8f4547fc64eabf3f" source="id-1121a7dd297240cc974383fde208bbef" target="id-9244152500d84e5d85bf2f0946901da0"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-62dd1e84413b4e8982f96a49e94e2893" source="id-1121a7dd297240cc974383fde208bbef" target="id-0dc55ed574c34873b43919aac73f4c2b"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-1b1b6e34fecb40e9978229e937b69061" source="id-1121a7dd297240cc974383fde208bbef" target="id-c8b2093490f644f4994c71ab6bcf329b"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-c5a8d5741daa441aa440ba742ffe4c13" source="id-204e18d6ae8c4aa78298422923f69369" target="id-b248210e24f642f5a7b723d130abbaa8"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-89970bf1ac8d4edd97959f55262b8b62" source="id-b248210e24f642f5a7b723d130abbaa8" target="id-7d51c1bbd8bd4c46b44596f5794c0a7a"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-8fd06a1bb4214c718ddd8d47e8786b28" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-1121a7dd297240cc974383fde208bbef"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-7fff7b70c58849d59b724e3fdf9b1714" source="id-9244152500d84e5d85bf2f0946901da0" target="id-5ff7dff6a75f4d41861155d0491466b3"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-12dcf9c59abe4919b284a93b51bf7b88" source="id-c8b2093490f644f4994c71ab6bcf329b" target="id-0dc55ed574c34873b43919aac73f4c2b"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-f5b0986341404496b2a5ebf97aaf7b77" source="id-1121a7dd297240cc974383fde208bbef" target="id-5ff7dff6a75f4d41861155d0491466b3"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-9145fee32bf04260ae94bbaa13d6894d" source="id-204e18d6ae8c4aa78298422923f69369" target="id-7d51c1bbd8bd4c46b44596f5794c0a7a"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-c237c521142449048be3199f23708b55" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-0dc55ed574c34873b43919aac73f4c2b"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-51090abad05040d1aa8c3cc9db4d4f35" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-5ff7dff6a75f4d41861155d0491466b3"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-707e04b07d454806b20983be779e15df" source="id-19b0ac5927bd421286dc9022262fca15" target="id-76e47261c7fb47c18775f01b720b5418"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-990efd6874444aaaaae5c47ad2072426" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-90045a37520747c6a82031edb5bf3a12"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-830968f49db845108de3f65b753797e3" source="id-39660a162fdd4043a38b902297395c34" target="id-768266497d4e47ec8442ed330cb05570"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-45294e49120545f68a3fedf31439c69f" source="id-f6fc78fb97574984bddc4c2b724a1795" target="id-a21c84cf7cb14cb58920a6a6af91bf1c"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-354342be0e1f4a08aeb9852a7f057b71" source="id-19b0ac5927bd421286dc9022262fca15" target="id-cba1c7e454784a63a2208a6b6de6a1cb"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-43eff5c440a3456fbc64546de21a94f4" source="id-76e47261c7fb47c18775f01b720b5418" target="id-cba1c7e454784a63a2208a6b6de6a1cb"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-b5bde7ff8ec043808acd165ece3192b1" source="id-90045a37520747c6a82031edb5bf3a12" target="id-5928f5612c83441396cffcd1d0e2a484"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-009102817c664db3bbc1ffacaf5e9256" source="id-768266497d4e47ec8442ed330cb05570" target="id-974173cf613b4d088ea2b534d450e26e"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-1fb76b44a8124553b462e2d2e34d0ade" source="id-a21c84cf7cb14cb58920a6a6af91bf1c" target="id-c894afae735841bdb3928d094571c80b"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-3c47528d0b6a45a2a3a4b9d444e2fd46" source="id-5ff7dff6a75f4d41861155d0491466b3" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-accdf4eb1b5749fba010caa04fbeb93a" source="id-204e18d6ae8c4aa78298422923f69369" target="id-19b0ac5927bd421286dc9022262fca15"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-00ef6cdb4c664c6ea9a4111a8fbfc341" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-f6fc78fb97574984bddc4c2b724a1795"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-5225305f265041fda4be7c9f1d8f8e99" source="id-0dc55ed574c34873b43919aac73f4c2b" target="id-39660a162fdd4043a38b902297395c34"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-2ddb43b8d6c54b539c8d4d928ae746df" source="id-19b0ac5927bd421286dc9022262fca15" target="id-f6fc78fb97574984bddc4c2b724a1795"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-e5344f1bb4da4a8d97348ba4406da98b" source="id-19b0ac5927bd421286dc9022262fca15" target="id-05d5e618d9f34cf889ee18792c10681b"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-420fba451e8e42e8af8ce76cea734aef" source="id-6b1944e84d4c4deaa837b6dd4c5e4e98" target="id-f6fc78fb97574984bddc4c2b724a1795"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-9782f3917a114ae5a2fece53cc9c27f5" source="id-f6fc78fb97574984bddc4c2b724a1795" target="id-a992cd500a414d3dbe07b82d0b80ed22"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-437595fb96c040dc834655cf76a842ed" source="id-aa8e11752fe34023a130d2b18eb45e22" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-094e23988b8c4f85b5193cc718ae8255" source="id-f6fc78fb97574984bddc4c2b724a1795" target="id-8220855d24784a338b74ed7616d9b3e0"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-eb3b8c9ff4394c9f83c3b2087c52a40c" source="id-62e029e579b9470a9e18ee7db5b3c9fd" target="id-39660a162fdd4043a38b902297395c34"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-dde00e91085e4d6691432b56c0987e21" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-5928f5612c83441396cffcd1d0e2a484"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-018e1bbaab7642d5abdee302279a6830" source="id-f6fc78fb97574984bddc4c2b724a1795" target="id-c894afae735841bdb3928d094571c80b"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-025ecd6decf345018bae75a8e8d49545" source="id-39660a162fdd4043a38b902297395c34" target="id-974173cf613b4d088ea2b534d450e26e"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-4f5a67169b5648cca88ec6bce1f68cc0" source="id-69b9839333cf49bc95161675bdb68ab4" target="id-ee016677f19b4d788ea93e7b5f37fa6f"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-5daf67d3b8b449d1afe42df5ef42bf98" source="id-eb235323e27c4183a1c95cf822ddc107" target="id-0ddbf7f729634ac0a2c59bb3798a4537"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-be2dcdeab65547f0be7e72747137577e" source="id-aa4ceb4a05ff4178b34f96604a221f9f" target="id-07bd72925def4930b2c82b3ec03d315a"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-2f1c94f4e39d404f807cab3a881433ef" source="id-19b0ac5927bd421286dc9022262fca15" target="id-ee016677f19b4d788ea93e7b5f37fa6f"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-c03c45ccf3c74263bb33e05565b3b43e" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-0ddbf7f729634ac0a2c59bb3798a4537"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-98e9be0298a145fea9706efe80cffda4" source="id-39660a162fdd4043a38b902297395c34" target="id-07bd72925def4930b2c82b3ec03d315a"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-a5a30993dd52482f93fcf0511a4aaf3e" source="id-69b9839333cf49bc95161675bdb68ab4" target="id-ee016677f19b4d788ea93e7b5f37fa6f"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-514fd4a831d040039881992f35d4c9cb" source="id-eb235323e27c4183a1c95cf822ddc107" target="id-0ddbf7f729634ac0a2c59bb3798a4537"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-f45c45aa0ab043139f25e40159de0509" source="id-aa4ceb4a05ff4178b34f96604a221f9f" target="id-07bd72925def4930b2c82b3ec03d315a">
+      <documentation>The business actor &quot;thesis comitee&quot; is assigned to the &quot;Thesis Application Processing&quot; business process. It represents that the thesis committee is acitvely engaged in the necessary concepts of the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-95c430ef6ebd4ced8b8fc4c80e53d900" source="id-aa8e11752fe34023a130d2b18eb45e22" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-4cd7930a815146a3a8ad49f0ebf98e91" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-aa8e11752fe34023a130d2b18eb45e22"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-7c72a6fe48c94417b3cbab7d31b3232f" source="id-19b0ac5927bd421286dc9022262fca15" target="id-05d5e618d9f34cf889ee18792c10681b"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f6ea9d49449b4ff0b0a450a5ba8d1d6d" source="id-f6fc78fb97574984bddc4c2b724a1795" target="id-8220855d24784a338b74ed7616d9b3e0"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-5f6a2ea8570c4a94bc2064665e15dba3" source="id-f6fc78fb97574984bddc4c2b724a1795" target="id-a992cd500a414d3dbe07b82d0b80ed22"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-e88a945ef3c94fc2a44a3ba08fa1a962" source="id-f6fc78fb97574984bddc4c2b724a1795" target="id-6b1944e84d4c4deaa837b6dd4c5e4e98"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-82183eb290644e568f5e044ebaea8754" source="id-39660a162fdd4043a38b902297395c34" target="id-62e029e579b9470a9e18ee7db5b3c9fd"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-6742a7e6671e4320a3158f8ff45121bd" source="id-19b0ac5927bd421286dc9022262fca15" target="id-23eabd24eeea4f4389282ea4d731c16a"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-c92a2338f9bf48bfb91879415aa22b5d" source="id-23eabd24eeea4f4389282ea4d731c16a" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-3db7a1d498014a7e98d00e55ad93fccc" source="id-19b0ac5927bd421286dc9022262fca15" target="id-f9a3ca25a5a54d3dac25d9a49efdcfd4"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-581f416f95654919944d54e684578219" source="id-f9a3ca25a5a54d3dac25d9a49efdcfd4" target="id-39660a162fdd4043a38b902297395c34"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-54e1a0bcbd014bc0b958c61387fe7478" source="id-19b0ac5927bd421286dc9022262fca15" target="id-5f6f74e2c9514bc7ac0eb9c73969e4b7"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-e1c4885a9a24432bb9e5283ba6157ce2" source="id-5f6f74e2c9514bc7ac0eb9c73969e4b7" target="id-45547ec3f3da4259bf2855b16b98b8ca"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-7ab6dc310494418e9671b966d256c45a" source="id-45547ec3f3da4259bf2855b16b98b8ca" target="id-878d103216264c15a78cdb72d8918876"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-2b516f077ac043e087b20738763409ed" source="id-878d103216264c15a78cdb72d8918876" target="id-39660a162fdd4043a38b902297395c34"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-eaf07098bd634b24a403211a64f05124" source="id-45547ec3f3da4259bf2855b16b98b8ca" target="id-66e688af962f4e0bb57f20d8b84308b3"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-5dbee2ec4e1d4f22acde79a49054b706" source="id-66e688af962f4e0bb57f20d8b84308b3" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-2b9e7ce793d14a17be411a17d0723141" source="id-1b2b8c3ed70247c09663438198f08232" target="id-63a71dcd5dfa4ec5a1750d148c6ca406"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-edbf3c56e0ba46638c40922ff1a57476" source="id-c3313c3cd95843b9969ea1f2e0e3e95b" target="id-9756e96dc3e94d4a805086cd3c56d66c">
+      <documentation>The use of the realization relationship is to clearify that the concrete element &quot; evaluate examinations&quot; realizes the abstract element of &quot; Examination evaluation service&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-2c0568d552ba45beba062eae7ec207f8" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-5d4aa622f62d4d8d9796492a3964d3fa"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-671bc91207604bb4b1e34b2b5671c916" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-00142a3cc7fa4144a8f3b84da7a6353b"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-88e44fac71754790890ca69cac0f408b" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-dadfa7c425084ee28e0fc7becc978d1e"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-0bcf92ea8bab4a89b402e6efb21bff83" source="id-19b0ac5927bd421286dc9022262fca15" target="id-7e354225ddcf4728a4bb69812f1afe1e"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-c4b9913b1dd74e07b2916537bf01bdf6" source="id-19b0ac5927bd421286dc9022262fca15" target="id-adaf60d2756a45bba3aea8483f3e9524">
+      <documentation>HIS is responsible for the study adminstration, which is shown by the use of assignment relationship.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-0a4069f1740a4b798443a79989a175a5" source="id-19b0ac5927bd421286dc9022262fca15" target="id-1514f4d2b3db4c03a89a27c64a7e4d87">
+      <documentation>HIS is responsible for the examination adminstration, which is shown by the use of assignment relationship.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-944cc37e28ef41f5a3c48d8e492ee5f2" source="id-19b0ac5927bd421286dc9022262fca15" target="id-92fc21bfba434ef08bd593238ee0c25b"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-9b485f01e38049699acf0c7dd028cb14" source="id-39660a162fdd4043a38b902297395c34" target="id-63a71dcd5dfa4ec5a1750d148c6ca406">
+      <documentation>WyseFlow  is responsible for the &quot;Management and Submission of thesis Application&quot;, which is shown by the use of assignment relationship.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-7aa21575f52c41a084f416b144dba69e" source="id-39660a162fdd4043a38b902297395c34" target="id-c3313c3cd95843b9969ea1f2e0e3e95b">
+      <documentation>WyseFlow  is responsible for the &quot;evaluate examinations&quot;, which is shown by the use of assignment relationship.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-de5c2a2e78cb48c18df541c9b66f383e" source="id-39660a162fdd4043a38b902297395c34" target="id-84566310a4634269940fc2f3f9f2836c"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-687e0cf7969b4a779d887b1018577e73" source="id-39660a162fdd4043a38b902297395c34" target="id-e5b0c59bab174b69a3e6aeb2fda7009f"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-7babd79071e14357ad0d72d556462051" source="id-39660a162fdd4043a38b902297395c34" target="id-239e261ee90a48d799be5f6766d71954"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-09c4d9ce490b4f588e2b9241f41df05c" source="id-adaf60d2756a45bba3aea8483f3e9524" target="id-1063231d86e94ad7afa141b526d88503">
+      <documentation>The use of the realization relationship is to clearify that the concrete element study administration realizes the abstract element of getting a certificate of study. </documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-3b5839afb92d454e883838a223726775" source="id-adaf60d2756a45bba3aea8483f3e9524" target="id-eb86416981f14beeab21f1ecbdf1f601"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-3aef7e65c57044b0920c4c409bd24a7b" source="id-1514f4d2b3db4c03a89a27c64a7e4d87" target="id-daf97b97d42b4b7cb9bb70eab00fdd36">
+      <documentation>The use of the realization relationship is to clearify that the concrete element examination administrationrealizes the abstract element of registrate and deregistrate for examinations. </documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-15f1558a59014fcab0bdaaafa08e1088" source="id-1514f4d2b3db4c03a89a27c64a7e4d87" target="id-120ee4aa11a44d9bba6b1c2d2c278c1f">
+      <documentation>The use of the realization relationship is to clearify that the entity/elementexamination administration plays a significant role in the creation of the information about registrated and deregistrated examination. </documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-7a685eb4977a477b9c44c915afe789cf" source="id-1514f4d2b3db4c03a89a27c64a7e4d87" target="id-ed0439e0a5f44897830c493761da1434">
+      <documentation>The use of the realization relationship is to clearify that the entity/element examination administration is crucial for the creation of the current performance overview. </documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-b6936c99ba634f7baf21409b2bbc34ae" source="id-1514f4d2b3db4c03a89a27c64a7e4d87" target="id-d65ec5692bf941aba281415dc1e5f21c"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-7c83767266744653a3e3c4c129d03792" source="id-1514f4d2b3db4c03a89a27c64a7e4d87" target="id-be0183fae92b4a81b6730a6b05522c9c"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f5a23a87cfb741769637451c5f7d5f5e" source="id-63a71dcd5dfa4ec5a1750d148c6ca406" target="id-1b2b8c3ed70247c09663438198f08232">
+      <documentation>The use of the realization relationship is to clearify that the concrete element &quot; Management and Submision of thesis Application&quot; realizes the abstract element of &quot; Create and Provide Examinations&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-c2e18d268b7f4a1d875d2f6bf36f7ca6" source="id-768266497d4e47ec8442ed330cb05570" target="id-a5c3f8e6dab544f4ac1c57ab39c5ddf7"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-c60fb2f3d45841f0bfb58714a15a147b" source="id-84566310a4634269940fc2f3f9f2836c" target="id-07047ad079c44cba803cf0369b6af88d"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-397b641fc3a54ee5b7453b8ecf928dd0" source="id-5d4aa622f62d4d8d9796492a3964d3fa" target="id-16e823922a7f40d28ee58db6b5019cac"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-c6cd39cb44ac44dd9e97d94ac86c8289" source="id-00142a3cc7fa4144a8f3b84da7a6353b" target="id-46020926b45f4c3ba8c9faa8f5d2f204"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-1a41b7fb4879407fa99741832f2a87f6" source="id-7d51c1bbd8bd4c46b44596f5794c0a7a" target="id-45547ec3f3da4259bf2855b16b98b8ca"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-26dd455f5f3349a4a38136efd7c50ce6" source="id-46cd2aa452c641d6a33962e64bedc5e6" target="id-ae04278807824b0690e65cb2d7a920fa"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-00e620dd6d7b4b7c966427a84048e405" source="id-46cd2aa452c641d6a33962e64bedc5e6" target="id-e9e3df154a4041c99b3a972f4a7529ec"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-e07bf12c22fb42a8b3b04f9c19a1817d" source="id-ae04278807824b0690e65cb2d7a920fa" target="id-e9e3df154a4041c99b3a972f4a7529ec"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-7e729bae7e3f494daa21264dac6c4de4" source="id-ae04278807824b0690e65cb2d7a920fa" target="id-e9e3df154a4041c99b3a972f4a7529ec"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-4511f54627d446e2aac9b0e271eef853" source="id-46cd2aa452c641d6a33962e64bedc5e6" target="id-19b0ac5927bd421286dc9022262fca15"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-d2f1b788830446769cbb8aa3a24a7def" source="id-ac2b27c14fa342c7b18e89ed5da6a579" target="id-b6d58e250a9541e6bb531de21d7cf7bf"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-21d7c952884b445bad90a8b46f376b94" source="id-3a277c52a359458bbb2f04ed87381294" target="id-da207c88585a48fa8419f07dac2914e7"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-b3bb130dd2254702b5f8b6fecf1bf2e7" source="id-055077b8ecad483287509819201e58c1" target="id-0dce459a6d584f88a75b924fb881c790"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-5045d4fac08448ba91d901b89c691196" source="id-a04c4e7c53da4183b0632409363a162d" target="id-373787698fbd4d4986efb6d040e4fa75"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-348dc48be9ed4c57ae529af008b4f53f" source="id-c3ecdbba44f94137bb3d7dffed58988d" target="id-2316cc4104a448cbb563102e4a926bc7"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-87cc9bb6a3fb4fa9ad4877ca09f1e547" source="id-893c738909714061803a95f864d020bf" target="id-6249646722354b67adc0c445b0297833"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-8717d698dc4b48a2821989fcb558f541" source="id-893c738909714061803a95f864d020bf" target="id-542fc5b79a124253b2c18c7fbd5264eb"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-b63b110d7dbc4567bcfcbd27770f0412" source="id-5548b09c24d744a0bbcd493c1d5655c6" target="id-45cea84d004b4e5d9c20c6d059cb104f"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-6a0ede0eb3f349abac752c1f05d59b5f" source="id-af9130510964491794885f93a7a2b4b4" target="id-713692c3860f4705acab8fa4bf452a7d"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-0645c4e21b5142779b619c2b3f1067f7" source="id-ec183356bb0c4771901c1d0e4b4782d7" target="id-af9130510964491794885f93a7a2b4b4"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ef52d8108dcc4ea8b2c039bcabe548cf" source="id-dcdac5e3264c4f9a813bd3ae8484c5a6" target="id-5548b09c24d744a0bbcd493c1d5655c6"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-81f99d971d9f43dd9e5b0fb1c5e97554" source="id-c3ecdbba44f94137bb3d7dffed58988d" target="id-893c738909714061803a95f864d020bf"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-1d189d004aca4d09b169a12e57315f76" source="id-2cad1915dc874cb0bc2bc10bcd501dff" target="id-9749682eb7554c0495fbda108ff082d4"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-11e4188922f24a36b96cdfac29321f9f" source="id-2cad1915dc874cb0bc2bc10bcd501dff" target="id-97a1ee259f874ad1b25f8a4fc6efd2ef"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-cedb1962d0ee4eb9b3b9cdb713c1b064" source="id-9749682eb7554c0495fbda108ff082d4" target="id-97a1ee259f874ad1b25f8a4fc6efd2ef"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f8573c341bfa4fed91a0af11eff617e1" source="id-5548b09c24d744a0bbcd493c1d5655c6" target="id-da19dee1e00842c2ae859a1d47298063"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-cf77561ffca542f6b5be008184780139" source="id-da19dee1e00842c2ae859a1d47298063" target="id-45cea84d004b4e5d9c20c6d059cb104f"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-10f76c38f1d3445ab88bbe7ee188a929" source="id-af9130510964491794885f93a7a2b4b4" target="id-b9db487d2e2444dd92348814677ddcb3"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-5ed003c15a844f0c8bd8c2bffd6a2afc" source="id-713692c3860f4705acab8fa4bf452a7d" target="id-b9db487d2e2444dd92348814677ddcb3"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-4333ec901ec749889e294f6c223bba08" source="id-6249646722354b67adc0c445b0297833" target="id-542fc5b79a124253b2c18c7fbd5264eb"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-1e907a8b85c240c0a0eb609ea568b281" source="id-2cad1915dc874cb0bc2bc10bcd501dff" target="id-19b0ac5927bd421286dc9022262fca15">
+      <documentation>The arrow points from Database Server to HIS Application. The Database Server has all the data, which is provided to HIS and then distributed. </documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-80df83611acd4954b01b15bffa5b8119" source="id-af9130510964491794885f93a7a2b4b4" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-0de0f1bbeaed4487a9b3f36eed0ee0e6" source="id-af9130510964491794885f93a7a2b4b4" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-232cbc3041a74302983d647063a90a06" source="id-5548b09c24d744a0bbcd493c1d5655c6" target="id-39660a162fdd4043a38b902297395c34">
+      <documentation>The arrow points from WyseFlow to WyseFlow Server. The WyseFlow Server hosts the WyseFlow application, facilitating exam management and processing.</documentation>
+    </element>
+    <element xsi:type="archimate:CompositionRelationship" id="id-f133a4707bfe431692def9c9ac088096" source="id-c3ecdbba44f94137bb3d7dffed58988d" target="id-96415070094a42cc8435f06f63b5f239"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-4dbdd318ae7d4cd9bed634a5957b7792" source="id-96415070094a42cc8435f06f63b5f239" target="id-2316cc4104a448cbb563102e4a926bc7"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-66c43de2a8de4eaa9984f9acb69d2533" source="id-c3ecdbba44f94137bb3d7dffed58988d" target="id-19b0ac5927bd421286dc9022262fca15">
+      <documentation>The HIS Server hosts the HIS Application, where all administrative tasks and data processing are conducted. </documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-9dce7eb4b7cd438ab212a5397aaab200" source="id-893c738909714061803a95f864d020bf" target="id-9fce2f9d51244b5097556f7607d8940b"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-e54bcd09789a4600863ab29b21a3531e" source="id-893c738909714061803a95f864d020bf" target="id-e5f22d84a32c44f882af2e38d8d02720"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-128e7692e56e49c7872a9b42f2a7eb85" source="id-893c738909714061803a95f864d020bf" target="id-45547ec3f3da4259bf2855b16b98b8ca"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-4bbe4ff0d3734e06a397b6c60ea365a3" source="id-45547ec3f3da4259bf2855b16b98b8ca" target="id-73435f55eac246b882d42add75522ccd"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-1a69151417e645169716557b6b8e5b89" source="id-45547ec3f3da4259bf2855b16b98b8ca" target="id-cdc2f20bcb0a4fafa443375899b8f6b6"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-a5dcc56082d243bbb77d64537481c6a9" source="id-19b0ac5927bd421286dc9022262fca15" target="id-88d752c8dc914b548eeac4ef592f4428"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-159f10f338974ca4bf1ccdb4844dee3f" source="id-88d752c8dc914b548eeac4ef592f4428" target="id-87ce6af27de64a24ae756caf1d31431d"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-8dc2d9099a834396b7e27e5c0a1e4b36" source="id-87ce6af27de64a24ae756caf1d31431d" target="id-69b9839333cf49bc95161675bdb68ab4"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-52dba08adba8432f910516c0d710c65b" source="id-daf97b97d42b4b7cb9bb70eab00fdd36" target="id-69b9839333cf49bc95161675bdb68ab4"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-045c479c44164ec5aa4d9c6aab40a6b2" source="id-6249646722354b67adc0c445b0297833" target="id-e5f22d84a32c44f882af2e38d8d02720"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-210ae52daa5f4031bf54d73c836841d6" source="id-6249646722354b67adc0c445b0297833" target="id-9fce2f9d51244b5097556f7607d8940b"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-7560af59a5c445948bb13b4140b23612" source="id-69b9839333cf49bc95161675bdb68ab4" target="id-dd4dc58b29664867bb802c1af8ed5b61"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-41a58c17f2de42cea6fd6b831d53b3d0" source="id-19b0ac5927bd421286dc9022262fca15" target="id-dd4dc58b29664867bb802c1af8ed5b61">
+      <documentation>HIS application component is composed of HIS Web UI, which enables the student to enter his/ her student data.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-7c021932ba154f01938bf287eb8042c5" source="id-16e823922a7f40d28ee58db6b5019cac" target="id-0ddbf7f729634ac0a2c59bb3798a4537"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-2e42cf2dc02b40da9c7d7a94580c55b3" source="id-46020926b45f4c3ba8c9faa8f5d2f204" target="id-0ddbf7f729634ac0a2c59bb3798a4537"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-3a86f32c3c234d7bad2a25454be68d1f" source="id-1063231d86e94ad7afa141b526d88503" target="id-ee016677f19b4d788ea93e7b5f37fa6f"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ff55f1353d7048cfa82e7948baf4232f" source="id-daf97b97d42b4b7cb9bb70eab00fdd36" target="id-ee016677f19b4d788ea93e7b5f37fa6f"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-10b7af4cfb22450088d6f4ccc0089211" source="id-120ee4aa11a44d9bba6b1c2d2c278c1f" target="id-ee016677f19b4d788ea93e7b5f37fa6f"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-bc719b2e16be4342a0b8039485a0c27b" source="id-ed0439e0a5f44897830c493761da1434" target="id-ee016677f19b4d788ea93e7b5f37fa6f"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-030c6854594d429e82ebe832c93a0cab" source="id-d65ec5692bf941aba281415dc1e5f21c" target="id-ee016677f19b4d788ea93e7b5f37fa6f"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-1e9eb72fb59147a4a037146ab8234e52" source="id-1b2b8c3ed70247c09663438198f08232" target="id-07bd72925def4930b2c82b3ec03d315a">
+      <documentation>Illustrates the serving relationship, &quot;Create and Provide Examinations&quot; application service serves the Business Process &quot;Thesis Applictaion processing&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-7e55248ce51a4a5faa2e7b9e0334de7b" source="id-9756e96dc3e94d4a805086cd3c56d66c" target="id-07bd72925def4930b2c82b3ec03d315a"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-0edcd7b141da4c99bc4e098025ced600" source="id-a5c3f8e6dab544f4ac1c57ab39c5ddf7" target="id-07bd72925def4930b2c82b3ec03d315a"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-108621672ca24ebcb823825080fe6b6d" source="id-dd4dc58b29664867bb802c1af8ed5b61" target="id-69b9839333cf49bc95161675bdb68ab4">
+      <documentation>Serves a UI for the Student.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-4b900e470d3f46aa947c1cca0807d039" source="id-9fce2f9d51244b5097556f7607d8940b" target="id-9e59deae2ed64988a0dffbb126c1f72a"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-025b4e726fc34d1ba99d58c5891794be" source="id-45547ec3f3da4259bf2855b16b98b8ca" target="id-9e59deae2ed64988a0dffbb126c1f72a"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-6761d0f28dee4845a09a3116989738b1" source="id-9e59deae2ed64988a0dffbb126c1f72a" target="id-39660a162fdd4043a38b902297395c34"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-da51054072794029904f2678f55c175e" source="id-dd4dc58b29664867bb802c1af8ed5b61" target="id-c3ecdbba44f94137bb3d7dffed58988d"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-05553cf0939641aeb3ed1b92b7833a00" source="id-187eaeae006c4ef89a3d49a36fa80bf0" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-b108cf63bfe64a38b36ac1cb62a53daa" source="id-45547ec3f3da4259bf2855b16b98b8ca" target="id-187eaeae006c4ef89a3d49a36fa80bf0"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-0ca1de27558a462eb83b3aeae2b73a62" source="id-9fce2f9d51244b5097556f7607d8940b" target="id-187eaeae006c4ef89a3d49a36fa80bf0"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-4113a2ea0bc742e1aaa1da566aed6cf6" source="id-0ddbf7f729634ac0a2c59bb3798a4537" target="id-69b9839333cf49bc95161675bdb68ab4"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-ce52fbbaa928422c83501dc200f650c1" source="id-07bd72925def4930b2c82b3ec03d315a" target="id-69b9839333cf49bc95161675bdb68ab4"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-53a3b94fcb7d44eab16dfd191c0bb30e" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-ed0d0f6958bf44a29152764de1b5dfd8"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-77767373417c47edb66276002d64d97d" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-216a3cffb74d45cf98a2a05c2d5beb51">
+      <documentation>Peregos  is responsible for the &quot;management of student data&quot;, which is shown by the use of assignment relationship.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-191b715dab704f2e91f8e3c9f6484014" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-1ee123d687e04cb3afe247c1cfff47e2">
+      <documentation>Peregos  is responsible for the &quot;request management&quot;, which is shown by the use of assignment relationship.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-1f58815a5fc44d248cc7c23c92becfe1" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-32f1aaaac96141608393d366404e958d">
+      <documentation>Peregos  is responsible for the &quot;support of the examiantion council&quot;, which is shown by the use of assignment relationship.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-a7a242896f7e47c981a6e02f8d59b1be" source="id-1ee123d687e04cb3afe247c1cfff47e2" target="id-c43a0ccb6d654f308b297942c98d4731">
+      <documentation>The use of the realization relationship is to clearify that the concrete element &quot; Request management&quot; realizes the abstract element of &quot; Process request&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-239322a9aa224cac9efd0d4ffba3480c" source="id-1ee123d687e04cb3afe247c1cfff47e2" target="id-9007698c975541aa83381813ba4da8df">
+      <documentation>The use of the realization relationship is to clearify that the concrete element &quot; Request management&quot; realizes the abstract element of &quot; Creating Request&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f8cb3c78ea834f07a6412cb1440fb38a" source="id-c43a0ccb6d654f308b297942c98d4731" target="id-0c140ca28e7c4e379c58e74455af8e8a">
+      <documentation>Illustrates the serving relationship, &quot;Process request&quot; application service serves the Business Process &quot;Request process&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-010abc8139c845b3af5fb56c9a4c265a" source="id-9007698c975541aa83381813ba4da8df" target="id-9ad6f131aeb641eca582340ce28ca4c4">
+      <documentation>Illustrates the serving relationship, &quot;Creating request&quot; application service serves the Business Process &quot;Create Request&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-1258ab4979304275974ebc264ae60365" source="id-eb235323e27c4183a1c95cf822ddc107" target="id-0c140ca28e7c4e379c58e74455af8e8a">
+      <documentation>The business actor &quot;examiantion office&quot; is assigned to the &quot;Request Process&quot; business process. It represents that the examiantion office is acitvely engaged in the necessary concepts of the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-d84d62f250b3489190ee39249059addc" source="id-69b9839333cf49bc95161675bdb68ab4" target="id-9ad6f131aeb641eca582340ce28ca4c4">
+      <documentation>The business actor &quot;student&quot; is assigned to the &quot;Create Request&quot; business process. It represents that the student has to apply or/and provide neccessary information. It underlines the active role of the student regarding the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-7b2195ec31f0484b9b6ed8977662c81d" source="id-32f1aaaac96141608393d366404e958d" target="id-53f77df418434f428a299904aa65e1c3">
+      <documentation>The use of the realization relationship is to clearify that the concrete element &quot; support of the examination council&quot; realizes the abstract element of &quot; application for examination&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-be72d371296a45769049726b31ada984" source="id-53f77df418434f428a299904aa65e1c3" target="id-687ead2afd3646d19aabb4cc52509a75">
+      <documentation>Illustrates the serving relationship, &quot;application for examination&quot; application service serves the Business Process &quot;Process of Exam application&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-9ab20cff1b0c44ce9e7f220b9bd9cc43" source="id-eb235323e27c4183a1c95cf822ddc107" target="id-687ead2afd3646d19aabb4cc52509a75">
+      <documentation>The business actor &quot;examiantion office&quot; is assigned to the &quot;Process of Exam application&quot; business process. It represents that the examiantion office is acitvely engaged in the necessary concepts of the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-d5ee5a5888e84f5da78ab032f2665774" source="id-1063231d86e94ad7afa141b526d88503" target="id-6e27a4a772e54a22b02eaa35fe090448">
+      <documentation>Illustrates the serving relationship, &quot;the get certificate of study&quot; application service serves the Business Process &quot;Completion of study certificate&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f4cb0552d35245e4839b41e3cdc7c786" source="id-daf97b97d42b4b7cb9bb70eab00fdd36" target="id-15f0bd1f409f4238b54b51aa442e5798">
+      <documentation>Illustrates the serving relationship, &quot;registrate and deregistered for examination&quot; application service serves the Business Process &quot;Management of deregistered and registered examination&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-0d6d7ff8042046ceab52748be7b9a600" source="id-120ee4aa11a44d9bba6b1c2d2c278c1f" target="id-15f0bd1f409f4238b54b51aa442e5798">
+      <documentation>Illustrates the serving relationship, &quot;Info. about registered and deregistered examination&quot; application service serves the Business Process &quot;Management of deregistered and registered examination&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-6f1512db697c46bdac9ddd74867cd0cd" source="id-ed0439e0a5f44897830c493761da1434" target="id-f659540b249145df9fe6bfa4aa9c301a">
+      <documentation>Illustrates the serving relationship, &quot;current performance overview&quot; application service serves the Business Process &quot;Process of the visualization of written examination&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-b6be7850a8774a06825b8af2cb8c7d9f" source="id-69b9839333cf49bc95161675bdb68ab4" target="id-6e27a4a772e54a22b02eaa35fe090448">
+      <documentation>The business actor &quot;student&quot; is assigned to the &quot;Completion of study certificate&quot; business process. It represents that the student has to apply or/and provide neccessary information. It underlines the active role of the student regarding the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-b9be3b0cdc69474e87abcfca27d8fec4" source="id-eb235323e27c4183a1c95cf822ddc107" target="id-15f0bd1f409f4238b54b51aa442e5798">
+      <documentation>The business actor &quot;examiantion office&quot; is assigned to the &quot;Management of deregistered and registered examination&quot; business process. It represents that the examiantion office is acitvely engaged in the necessary concepts of the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-bc66d707aae7422ea20a396bfbb0671d" source="id-eb235323e27c4183a1c95cf822ddc107" target="id-f659540b249145df9fe6bfa4aa9c301a">
+      <documentation>The business actor &quot;examiantion office&quot; is assigned to the &quot;Process of the visualization of written Examinations&quot; business process. It represents that the examiantion office is acitvely engaged in the necessary concepts of the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-ce87339223c540d6b1919d99ccc02503" source="id-9756e96dc3e94d4a805086cd3c56d66c" target="id-7a64e3033fa74c5fb8e4eca0af41d720">
+      <documentation>Illustrates the serving relationship, &quot;Examiation evaluation service&quot; application service serves the Business Process &quot;Evaluation of Examination&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-85dbc5d2de8a4edd8b33fa35f71be784" source="id-aa4ceb4a05ff4178b34f96604a221f9f" target="id-7a64e3033fa74c5fb8e4eca0af41d720">
+      <documentation>The business actor &quot;thesis comitee&quot; is assigned to the &quot;Evaluation of Exams&quot; business process. It represents that the thesis committee is acitvely engaged in the necessary concepts of the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f03ff692e088428d8375c3890610b826" source="id-a5c3f8e6dab544f4ac1c57ab39c5ddf7" target="id-787808b110eb4436bfa98b71865fa29f"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-b0cb573e621843c69d09876d56824393" source="id-39660a162fdd4043a38b902297395c34" target="id-d51f14a65a574a69a73903de3bf47060"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-539391a0079d4e669cc9b0b70be4df29" source="id-2d59c0a9967d4617b3b1477b73dada15" target="id-78188521b7284f79b5a7a9424910b740">
+      <documentation>The use of the realization relationship is to clearify that the concrete element &quot;Management of student data&quot; realizes the abstract element of &quot; receive student data&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-ef115e2fd1984a758665da979d1e2040" source="id-2d59c0a9967d4617b3b1477b73dada15" target="id-20f736987038464e90893cac023ce9d7">
+      <documentation>The use of the realization relationship is to clearify that the concrete element &quot;Management of student data&quot; realizes the abstract element of &quot; Adminstration and saving of student data&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-da6f3abe39234fc3bef768f966bad951" source="id-20f736987038464e90893cac023ce9d7" target="id-e8f51008599540aa9000b8a0256c58c6">
+      <documentation>Illustrates the serving relationship, &quot;Adminstration and saving student data&quot; application service serves the Business Process &quot;Processing student data&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-67f09d8fd43540829e6cb3a852edea12" source="id-78188521b7284f79b5a7a9424910b740" target="id-e8f51008599540aa9000b8a0256c58c6">
+      <documentation>Illustrates the serving relationship, &quot;receive student data&quot; application service serves the Business Process &quot;Processing student data&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-24f44556823046fb8d4994ea18b01553" source="id-39660a162fdd4043a38b902297395c34" target="id-2d59c0a9967d4617b3b1477b73dada15">
+      <documentation>WyseFlow  is responsible for the &quot;Management of student data&quot;, which is shown by the use of assignment relationship.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-61011cb37a624fb69cc690562b7747e6" source="id-70da076df08a425fb2580c73878ef472" target="id-41bcf956afb44d3c8eaeb267fadab83f">
+      <documentation>Illustrates the serving relationship, &quot;Adminstration and saving student data&quot; application service serves the Business Process &quot;Processing student data (copy)&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-f8293c8c2fd64eb3937bdbed928056c3" source="id-cf191f691329422997b60f3cb3365c4a" target="id-41bcf956afb44d3c8eaeb267fadab83f">
+      <documentation>Illustrates the serving relationship, &quot;receive student data (copy)&quot; application service serves the Business Process &quot;Processing student data (copy)&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-dcb345f5eb5b4f9e91943ac471a8e3be" source="id-216a3cffb74d45cf98a2a05c2d5beb51" target="id-cf191f691329422997b60f3cb3365c4a">
+      <documentation>The use of the realization relationship is to clearify that the concrete element &quot; Management of student data&quot; realizes the abstract element of &quot; receive student data (copy)&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-00fb31b6891f4a1396d13d766c50efcb" source="id-216a3cffb74d45cf98a2a05c2d5beb51" target="id-70da076df08a425fb2580c73878ef472">
+      <documentation>The use of the realization relationship is to clearify that the concrete element &quot; Management of student data&quot; realizes the abstract element of &quot; Adminstration and saving student data&quot;.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-5c0b2e94a5dc4870a7ec8da4a2db6012" source="id-eb235323e27c4183a1c95cf822ddc107" target="id-41bcf956afb44d3c8eaeb267fadab83f">
+      <documentation>The business actor &quot;Processing student data (copy)&quot; is assigned to the &quot;Process of Exam application&quot; business process. It represents that the examiantion office is acitvely engaged in the necessary concepts of the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-660a73e57902485b972dd8f8e62eff71" source="id-aa4ceb4a05ff4178b34f96604a221f9f" target="id-e8f51008599540aa9000b8a0256c58c6">
+      <documentation>The business actor &quot;thesis comitee&quot; is assigned to the &quot;Processing student data&quot; business process. It represents that the thesis committee is acitvely engaged in the necessary concepts of the business process.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-06c7c530b92e478bb96cb61c5e74bd2f" source="id-893c738909714061803a95f864d020bf" target="id-43871b8b6ee74aa99de6ef6e1d7fb4f3"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-b226b095382240ebb2360269c4003573" source="id-893c738909714061803a95f864d020bf" target="id-99b37a60b8cc473d8d975210a3878331"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-dc6180e119c14c3595c7b8160d8a20c1" source="id-893c738909714061803a95f864d020bf" target="id-c8db5cf1d5db4b449345b8c6125a4d14"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-7f545ffdd7d94e99b70369e48083c756" source="id-c8db5cf1d5db4b449345b8c6125a4d14" target="id-99b37a60b8cc473d8d975210a3878331"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-36f11c234fe64307bb9e5bf5016a0867" source="id-c8db5cf1d5db4b449345b8c6125a4d14" target="id-43871b8b6ee74aa99de6ef6e1d7fb4f3"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-2f1d83c1bef84db988e91b6b23058e71" source="id-43871b8b6ee74aa99de6ef6e1d7fb4f3" target="id-b27ec898ebe84c31be9d154c9e3fc18f"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-5571dd8fb9904653912e44d1cd3f367e" source="id-99b37a60b8cc473d8d975210a3878331" target="id-cb92934e97be47bd9d18237f9206878b"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-c46d8e7a22e4400599570aee96781701" source="id-b27ec898ebe84c31be9d154c9e3fc18f" target="id-726679fca35244b0b72f49d675e6781e"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-8ba8f0e10975436197923bc2ef7a6d05" source="id-cb92934e97be47bd9d18237f9206878b" target="id-d17e733a19ff4ac5846b3e3c070b80af"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-75147da0f48043fcab3ac3785729f2db" source="id-c3ecdbba44f94137bb3d7dffed58988d" target="id-6de089e50a0b47c89a0b2ba886c04638"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-8d04e01df0fa410bbfcc233197cf3a0d" source="id-5548b09c24d744a0bbcd493c1d5655c6" target="id-024186cea4384cad9b70114ab21096e5"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-7853fd43782244139d67f7d76eda3e30" source="id-af9130510964491794885f93a7a2b4b4" target="id-200a9dd0a909489b8a980f689d11a557"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-8dda05681aa34698ba6b031d251bbaee" source="id-19b0ac5927bd421286dc9022262fca15" target="id-54af203b3ea14d439415eea7c69a6858"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-0557be60ac4f42298776f87a325a1830" source="id-54af203b3ea14d439415eea7c69a6858" target="id-726679fca35244b0b72f49d675e6781e"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-96c6c08e58e74a17a98381df87895e94" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-ff0462edbb584ab1bd3d54337925b118"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-fd7d89b6a6d349e4a4811091fec79a1f" source="id-39660a162fdd4043a38b902297395c34" target="id-ff0462edbb584ab1bd3d54337925b118"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-e0cd9f83373841dfa3a40c7f7e2ca266" source="id-ff0462edbb584ab1bd3d54337925b118" target="id-d17e733a19ff4ac5846b3e3c070b80af"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-67ed6a7f813b42c98dc4e184f7519f22" source="id-ff0462edbb584ab1bd3d54337925b118" target="id-984f4384115b43408a9adf6c88e96cf7"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-e793dcce0b2b42c5b0118219243e11c2" source="id-54af203b3ea14d439415eea7c69a6858" target="id-76a554ed74844571ada81fde335102f2"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-d611348eb5e54ff99cbc57e418adaffa" source="id-76a554ed74844571ada81fde335102f2" target="id-ec183356bb0c4771901c1d0e4b4782d7">
+      <documentation>Student exchange is connected to Peregos Queue.  This is called binding. A binding connects an exchange to a queue and defines which messages is forwarded to the queue.</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-4d08c2e1a3c64120bd6ca407dd4e1706" source="id-76a554ed74844571ada81fde335102f2" target="id-dcdac5e3264c4f9a813bd3ae8484c5a6">
+      <documentation>Student exchange is connected to WyseFlow Queue. This is called binding. A binding connects an exchange to a queue and defines which messages is forwarded to the queue.</documentation>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-47e8a82de1494a12a7e3f617aa8c5fa5" source="id-96415070094a42cc8435f06f63b5f239" target="id-6de089e50a0b47c89a0b2ba886c04638"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-f1280521c8124f52b5d2697937cb6731" source="id-96415070094a42cc8435f06f63b5f239" target="id-6de089e50a0b47c89a0b2ba886c04638"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-1b57b3f1c3d94bb796e0ae9473363568" source="id-c3ecdbba44f94137bb3d7dffed58988d" target="id-76a554ed74844571ada81fde335102f2"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-6f916338dd924cdc8ab6d711b9775a7e" source="id-893c738909714061803a95f864d020bf" target="id-c8db5cf1d5db4b449345b8c6125a4d14"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-98343d8f8e774215b9f4a1ae9f11b428" source="id-3c86e78d6beb42b68b0ecc7941763dd0" target="id-eb235323e27c4183a1c95cf822ddc107">
+      <documentation>The actor&quot; examiantion office&quot;  gets a different User Interface provided by the application component HIS.</documentation>
+    </element>
+    <element xsi:type="archimate:CompositionRelationship" id="id-2705f6ec3fe5487198079372de90e9d7" source="id-19b0ac5927bd421286dc9022262fca15" target="id-3c86e78d6beb42b68b0ecc7941763dd0">
+      <documentation>HIS application component is composed of HIS Web UI, which enables the wokring person to work on HIS application component.</documentation>
+    </element>
+    <element xsi:type="archimate:CompositionRelationship" id="id-2371166c03294042b7ddc4da564df86a" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-1be12a8abe874a1893f498ffcf6e613b">
+      <documentation>Peregos application component is composed of Peregos Web UI, which enables the worker to do administration work.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-4f3603a59f314ca9bdd670552438c9ac" source="id-1be12a8abe874a1893f498ffcf6e613b" target="id-eb235323e27c4183a1c95cf822ddc107">
+      <documentation>Peregos provide the worker a UI to work on. </documentation>
+    </element>
+    <element xsi:type="archimate:CompositionRelationship" id="id-651dc5414ba84d09882e3794889abca4" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-3a7c84135270483291c4e12b8934c3c6">
+      <documentation>Peregos application component is composed of Peregos Web UI, which enables the student to create requests.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-98e8d4fb444f422f8667dc23b5e4b268" source="id-3a7c84135270483291c4e12b8934c3c6" target="id-69b9839333cf49bc95161675bdb68ab4">
+      <documentation>The actor&quot; student&quot;  gets a different User Interface provided by the application component Peregos.</documentation>
+    </element>
+    <element xsi:type="archimate:CompositionRelationship" id="id-59b40439c4fc45edaed4276f09e50c09" source="id-39660a162fdd4043a38b902297395c34" target="id-bbd31f027c2e41a48e574c785d7c62b0">
+      <documentation>WyseFlow application component is composed of WyseFlow Web UI, which enables the worker to do administration work.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-acf195c1f9ed4aaeb77e3b2f31321ff0" source="id-bbd31f027c2e41a48e574c785d7c62b0" target="id-aa4ceb4a05ff4178b34f96604a221f9f">
+      <documentation>WyseFlow provide the worker a UI to work on. </documentation>
+    </element>
+    <element xsi:type="archimate:TriggeringRelationship" id="id-db740370d64e4ebdb65d639c1d62a5b9" source="id-893c738909714061803a95f864d020bf" target="id-af9130510964491794885f93a7a2b4b4"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-f9fb7398ec1442b2a2ac9e216b85045a" source="id-19b0ac5927bd421286dc9022262fca15" target="id-893c738909714061803a95f864d020bf"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-75f025dc77684950bf9804ced12c922d" source="id-19b0ac5927bd421286dc9022262fca15" target="id-c8db5cf1d5db4b449345b8c6125a4d14">
+      <documentation>HIS connects to the RabbitMQ application.&#xD;
+</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-092a25e74f834db5b12577c107d17e0c" source="id-19b0ac5927bd421286dc9022262fca15" target="id-76a554ed74844571ada81fde335102f2">
+      <documentation>HIS is sending the processed data as Messanges to the Exchange.</documentation>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-5641c9397b5642ad861680ce45ff6626" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-c8db5cf1d5db4b449345b8c6125a4d14">
+      <documentation>Peregos connect to the RabbitMQ application to consume messages from their respective queues.&#xD;
+</documentation>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-35cbef2235e04d52ae804173397207c2" source="id-39660a162fdd4043a38b902297395c34" target="id-c8db5cf1d5db4b449345b8c6125a4d14">
+      <documentation>WyseFlow connect to the RabbitMQ application to consume messages from their respective queues.&#xD;
+</documentation>
+    </element>
+    <element xsi:type="archimate:AssociationRelationship" id="id-2478777554b3476987d1b37f5f1bcefa" source="id-19b0ac5927bd421286dc9022262fca15" target="id-c8db5cf1d5db4b449345b8c6125a4d14"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-a33ba68620e049efbb1ad1b9d228b6ac" source="id-893c738909714061803a95f864d020bf" target="id-2ac5dca9f61e49889dc61a252784cea0"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-27a99dd5a6654a11a01c9a73983f3e82" source="id-893c738909714061803a95f864d020bf" target="id-7a9321c0fea94f5b8a55c71968c7e51d"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-5e16b75f0d96473bbf2edbef9ed5e6fa" source="id-893c738909714061803a95f864d020bf" target="id-dcdac5e3264c4f9a813bd3ae8484c5a6"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-bca1846c9c4a42448561328f14f03915" source="id-893c738909714061803a95f864d020bf" target="id-dcdac5e3264c4f9a813bd3ae8484c5a6"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-418dc8fe31de479aa4d4f491ada03db9" source="id-76a554ed74844571ada81fde335102f2" target="id-ec183356bb0c4771901c1d0e4b4782d7"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-3c2cca8c39c84dacb53eb122cae6207a" source="id-893c738909714061803a95f864d020bf" target="id-76a554ed74844571ada81fde335102f2"/>
+    <element xsi:type="archimate:AssociationRelationship" id="id-f7fa2b0255084d67b6c9030a2914379a" source="id-893c738909714061803a95f864d020bf" target="id-ec183356bb0c4771901c1d0e4b4782d7"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-0d2ea6d05a50473caa3e06eee44df1c6" source="id-893c738909714061803a95f864d020bf" target="id-3d4ac5d433c145bbb4ebb0f663107967"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-18c18a5081a54776b5a72fe031b9fc70" source="id-893c738909714061803a95f864d020bf" target="id-dc70bd3a9d6044d9bae5d96a64a76978"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-bb883597350d4e11abbb3e73da0fd29a" source="id-893c738909714061803a95f864d020bf" target="id-e558adc178704af2b0ce7e832d1b2a7d"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-fd46dcb49b80457b952cf595b51d2f63" source="id-c8db5cf1d5db4b449345b8c6125a4d14" target="id-dc70bd3a9d6044d9bae5d96a64a76978">
+      <documentation>The RabbitMQ application is responsible for running the &quot;Receiving Message&quot; function.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-e34ac392b5a94a34bcf2e9dff7fef04c" source="id-c8db5cf1d5db4b449345b8c6125a4d14" target="id-3d4ac5d433c145bbb4ebb0f663107967">
+      <documentation>The RabbitMQ application is responsible for running the &quot;Routing Decision&quot; function.</documentation>
+    </element>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-36dcaae0566c4ea88bc10331fde21bef" source="id-c8db5cf1d5db4b449345b8c6125a4d14" target="id-e558adc178704af2b0ce7e832d1b2a7d">
+      <documentation>The RabbitMQ application is responsible for running the &quot;Managing Binding&quot; function.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-080c96cd562c4e3a9134b0a4987f7a4d" source="id-3d4ac5d433c145bbb4ebb0f663107967" target="id-76a554ed74844571ada81fde335102f2"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-22be9356f77e4a078eb470f3fc180db9" source="id-dc70bd3a9d6044d9bae5d96a64a76978" target="id-76a554ed74844571ada81fde335102f2"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-41361c5488544faeac90636b7904fbb3" source="id-e558adc178704af2b0ce7e832d1b2a7d" target="id-76a554ed74844571ada81fde335102f2">
+      <documentation>The realtionship indicates thta the &quot;Managing Bindings&quot; function supports or provides the &quot;RabbitMQ Exchange&quot; service by forming the basis for forwarding and distributing messages.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-6f88e29cf9834fcba56c278b007308cf" source="id-3d4ac5d433c145bbb4ebb0f663107967" target="id-76a554ed74844571ada81fde335102f2">
+      <documentation>The realtionship indicates thta the &quot;Routing Decisions&quot; function supports or provides the &quot;RabbitMQ Exchange&quot; service by forming the basis for forwarding and distributing messages.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-7e658095003c4a3595b0204c55749bcb" source="id-dc70bd3a9d6044d9bae5d96a64a76978" target="id-76a554ed74844571ada81fde335102f2">
+      <documentation>The realtionship indicates thta the &quot;Receiving Message&quot; function supports or provides the &quot;RabbitMQ Exchange&quot; service by forming the basis for forwarding and distributing messages.</documentation>
+    </element>
+    <element xsi:type="archimate:RealizationRelationship" id="id-96e36e6d922b470597f101436352069d" source="id-893c738909714061803a95f864d020bf" target="id-038e572c59a74f79b6712e69d4208166"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-25c29d0d752241b595e80ca88bd9b826" source="id-76a554ed74844571ada81fde335102f2" target="id-038e572c59a74f79b6712e69d4208166">
+      <documentation>the Exchange Services supports the Binding Function, which manages the routeing of messages.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-762074d6cd5f499b9e800c3cf46f0eb2" source="id-038e572c59a74f79b6712e69d4208166" target="id-dcdac5e3264c4f9a813bd3ae8484c5a6">
+      <documentation>Binding supports Peregos Queue by managing message forwarding.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-1dab284e08164051aa65b89a01905a2f" source="id-038e572c59a74f79b6712e69d4208166" target="id-ec183356bb0c4771901c1d0e4b4782d7">
+      <documentation>Binding supports Peregos Queue by managing message forwarding.</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-ad5b31c26c79421abaff180c55596039" source="id-dcdac5e3264c4f9a813bd3ae8484c5a6" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6">
+      <documentation>The </documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-3b03887a07f04da292dda5ab60ac0b3e" source="id-ec183356bb0c4771901c1d0e4b4782d7" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6">
+      <documentation>Peregos Queue provide messages for the Peregos application (Consumer).</documentation>
+    </element>
+    <element xsi:type="archimate:ServingRelationship" id="id-fe5cecdb4491483fb2dc4fb30b5aa859" source="id-dcdac5e3264c4f9a813bd3ae8484c5a6" target="id-39660a162fdd4043a38b902297395c34">
+      <documentation>WyseFlow Queue provide messages for the WyseFlow application (Consumer).</documentation>
+    </element>
+    <element xsi:type="archimate:FlowRelationship" id="id-39530073607d49378a51be91ab50e603" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-ec183356bb0c4771901c1d0e4b4782d7"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-ae66e55ffebd418e9a5712729a1b78cf" source="id-ec183356bb0c4771901c1d0e4b4782d7" target="id-4a8d4e6e815b4e4f9c56c619d41f01a6"/>
+    <element xsi:type="archimate:FlowRelationship" id="id-bc164b68236f43158fa011431f6370e8" source="id-dcdac5e3264c4f9a813bd3ae8484c5a6" target="id-39660a162fdd4043a38b902297395c34"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-7409fd8625a04228ad8676334cb8e1f3" source="id-69b9839333cf49bc95161675bdb68ab4" target="id-daf97b97d42b4b7cb9bb70eab00fdd36"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-535f54e5fd32436893b3b0e6f0f988c9" source="id-69b9839333cf49bc95161675bdb68ab4" target="id-daf97b97d42b4b7cb9bb70eab00fdd36"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-c099fb78a1584d719c0a9a8f80daaa91" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-cf191f691329422997b60f3cb3365c4a"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-5e6a6977205449f994f6a18bddc04128" source="id-19b0ac5927bd421286dc9022262fca15" target="id-cf191f691329422997b60f3cb3365c4a"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-08ec2c8ed6c24cdba7edd27c85983fcf" source="id-39660a162fdd4043a38b902297395c34" target="id-d6c7490d54ed4e138a3d32ec4e7bb12b"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-7efea6d3843447be8b42f36a05dd3c8f" source="id-63a71dcd5dfa4ec5a1750d148c6ca406" target="id-07bd72925def4930b2c82b3ec03d315a"/>
+    <element xsi:type="archimate:ServingRelationship" id="id-fd4e0af210bb4709a57d3412c58b4d22" source="id-4a8d4e6e815b4e4f9c56c619d41f01a6" target="id-78188521b7284f79b5a7a9424910b740"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-50fb8fe5107547fcbe6fb5535993f528" source="id-eb235323e27c4183a1c95cf822ddc107" target="id-e8f51008599540aa9000b8a0256c58c6"/>
+    <element xsi:type="archimate:AssignmentRelationship" id="id-746965eae4804123bc4680212bb9a039" source="id-eb235323e27c4183a1c95cf822ddc107" target="id-07bd72925def4930b2c82b3ec03d315a"/>
+  </folder>
+  <folder name="Views" id="id-b25919e10a334b17bc07c0df831c7249" type="diagrams">
+    <element xsi:type="archimate:ArchimateDiagramModel" name="Covrk_Batniji_Zadran" id="id-710386ad0b274aab94da60da7af93f58">
+      <child xsi:type="archimate:DiagramObject" id="id-af941edbeb6c425da0b7748bde37cba2" archimateElement="id-19b0ac5927bd421286dc9022262fca15">
+        <bounds x="228" y="-13" width="636" height="65"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-2b4a8f0755d2484586fe875814160b3b" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-a9e3dfc036eb479b8cd722dc389427e3" archimateRelationship="id-c4b9913b1dd74e07b2916537bf01bdf6"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-d2642d8bc3a84926ab89e4e14f516c49" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-7eb4da25a436403d984490b82509d239" archimateRelationship="id-0a4069f1740a4b798443a79989a175a5"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-026cac4284f440f3ba47e912d73885b6" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-ce8ad3a482164d6a99f17ed04dfc00a0" archimateRelationship="id-5e6a6977205449f994f6a18bddc04128"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-b5202d0b3bb24e01b3697193d899028a" archimateElement="id-4a8d4e6e815b4e4f9c56c619d41f01a6">
+        <bounds x="1272" y="-17" width="771" height="63"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-c8f3cbe716ce4c1f9cc71e2924983835" source="id-b5202d0b3bb24e01b3697193d899028a" target="id-6f742b5ca94741e4a900dcc0b93ab287" archimateRelationship="id-191b715dab704f2e91f8e3c9f6484014"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-49a3d2102b3741ef98340a2f006f3d44" source="id-b5202d0b3bb24e01b3697193d899028a" target="id-aae26d9d4e9b47df9966d393fae560bd" archimateRelationship="id-fd4e0af210bb4709a57d3412c58b4d22"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-5dabe83819ff4e159ae28da13a7ace93" archimateElement="id-39660a162fdd4043a38b902297395c34">
+        <bounds x="2374" y="-14" width="675" height="66"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-c91a040e78ba4e0c8af65546940c5ee7" source="id-5dabe83819ff4e159ae28da13a7ace93" target="id-5138d17928f94447b3ddf6c91447826c" archimateRelationship="id-9b485f01e38049699acf0c7dd028cb14"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-620267b2aab04ac28670a9d0d9dc2c7d" archimateElement="id-69b9839333cf49bc95161675bdb68ab4">
+        <bounds x="421" y="-558" width="132" height="73"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-c4bd4d42e0724ab2a191d8a55b041b71" source="id-620267b2aab04ac28670a9d0d9dc2c7d" target="id-8c1ab5a7bf9a4649b571e84367cb2849" archimateRelationship="id-d84d62f250b3489190ee39249059addc">
+          <bendpoint startX="1061" startY="18" endX="-2" endY="-214"/>
+          <bendpoint startX="1061" startY="78" endX="-2" endY="-154"/>
+        </sourceConnection>
+        <sourceConnection xsi:type="archimate:Connection" id="id-6b793cd5546b47329dc8e3a5283ee0f0" source="id-620267b2aab04ac28670a9d0d9dc2c7d" target="id-d70a1870438844d7aad046386dc5c034" archimateRelationship="id-535f54e5fd32436893b3b0e6f0f988c9"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-66b10e19aba44eb5b65642da0106df6b" archimateElement="id-eb235323e27c4183a1c95cf822ddc107">
+        <bounds x="1332" y="-660" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-fbb5b1f210e24925b5ef5dad8fe0fcba" source="id-66b10e19aba44eb5b65642da0106df6b" target="id-ea5efc407fa547a6b21fa16709b9069e" archimateRelationship="id-1258ab4979304275974ebc264ae60365">
+          <bendpoint startX="312" startY="165" endX="-2" endY="-178"/>
+        </sourceConnection>
+        <sourceConnection xsi:type="archimate:Connection" id="id-36f75794a2bd4af1aa582bbdcfea633b" source="id-66b10e19aba44eb5b65642da0106df6b" target="id-8501b61bb8934ce0aec408a804bfc292" archimateRelationship="id-b9be3b0cdc69474e87abcfca27d8fec4">
+          <bendpoint startX="-180" startY="9" endX="672" endY="-323"/>
+          <bendpoint startX="-852" startY="213" endY="-119"/>
+        </sourceConnection>
+        <sourceConnection xsi:type="archimate:Connection" id="id-29141581211843ab91deb0c8bd41028c" source="id-66b10e19aba44eb5b65642da0106df6b" target="id-a9d8c5611c684767b3d0388806121d4a" archimateRelationship="id-bc66d707aae7422ea20a396bfbb0671d">
+          <bendpoint startX="-228" startY="-3" endX="400" endY="-336"/>
+          <bendpoint startX="-636" startY="249" endX="-8" endY="-84"/>
+        </sourceConnection>
+        <sourceConnection xsi:type="archimate:Connection" id="id-ede2b87e276743efb12f1eb2512e1ac6" source="id-66b10e19aba44eb5b65642da0106df6b" target="id-dcf8fb3bebf3451e8e71ace4d8406536" archimateRelationship="id-5c0b2e94a5dc4870a7ec8da4a2db6012"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-51597843c41448ab991aec5083c607f8" source="id-66b10e19aba44eb5b65642da0106df6b" target="id-da3a8b1c0ba74dfbaef2e7b94f2cb4c5" archimateRelationship="id-50fb8fe5107547fcbe6fb5535993f528"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-28fe747f810a48399dc990f54ce7d051" source="id-66b10e19aba44eb5b65642da0106df6b" target="id-573bd3bf54e744dba0a0aa923a4a4c1e" archimateRelationship="id-746965eae4804123bc4680212bb9a039"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-573bd3bf54e744dba0a0aa923a4a4c1e" targetConnections="id-c1efafb942044c9a91901ea208249cc7 id-28fe747f810a48399dc990f54ce7d051" archimateElement="id-07bd72925def4930b2c82b3ec03d315a">
+        <bounds x="2593" y="-337" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-5138d17928f94447b3ddf6c91447826c" targetConnections="id-c91a040e78ba4e0c8af65546940c5ee7" archimateElement="id-63a71dcd5dfa4ec5a1750d148c6ca406">
+        <bounds x="2568" y="-126" width="145" height="54"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-c1efafb942044c9a91901ea208249cc7" source="id-5138d17928f94447b3ddf6c91447826c" target="id-573bd3bf54e744dba0a0aa923a4a4c1e" archimateRelationship="id-7efea6d3843447be8b42f36a05dd3c8f"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-a9e3dfc036eb479b8cd722dc389427e3" targetConnections="id-2b4a8f0755d2484586fe875814160b3b" archimateElement="id-adaf60d2756a45bba3aea8483f3e9524">
+        <bounds x="235" y="-98" width="133" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-3118c3d02fdd45b6b1ca0eb88c8ecc2c" source="id-a9e3dfc036eb479b8cd722dc389427e3" target="id-fd415cc3f439406c82bcb7f23f90011a" archimateRelationship="id-09c4d9ce490b4f588e2b9241f41df05c">
+          <bendpoint startX="-78" startY="-70" endX="63" endY="48"/>
+        </sourceConnection>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-7eb4da25a436403d984490b82509d239" targetConnections="id-d2642d8bc3a84926ab89e4e14f516c49" archimateElement="id-1514f4d2b3db4c03a89a27c64a7e4d87">
+        <bounds x="379" y="-98" width="445" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-3523815b43ee476b9fabdd5ed0c6705d" source="id-7eb4da25a436403d984490b82509d239" target="id-d70a1870438844d7aad046386dc5c034" archimateRelationship="id-3aef7e65c57044b0920c4c409bd24a7b"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-92b1cca392644c38a6bde733bebee4eb" source="id-7eb4da25a436403d984490b82509d239" target="id-f4b8526056bf400d821ddbb07cba0432" archimateRelationship="id-15f1558a59014fcab0bdaaafa08e1088"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-33b21b1e717844498cf25e14f7fd88f8" source="id-7eb4da25a436403d984490b82509d239" target="id-f459cb6a4e48421e829b8476c1a6161a" archimateRelationship="id-7a685eb4977a477b9c44c915afe789cf"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-fd415cc3f439406c82bcb7f23f90011a" targetConnections="id-3118c3d02fdd45b6b1ca0eb88c8ecc2c" archimateElement="id-1063231d86e94ad7afa141b526d88503">
+        <bounds x="235" y="-198" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-d70a1870438844d7aad046386dc5c034" targetConnections="id-3523815b43ee476b9fabdd5ed0c6705d id-6b793cd5546b47329dc8e3a5283ee0f0" archimateElement="id-daf97b97d42b4b7cb9bb70eab00fdd36">
+        <bounds x="396" y="-198" width="120" height="73"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-7672848cb0e9411383b0b35615bb3ff8" source="id-d70a1870438844d7aad046386dc5c034" target="id-8501b61bb8934ce0aec408a804bfc292" archimateRelationship="id-f4cb0552d35245e4839b41e3cdc7c786"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-f4b8526056bf400d821ddbb07cba0432" targetConnections="id-92b1cca392644c38a6bde733bebee4eb" archimateElement="id-120ee4aa11a44d9bba6b1c2d2c278c1f">
+        <bounds x="552" y="-198" width="134" height="73"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-2616f0e161354bbb8417d338a69d2a06" source="id-f4b8526056bf400d821ddbb07cba0432" target="id-8501b61bb8934ce0aec408a804bfc292" archimateRelationship="id-0d6d7ff8042046ceab52748be7b9a600"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-f459cb6a4e48421e829b8476c1a6161a" targetConnections="id-33b21b1e717844498cf25e14f7fd88f8" archimateElement="id-ed0439e0a5f44897830c493761da1434">
+        <bounds x="704" y="-189" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-30161dac44124c6f869df54ee55971b4" source="id-f459cb6a4e48421e829b8476c1a6161a" target="id-a9d8c5611c684767b3d0388806121d4a" archimateRelationship="id-6f1512db697c46bdac9ddd74867cd0cd"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-6f742b5ca94741e4a900dcc0b93ab287" targetConnections="id-c8f3cbe716ce4c1f9cc71e2924983835" archimateElement="id-1ee123d687e04cb3afe247c1cfff47e2">
+        <bounds x="1567" y="-112" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-885a5c5fc8f647cea5e9778000ce1dc9" source="id-6f742b5ca94741e4a900dcc0b93ab287" target="id-4371a46946b641efbbcbe132d5b8d20f" archimateRelationship="id-a7a242896f7e47c981a6e02f8d59b1be"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-28f1b4b93a9044b399be4d541af58915" source="id-6f742b5ca94741e4a900dcc0b93ab287" target="id-25dbbed202d64101b700dc0ed82ed753" archimateRelationship="id-239322a9aa224cac9efd0d4ffba3480c"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-25dbbed202d64101b700dc0ed82ed753" targetConnections="id-28f1b4b93a9044b399be4d541af58915" archimateElement="id-9007698c975541aa83381813ba4da8df">
+        <bounds x="1490" y="-212" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-2151622099034bd5ad3c9150c96af326" source="id-25dbbed202d64101b700dc0ed82ed753" target="id-8c1ab5a7bf9a4649b571e84367cb2849" archimateRelationship="id-010abc8139c845b3af5fb56c9a4c265a"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-4371a46946b641efbbcbe132d5b8d20f" targetConnections="id-885a5c5fc8f647cea5e9778000ce1dc9" archimateElement="id-c43a0ccb6d654f308b297942c98d4731">
+        <bounds x="1646" y="-212" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-e91fee465c4147deb41b36216405f5d0" source="id-4371a46946b641efbbcbe132d5b8d20f" target="id-ea5efc407fa547a6b21fa16709b9069e" archimateRelationship="id-f8cb3c78ea834f07a6412cb1440fb38a"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-ea5efc407fa547a6b21fa16709b9069e" targetConnections="id-e91fee465c4147deb41b36216405f5d0 id-fbb5b1f210e24925b5ef5dad8fe0fcba" archimateElement="id-0c140ca28e7c4e379c58e74455af8e8a">
+        <bounds x="1646" y="-317" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-8c1ab5a7bf9a4649b571e84367cb2849" targetConnections="id-2151622099034bd5ad3c9150c96af326 id-c4bd4d42e0724ab2a191d8a55b041b71" archimateElement="id-9ad6f131aeb641eca582340ce28ca4c4">
+        <bounds x="1490" y="-317" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-8501b61bb8934ce0aec408a804bfc292" targetConnections="id-7672848cb0e9411383b0b35615bb3ff8 id-2616f0e161354bbb8417d338a69d2a06 id-36f75794a2bd4af1aa582bbdcfea633b" archimateElement="id-15f0bd1f409f4238b54b51aa442e5798">
+        <bounds x="480" y="-343" width="120" height="85"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-a9d8c5611c684767b3d0388806121d4a" targetConnections="id-30161dac44124c6f869df54ee55971b4 id-29141581211843ab91deb0c8bd41028c" archimateElement="id-f659540b249145df9fe6bfa4aa9c301a">
+        <bounds x="704" y="-337" width="120" height="75"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-aae26d9d4e9b47df9966d393fae560bd" targetConnections="id-49a3d2102b3741ef98340a2f006f3d44" archimateElement="id-78188521b7284f79b5a7a9424910b740">
+        <bounds x="2374" y="-120" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-8411d46d01ce4ecf8c485b4854cc498a" source="id-aae26d9d4e9b47df9966d393fae560bd" target="id-da3a8b1c0ba74dfbaef2e7b94f2cb4c5" archimateRelationship="id-67f09d8fd43540829e6cb3a852edea12"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-da3a8b1c0ba74dfbaef2e7b94f2cb4c5" targetConnections="id-8411d46d01ce4ecf8c485b4854cc498a id-51597843c41448ab991aec5083c607f8" archimateElement="id-e8f51008599540aa9000b8a0256c58c6">
+        <bounds x="2374" y="-327" width="120" height="55"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-ce8ad3a482164d6a99f17ed04dfc00a0" targetConnections="id-026cac4284f440f3ba47e912d73885b6" archimateElement="id-cf191f691329422997b60f3cb3365c4a">
+        <bounds x="1332" y="-212" width="120" height="55"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-4a71c7b057bc4658bd16141798a0ff05" source="id-ce8ad3a482164d6a99f17ed04dfc00a0" target="id-dcf8fb3bebf3451e8e71ace4d8406536" archimateRelationship="id-f8293c8c2fd64eb3937bdbed928056c3"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-dcf8fb3bebf3451e8e71ace4d8406536" targetConnections="id-4a71c7b057bc4658bd16141798a0ff05 id-ede2b87e276743efb12f1eb2512e1ac6" archimateElement="id-41bcf956afb44d3c8eaeb267fadab83f">
+        <bounds x="1332" y="-317" width="120" height="55"/>
+      </child>
+    </element>
+  </folder>
+</archimate:model>
