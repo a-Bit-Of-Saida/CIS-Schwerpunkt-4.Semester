@@ -1,9 +1,10 @@
 # Projekt zum Modul Architecture-and-Integration und Seminar ISA
 
 ---
-# 📚 Inhaltsverzeichnis
+## 📚 Inhaltsverzeichnis
 
 - [Architecture-and-Integration](#architecture-and-integration)
+- [Sem-ISA](#sem-isa)
 - [📘 Projektbeschreibung](#-projektbeschreibung)
 - [⚙️ Architekturüberblick](#️-architekturüberblick)
   - [Komponenten](#komponenten)
@@ -113,6 +114,8 @@ In der HIS-GUI:
 ```
 [Peregos] Received: {"name": "Anna Müller", "Martikelnummer": 123456, "programs": ["WI", "AI"]}
 ```
+
+# Sem ISA
 
 **WyseFlow:**
 ```
