@@ -115,9 +115,10 @@ In der HIS-GUI:
 [Peregos] Received: {"name": "Anna Müller", "Martikelnummer": 123456, "programs": ["WI", "AI"]}
 ```
 
-# Sem ISA
-
 **WyseFlow:**
 ```
 [WyseFlow] Received: {"name": "Anna Müller", "Martikelnummer": 123456, "programs": [...], "startDates": {...}, "creditsPerProgram": {...}, "totalCredits": 180}
 ```
+---
+
+# Sem ISA
