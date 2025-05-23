@@ -284,28 +284,6 @@ The HIS aaplication receives the data from the user interface and processes it. 
     <element xsi:type="archimate:DataObject" name="Extracted student data for Wyseflow" id="id-fca4efffce85497fbd8692f5e2743bcf">
       <documentation>The extracted data coming from the exchange becomes now the extracted data for the wyseflow applications with its needed informations (see project description).</documentation>
     </element>
-    <element xsi:type="archimate:ApplicationComponent" name="RabbitMQ" id="id-fb061f6307c44bb88505524c30bbde83">
-      <documentation>RabbitMQ is an open-source message broker software that facilitates communication between different applications or components of a distributed system. (cf: RabbitMQ)</documentation>
-    </element>
-    <element xsi:type="archimate:ApplicationFunction" name="Fetch message" id="id-083408e47fa741d09e77857da09516a7">
-      <documentation>The fetch message function realizes the service If an application is ready to get the extracted student data, the message will be sent to it.
-</documentation>
-    </element>
-    <element xsi:type="archimate:ApplicationFunction" name="Monitoring" id="id-f224cc358b20411fb775fa54df88e1a8">
-      <documentation>The RabbitMQ software includes a monitoring function designed to oversee the flow of messages across applications. In the context of ArchiMate 3.2, monitoring message flow in RabbitMQ is classified as an application function because it ensurs reliable message communication across applications, hence why it is an application function (The Open Group: 9.3.2)</documentation>
-    </element>
-    <element xsi:type="archimate:ApplicationService" name="Receive message" id="id-8fee64cb0edf406fb76078e0796ddc91">
-      <documentation>This service is realized by the &quot;provide message&quot; function and is offered as a receiving service that receives the student data over an interface called &quot;message receiver API&quot;.</documentation>
-    </element>
-    <element xsi:type="archimate:ApplicationFunction" name="Provide message" id="id-987752f166904a9dafbcb889b48b633b">
-      <documentation>This function plays a crucial role in managing the reception of student data originating from the HIS application.</documentation>
-    </element>
-    <element xsi:type="archimate:ApplicationService" name="Monitor message flow" id="id-38477150f5614b64b297e393fa7cf726">
-      <documentation>You can monitor the message flow in RabbitMQ by accessing it at: http://localhost:15672/.</documentation>
-    </element>
-    <element xsi:type="archimate:ApplicationFunction" name="Forward student data to exchange" id="id-ad41a70b4a434118bff296a4d390a28c">
-      <documentation>After the student data have been received, they will be forwarded to the exchange for automated routing and distribution.</documentation>
-    </element>
   </folder>
   <folder name="Technology &amp; Physical" id="id-2fb960a9e71748f795b6526ad09251e0" type="technology">
     <element xsi:type="archimate:Path" id="id-24a53b22e698420294a301304ba75af1"/>
@@ -1001,16 +979,6 @@ The HIS aaplication receives the data from the user interface and processes it. 
     <element xsi:type="archimate:FlowRelationship" id="id-9bfaf7d36b8744498afd1c341af3dedf" source="id-bcb877373d0e41ae84010001fbfe3dec" target="id-26a5be7c38fc4b5ab4238beebff260c4"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-e60631bc30e44e9b9b23b1d38ba34ec8" source="id-fca4efffce85497fbd8692f5e2743bcf" target="id-9bfaf7d36b8744498afd1c341af3dedf"/>
     <element xsi:type="archimate:AssociationRelationship" id="id-cc14e4e08e504aca997a95fa356023bc" source="id-ed278c5c5d754276ab084ceec637d4be" target="id-087c261027ee48b3bdf419b70b54634c"/>
-    <element xsi:type="archimate:RealizationRelationship" id="id-d68d771932a040acbf476829ebce1452" source="id-987752f166904a9dafbcb889b48b633b" target="id-8fee64cb0edf406fb76078e0796ddc91"/>
-    <element xsi:type="archimate:AssignmentRelationship" id="id-4a7bcff805f34c318209c3bbd3b14051" source="id-fb061f6307c44bb88505524c30bbde83" target="id-987752f166904a9dafbcb889b48b633b"/>
-    <element xsi:type="archimate:AssignmentRelationship" id="id-0bc7c1c61a5144cc803376d1e8594ac8" source="id-fb061f6307c44bb88505524c30bbde83" target="id-f224cc358b20411fb775fa54df88e1a8"/>
-    <element xsi:type="archimate:AssignmentRelationship" id="id-4323c5b807ff45488235bf6a2ffbe9a4" source="id-fb061f6307c44bb88505524c30bbde83" target="id-083408e47fa741d09e77857da09516a7"/>
-    <element xsi:type="archimate:RealizationRelationship" id="id-3511fbd48bf0426bbcdeb458b296676a" source="id-f224cc358b20411fb775fa54df88e1a8" target="id-38477150f5614b64b297e393fa7cf726">
-      <documentation>The Monitoring function utilizes the Message Flow Monitoring service to track the flow of messages and monitor the health of the system.</documentation>
-    </element>
-    <element xsi:type="archimate:ServingRelationship" id="id-63cf0d254c3243c0ac03bc8fd47b875d" source="id-ae96010e253d41c1b00d44b368ce6ca1" target="id-fb061f6307c44bb88505524c30bbde83"/>
-    <element xsi:type="archimate:ServingRelationship" id="id-d8428e873e584ba1a3bd33506562e89d" source="id-ad41a70b4a434118bff296a4d390a28c" target="id-2702c796399d46a5864a161635838575"/>
-    <element xsi:type="archimate:TriggeringRelationship" id="id-022d17fceb5449b385519ad72697b8f3" source="id-fb061f6307c44bb88505524c30bbde83" target="id-ad41a70b4a434118bff296a4d390a28c"/>
   </folder>
   <folder name="Views" id="id-b25919e10a334b17bc07c0df831c7249" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="Covrk_Batniji_Zadran" id="id-710386ad0b274aab94da60da7af93f58">
@@ -1020,7 +988,7 @@ The HIS aaplication receives the data from the user interface and processes it. 
         <sourceConnection xsi:type="archimate:Connection" id="id-d2642d8bc3a84926ab89e4e14f516c49" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-7eb4da25a436403d984490b82509d239" archimateRelationship="id-0a4069f1740a4b798443a79989a175a5"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-b5202d0b3bb24e01b3697193d899028a" targetConnections="id-e650a9e0026643dfbd55939146c04c2a" archimateElement="id-4a8d4e6e815b4e4f9c56c619d41f01a6">
-        <bounds x="1445" y="-5" width="771" height="63"/>
+        <bounds x="1272" y="-17" width="771" height="63"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-c8f3cbe716ce4c1f9cc71e2924983835" source="id-b5202d0b3bb24e01b3697193d899028a" target="id-6f742b5ca94741e4a900dcc0b93ab287" archimateRelationship="id-191b715dab704f2e91f8e3c9f6484014"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-4c2ab63b6afb42b3bcb44d94474bdad0" source="id-b5202d0b3bb24e01b3697193d899028a" target="id-e6cb445b4a774e8c9a332191614056b7" archimateRelationship="id-1621aacc90f4441180dcd383d00e7eb8"/>
       </child>
@@ -1090,23 +1058,23 @@ The HIS aaplication receives the data from the user interface and processes it. 
         <sourceConnection xsi:type="archimate:Connection" id="id-30161dac44124c6f869df54ee55971b4" source="id-f459cb6a4e48421e829b8476c1a6161a" target="id-a9d8c5611c684767b3d0388806121d4a" archimateRelationship="id-6f1512db697c46bdac9ddd74867cd0cd"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-6f742b5ca94741e4a900dcc0b93ab287" targetConnections="id-c8f3cbe716ce4c1f9cc71e2924983835" archimateElement="id-1ee123d687e04cb3afe247c1cfff47e2">
-        <bounds x="1740" y="-100" width="120" height="55"/>
+        <bounds x="1567" y="-112" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-885a5c5fc8f647cea5e9778000ce1dc9" source="id-6f742b5ca94741e4a900dcc0b93ab287" target="id-4371a46946b641efbbcbe132d5b8d20f" archimateRelationship="id-a7a242896f7e47c981a6e02f8d59b1be"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-28f1b4b93a9044b399be4d541af58915" source="id-6f742b5ca94741e4a900dcc0b93ab287" target="id-25dbbed202d64101b700dc0ed82ed753" archimateRelationship="id-239322a9aa224cac9efd0d4ffba3480c"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-25dbbed202d64101b700dc0ed82ed753" targetConnections="id-28f1b4b93a9044b399be4d541af58915" archimateElement="id-9007698c975541aa83381813ba4da8df">
-        <bounds x="1663" y="-200" width="120" height="55"/>
+        <bounds x="1490" y="-212" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-2151622099034bd5ad3c9150c96af326" source="id-25dbbed202d64101b700dc0ed82ed753" target="id-8c1ab5a7bf9a4649b571e84367cb2849" archimateRelationship="id-010abc8139c845b3af5fb56c9a4c265a"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-4371a46946b641efbbcbe132d5b8d20f" targetConnections="id-885a5c5fc8f647cea5e9778000ce1dc9" archimateElement="id-c43a0ccb6d654f308b297942c98d4731">
-        <bounds x="1819" y="-200" width="120" height="55"/>
+        <bounds x="1646" y="-212" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-e91fee465c4147deb41b36216405f5d0" source="id-4371a46946b641efbbcbe132d5b8d20f" target="id-ea5efc407fa547a6b21fa16709b9069e" archimateRelationship="id-f8cb3c78ea834f07a6412cb1440fb38a"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-ea5efc407fa547a6b21fa16709b9069e" targetConnections="id-e91fee465c4147deb41b36216405f5d0 id-fbb5b1f210e24925b5ef5dad8fe0fcba" archimateElement="id-0c140ca28e7c4e379c58e74455af8e8a">
-        <bounds x="1819" y="-305" width="120" height="55"/>
+        <bounds x="1646" y="-317" width="120" height="55"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-8c1ab5a7bf9a4649b571e84367cb2849" targetConnections="id-2151622099034bd5ad3c9150c96af326 id-c4bd4d42e0724ab2a191d8a55b041b71" archimateElement="id-9ad6f131aeb641eca582340ce28ca4c4">
-        <bounds x="1663" y="-305" width="120" height="55"/>
+        <bounds x="1490" y="-317" width="120" height="55"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-8501b61bb8934ce0aec408a804bfc292" targetConnections="id-7672848cb0e9411383b0b35615bb3ff8 id-2616f0e161354bbb8417d338a69d2a06 id-36f75794a2bd4af1aa582bbdcfea633b" archimateElement="id-15f0bd1f409f4238b54b51aa442e5798">
         <bounds x="480" y="-343" width="120" height="85"/>
@@ -1122,18 +1090,15 @@ The HIS aaplication receives the data from the user interface and processes it. 
         <bounds x="2281" y="-328" width="120" height="55"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-ce8ad3a482164d6a99f17ed04dfc00a0" archimateElement="id-cf191f691329422997b60f3cb3365c4a">
-        <bounds x="1469" y="-200" width="156" height="54"/>
+        <bounds x="1296" y="-212" width="156" height="54"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-4a71c7b057bc4658bd16141798a0ff05" source="id-ce8ad3a482164d6a99f17ed04dfc00a0" target="id-dcf8fb3bebf3451e8e71ace4d8406536" archimateRelationship="id-f8293c8c2fd64eb3937bdbed928056c3"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-dcf8fb3bebf3451e8e71ace4d8406536" targetConnections="id-4a71c7b057bc4658bd16141798a0ff05 id-ede2b87e276743efb12f1eb2512e1ac6" archimateElement="id-41bcf956afb44d3c8eaeb267fadab83f">
-        <bounds x="1505" y="-305" width="120" height="55"/>
+        <bounds x="1332" y="-317" width="120" height="55"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-1875c944b8b246b29042bc17c021ae28" archimateElement="id-ae96010e253d41c1b00d44b368ce6ca1">
         <bounds x="1320" y="648" width="646" height="319"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-9db48a384f7b44bb855091178b62315f" source="id-1875c944b8b246b29042bc17c021ae28" target="id-9bc75bf85ded4e1d9142652d982fea8d" archimateRelationship="id-0bf8934503d844ecb3bfd5cf5db871b2"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-4840bf59888149c687badca5fd7d325f" source="id-1875c944b8b246b29042bc17c021ae28" target="id-c26beb1d018745acb0b16eaf2f1292c3" archimateRelationship="id-63cf0d254c3243c0ac03bc8fd47b875d">
-          <bendpoint startX="-34" startY="-446" endX="612" endY="310"/>
-        </sourceConnection>
         <child xsi:type="archimate:DiagramObject" id="id-9bc75bf85ded4e1d9142652d982fea8d" targetConnections="id-9db48a384f7b44bb855091178b62315f" archimateElement="id-4596b96d22e14405a208230e7fcd7907">
           <bounds x="60" y="60" width="528" height="216"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-53bbb89dd0d64e5b99ad733c78c347c9" source="id-9bc75bf85ded4e1d9142652d982fea8d" target="id-1b0326359b9747648ac29c954fd24e0b" archimateRelationship="id-820bc4a318214417b7aa8b10cfcf0563"/>
@@ -1197,7 +1162,7 @@ The HIS aaplication receives the data from the user interface and processes it. 
         </child>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-fdbbb68c75cd4c59b0030ffd7ed6dadb" archimateElement="id-f4cb7887c1964b5b980a49b7777240ce">
-        <bounds x="1620" y="120" width="360" height="204"/>
+        <bounds x="1447" y="108" width="360" height="204"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-f8b6fe2fa3944174ab862784333542ea" source="id-fdbbb68c75cd4c59b0030ffd7ed6dadb" target="id-5987b196f3ec468ab7d6f64e6c516017" archimateRelationship="id-d988bfa63c9648368ea611b21c80254b"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-2ea4e9d03139448ebe1d604a2195f30b" source="id-fdbbb68c75cd4c59b0030ffd7ed6dadb" target="id-5d40b12af838493795d99d1441a18e9d" archimateRelationship="id-1a04e01f363149288380c481b54cf687"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-4b5fb2d05d4f44559840111b6886d357" source="id-fdbbb68c75cd4c59b0030ffd7ed6dadb" target="id-07da2dc051a542c6b1f0579be2bf4260" archimateRelationship="id-939f92fdc3024068ab4aa933b0dd9c6a"/>
@@ -1242,7 +1207,7 @@ The HIS aaplication receives the data from the user interface and processes it. 
       <child xsi:type="archimate:DiagramObject" id="id-2be1faa3af86474191136a5ef68ede71" targetConnections="id-07bf9b2e4e664ec8978c3bc00768143a id-cbe52c59a00a461a9121cd892a0d91e4" archimateElement="id-9e704a1393e54038a68b397dbdd53383">
         <bounds x="1447" y="1106" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-32b1282127424c0b91fe1fb833e3d042" source="id-2be1faa3af86474191136a5ef68ede71" target="id-8947d5d39f85492897dd55798505010b" archimateRelationship="id-d99c69295f914e9daa41ff29642933a8">
-          <bendpoint startX="-655" startY="-17" endX="-300" endY="1077"/>
+          <bendpoint startX="-750" startY="-16" endX="-396" endY="1078"/>
           <bendpoint startX="-642" startY="-736" endX="-288" endY="358"/>
         </sourceConnection>
       </child>
@@ -1253,11 +1218,11 @@ The HIS aaplication receives the data from the user interface and processes it. 
         </sourceConnection>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-8947d5d39f85492897dd55798505010b" targetConnections="id-32b1282127424c0b91fe1fb833e3d042" archimateElement="id-e3297034fe98482f90b9e35bb7f0f75e">
-        <bounds x="1265" y="24" width="120" height="55"/>
+        <bounds x="1092" y="12" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-8fec99cc638b44c7a5c58af6d524ef9d" source="id-8947d5d39f85492897dd55798505010b" target="id-e6cb445b4a774e8c9a332191614056b7" archimateRelationship="id-4aafb6f734394c7aa5c7a7ad99d809d4"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-e6cb445b4a774e8c9a332191614056b7" targetConnections="id-8fec99cc638b44c7a5c58af6d524ef9d id-4c2ab63b6afb42b3bcb44d94474bdad0" archimateElement="id-cc49227fb23a4d069eea1a7d9cc870e0">
-        <bounds x="1265" y="-100" width="120" height="55"/>
+        <bounds x="1092" y="-112" width="120" height="55"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-e2f4c36b01a64942a903d27662560bb6" archimateElement="id-33b6640e2ee54e579c07de460e87e60a">
         <bounds x="1307" y="456" width="120" height="55"/>
@@ -1269,7 +1234,7 @@ The HIS aaplication receives the data from the user interface and processes it. 
         <bounds x="1463" y="456" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-69cb38abb73e40528c23b9b057ac8099" source="id-9f319a78182e46f79db2ba60065f113f" target="id-398fd0a045114e44adf169a9889e2c77" archimateRelationship="id-553b35c8c3974a33aaf425ec36f7b762"/>
       </child>
-      <child xsi:type="archimate:DiagramObject" id="id-77b1c1254fa444a5b2958b43957b3d9e" targetConnections="id-35a5cf50717741cc926a29c850ee8c79 id-a2a60d962a5941999dd718432f1979c9 id-bc16450cd45d40a69b4d7200fab9f2c0" archimateElement="id-2702c796399d46a5864a161635838575">
+      <child xsi:type="archimate:DiagramObject" id="id-77b1c1254fa444a5b2958b43957b3d9e" targetConnections="id-35a5cf50717741cc926a29c850ee8c79 id-a2a60d962a5941999dd718432f1979c9" archimateElement="id-2702c796399d46a5864a161635838575">
         <bounds x="984" y="456" width="274" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-f5d8ad91df5d41a898a11573fa4dc792" source="id-77b1c1254fa444a5b2958b43957b3d9e" target="id-5dca26358c8944dc89d2e334065bdafd" archimateRelationship="id-aceae99752cb409eb63683dc96374f33">
           <bendpoint startX="-65" startY="207" endX="12" endY="-42"/>
@@ -1295,7 +1260,7 @@ The HIS aaplication receives the data from the user interface and processes it. 
           <bendpoint startX="432" startY="-185" endX="-22" endY="64"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-cbe52c59a00a461a9121cd892a0d91e4" targetConnections="id-c85b7131cdbf4d9090be8ecbeb483ad6" source="id-5dca26358c8944dc89d2e334065bdafd" target="id-2be1faa3af86474191136a5ef68ede71" archimateRelationship="id-087c261027ee48b3bdf419b70b54634c">
-          <bendpoint startX="60" startY="240" endX="-403" endY="-161"/>
+          <bendpoint startX="-12" startY="312" endX="-474" endY="-88"/>
         </sourceConnection>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-f83a510450664babbd2c536202246fef" targetConnections="id-e698837790234483ab38682353009f3a id-87a78c47333c4978bf2c443c0730c26f" archimateElement="id-bcb877373d0e41ae84010001fbfe3dec">
@@ -1311,44 +1276,12 @@ The HIS aaplication receives the data from the user interface and processes it. 
         </sourceConnection>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-b3124ec46f974a86b076de83fb381a89" archimateElement="id-ed278c5c5d754276ab084ceec637d4be">
-        <bounds x="984" y="1164" width="120" height="55"/>
+        <bounds x="1056" y="1200" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-c85b7131cdbf4d9090be8ecbeb483ad6" source="id-b3124ec46f974a86b076de83fb381a89" target="id-cbe52c59a00a461a9121cd892a0d91e4" archimateRelationship="id-cc14e4e08e504aca997a95fa356023bc"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-d98766bbead24b9394d0caf191db6571" archimateElement="id-fca4efffce85497fbd8692f5e2743bcf">
-        <bounds x="1440" y="1284" width="120" height="55"/>
+        <bounds x="1548" y="1296" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-23d543e3990442b0a9656da591f86e65" source="id-d98766bbead24b9394d0caf191db6571" target="id-9f06248039a44254add42be3082441c1" archimateRelationship="id-e60631bc30e44e9b9b23b1d38ba34ec8"/>
-      </child>
-      <child xsi:type="archimate:Note" id="id-7e201c304c5343f8a029844273549909" textAlignment="1">
-        <bounds x="84" y="-432" width="185" height="80"/>
-        <content>womit sollte das GUI verbunden werden?</content>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-c26beb1d018745acb0b16eaf2f1292c3" targetConnections="id-4840bf59888149c687badca5fd7d325f" archimateElement="id-fb061f6307c44bb88505524c30bbde83">
-        <bounds x="936" y="24" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-7ae4a83752604ac4907cf85695bdc6bd" source="id-c26beb1d018745acb0b16eaf2f1292c3" target="id-c7d3ae6d1f5b4fa2a05093e6da5d32aa" archimateRelationship="id-4323c5b807ff45488235bf6a2ffbe9a4"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-4ccdf90bee764cd2af26a324bf783233" source="id-c26beb1d018745acb0b16eaf2f1292c3" target="id-ca06ded224a949fbb77dd2eb6626eda3" archimateRelationship="id-4a7bcff805f34c318209c3bbd3b14051"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-86269e4de14e4475b343ed3f29b817bf" source="id-c26beb1d018745acb0b16eaf2f1292c3" target="id-84de9dbbe9f8463f86d2a706f42f6938" archimateRelationship="id-0bc7c1c61a5144cc803376d1e8594ac8"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-7e2e193c43e64af297f8a94414d09e7b" source="id-c26beb1d018745acb0b16eaf2f1292c3" target="id-7d51628e2057425ea5239fcfc3f449a0" archimateRelationship="id-022d17fceb5449b385519ad72697b8f3"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-c7d3ae6d1f5b4fa2a05093e6da5d32aa" targetConnections="id-7ae4a83752604ac4907cf85695bdc6bd" archimateElement="id-083408e47fa741d09e77857da09516a7">
-        <bounds x="1080" y="24" width="120" height="55"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-84de9dbbe9f8463f86d2a706f42f6938" targetConnections="id-86269e4de14e4475b343ed3f29b817bf" archimateElement="id-f224cc358b20411fb775fa54df88e1a8">
-        <bounds x="1080" y="-66" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-71fef4b8a3a443658b68336109543021" source="id-84de9dbbe9f8463f86d2a706f42f6938" target="id-be01bcb13f0e4d8a8f691b199c3461f1" archimateRelationship="id-3511fbd48bf0426bbcdeb458b296676a"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-dc0fda53dedf40bbae057c31c600bb04" targetConnections="id-544e185eacc547ff9bf8b8c583a3175b" archimateElement="id-8fee64cb0edf406fb76078e0796ddc91">
-        <bounds x="936" y="-175" width="120" height="55"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-ca06ded224a949fbb77dd2eb6626eda3" targetConnections="id-4ccdf90bee764cd2af26a324bf783233" archimateElement="id-987752f166904a9dafbcb889b48b633b">
-        <bounds x="936" y="-60" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-544e185eacc547ff9bf8b8c583a3175b" source="id-ca06ded224a949fbb77dd2eb6626eda3" target="id-dc0fda53dedf40bbae057c31c600bb04" archimateRelationship="id-d68d771932a040acbf476829ebce1452"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-be01bcb13f0e4d8a8f691b199c3461f1" targetConnections="id-71fef4b8a3a443658b68336109543021" archimateElement="id-38477150f5614b64b297e393fa7cf726">
-        <bounds x="1080" y="-175" width="120" height="55"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-7d51628e2057425ea5239fcfc3f449a0" targetConnections="id-7e2e193c43e64af297f8a94414d09e7b" archimateElement="id-ad41a70b4a434118bff296a4d390a28c">
-        <bounds x="1061" y="347" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-bc16450cd45d40a69b4d7200fab9f2c0" source="id-7d51628e2057425ea5239fcfc3f449a0" target="id-77b1c1254fa444a5b2958b43957b3d9e" archimateRelationship="id-d8428e873e584ba1a3bd33506562e89d"/>
       </child>
     </element>
   </folder>
