@@ -1,45 +1,53 @@
 import sys
 import json
+import pika
+import threading
 from PyQt6.QtWidgets import (
-    QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout,
-    QHBoxLayout, QMessageBox, QTableWidget, QTableWidgetItem, QHeaderView
+    QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QMessageBox
 )
 from PyQt6.QtGui import QFont
-from PyQt6.QtCore import Qt
-import pika
-from datetime import datetime
+from PyQt6.QtCore import QTimer
 
 
 class HISWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("HIS – Student Data Entry")
-        self.setMinimumSize(800, 600)
+        self.setMinimumSize(600, 300)
 
-        self.students = []  # List to store student data
-        self.setup_ui()     # Initialize the UI
+        self.status = {"wyseflow": False, "peregos": False}
+        self.last_pongs = {"wyseflow": False, "peregos": False}
+
+        # Hardcoded Studienprogramme
+        self.allowed_programs = {
+            "Informatik": "01/10/2022",
+            "Wirtschaft": "15/03/2023",
+            "Maschinenbau": "01/04/2024"
+        }
+
+        self.program_credits = {k: 3 for k in self.allowed_programs}
+
+        # Studierende-Datenbank (Name+ID ➝ Programme)
+        self.students = {}
+
+        self.setup_ui()
+        self.setup_rabbit_listener()
+        self.setup_heartbeat()
 
     def setup_ui(self):
         layout = QVBoxLayout()
-
         font_label = QFont("Segoe UI", 10)
         font_input = QFont("Segoe UI", 10)
 
-        # Form fields for user input
         self.name_input = QLineEdit()
         self.id_input = QLineEdit()
         self.programs_input = QLineEdit()
-        self.start_dates_input = QLineEdit()
-        self.credits_input = QLineEdit()
 
         form_layout = QVBoxLayout()
-        # Add labels and input fields to the form
         for text, widget in [
             ("Name", self.name_input),
             ("Matrikelnummer", self.id_input),
-            ("Study Programs (comma-separated)", self.programs_input),
-            ("Start Dates (comma-separated, DD/MM/YY or YYYY)", self.start_dates_input),
-            ("Credits per Program (comma-separated)", self.credits_input),
+            ("Study Programs (comma-separated)", self.programs_input)
         ]:
             label = QLabel(text)
             label.setFont(font_label)
@@ -48,138 +56,119 @@ class HISWindow(QWidget):
             form_layout.addWidget(label)
             form_layout.addWidget(widget)
 
-        # Buttons for actions
-        button_layout = QHBoxLayout()
-        add_btn = QPushButton("+ Hinzufügen")  # Add student
-        send_btn = QPushButton("✔ Alle senden")  # Send all students
-        remove_btn = QPushButton("❌ Entfernen")  # Remove selected students
-        for btn in (add_btn, send_btn, remove_btn):
-            btn.setFixedHeight(30)
-            btn.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
-        button_layout.addWidget(add_btn)
-        button_layout.addWidget(send_btn)
-        button_layout.addWidget(remove_btn)
+        self.add_btn = QPushButton("+ Hinzufügen & Senden")
+        self.add_btn.setFixedHeight(30)
+        self.add_btn.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
+        self.add_btn.clicked.connect(self.add_and_send_student)
 
-        # Connect button clicks to their functions
-        add_btn.clicked.connect(self.add_student)
-        send_btn.clicked.connect(self.send_all_students)
-        remove_btn.clicked.connect(self.remove_selected)
+        self.status_label = QLabel("")
+        self.status_label.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
 
-        # Table to display students
-        self.table = QTableWidget()
-        self.table.setColumnCount(2)
-        self.table.setHorizontalHeaderLabels(["Name", "Matrikelnummer"])
-        self.table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
-        self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
-        self.table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
+        self.connection_status = QLabel("")
+        self.connection_status.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
 
-        # Status label for feedback
-        self.status = QLabel("")
-        self.status.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
-
-        # Add all widgets to the main layout
         layout.addLayout(form_layout)
-        layout.addLayout(button_layout)
-        layout.addWidget(self.table)
-        layout.addWidget(self.status)
-
+        layout.addWidget(self.add_btn)
+        layout.addWidget(self.status_label)
+        layout.addWidget(self.connection_status)
         self.setLayout(layout)
 
-    def add_student(self):
+    def setup_rabbit_listener(self):
+        def callback(ch, method, properties, body):
+            data = json.loads(body.decode())
+            sender = data.get("source")
+            if sender in self.last_pongs:
+                self.last_pongs[sender] = True
+
+        def listen():
+            connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
+            channel = connection.channel()
+            channel.exchange_declare(exchange="student_exchange", exchange_type="topic")
+            result = channel.queue_declare('', exclusive=True)
+            queue_name = result.method.queue
+            channel.queue_bind(exchange="student_exchange", queue=queue_name, routing_key="his.pong")
+            channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
+            channel.start_consuming()
+
+        thread = threading.Thread(target=listen, daemon=True)
+        thread.start()
+
+    def setup_heartbeat(self):
+        def heartbeat():
+            for service in ["wyseflow", "peregos"]:
+                self.last_pongs[service] = False
+                self.send_to_rabbitmq(f"{service}.ping", {"type": "ping", "target": service})
+            QTimer.singleShot(2000, self.evaluate_heartbeat)
+
+        self.timer = QTimer()
+        self.timer.timeout.connect(heartbeat)
+        self.timer.start(5000)
+
+    def evaluate_heartbeat(self):
+        self.status = self.last_pongs.copy()
+        status_text = f"🩺 Peregos: {'✅' if self.status['peregos'] else '❌'} | WyseFlow: {'✅' if self.status['wyseflow'] else '❌'}"
+        self.connection_status.setText(status_text)
+
+    def add_and_send_student(self):
         try:
-            # Read and process input fields
             name = self.name_input.text().strip()
             student_id = self.id_input.text().strip()
-            programs = [p.strip() for p in self.programs_input.text().split(",") if p.strip()]
-            start_dates = [d.strip() for d in self.start_dates_input.text().split(",") if d.strip()]
-            credits_raw = [c.strip() for c in self.credits_input.text().split(",") if c.strip()]
+            requested_programs = [p.strip() for p in self.programs_input.text().split(",") if p.strip()]
 
-            # Validate input
             if not name.replace(" ", "").isalpha():
                 raise ValueError("Name darf nur Buchstaben enthalten.")
             if not student_id.isdigit():
                 raise ValueError("Matrikelnummer muss eine Ganzzahl sein.")
-            if len(programs) != len(start_dates) or len(programs) != len(credits_raw):
-                raise ValueError("Alle Felder müssen gleich viele Einträge enthalten.")
+            if not requested_programs:
+                raise ValueError("Mindestens ein Studienprogramm angeben.")
 
-            # Parse and validate dates
-            try:
-                datetime_objects = []
-                for d in start_dates:
-                    try:
-                        datetime_objects.append(datetime.strptime(d, "%d/%m/%y"))
-                    except ValueError:
-                        datetime_objects.append(datetime.strptime(d, "%d/%m/%Y"))
-            except ValueError:
-                raise ValueError("Ungültiges Datumsformat. Verwende DD/MM/YY oder DD/MM/YYYY")
+            # Validieren ob Programme erlaubt sind
+            for p in requested_programs:
+                if p not in self.allowed_programs:
+                    raise ValueError(f"Unbekanntes Studienprogramm: {p}")
 
-            # Parse and validate credits
-            try:
-                credits = [int(c) for c in credits_raw]
-            except ValueError:
-                raise ValueError("Credits müssen Ganzzahlen sein.")
+            key = (name, student_id)
 
-            # Map programs to start dates and credits
-            start_map = {prog: start_dates[i] for i, prog in enumerate(programs)}
-            credit_map = {prog: credits[i] for i, prog in enumerate(programs)}
-            total_credits = sum(credits)
+            # Neuen Studenten einfügen oder Programme erweitern
+            if key not in self.students:
+                self.students[key] = requested_programs
+            else:
+                for p in requested_programs:
+                    if p not in self.students[key]:
+                        self.students[key].append(p)
 
-            # Create student dictionary
+            final_programs = self.students[key]
+            start_map = {p: self.allowed_programs[p] for p in final_programs}
+            credit_map = {p: self.program_credits[p] for p in final_programs}
+            total_credits = sum(credit_map.values())
+
             student = {
                 "name": name,
                 "Martikelnummer": int(student_id),
-                "programs": programs,
+                "programs": final_programs,
                 "startDates": start_map,
                 "creditsPerProgram": credit_map,
                 "totalCredits": total_credits
             }
 
-            self.students.append(student)  # Add student to list
-            row = self.table.rowCount()
-            self.table.insertRow(row)
-            self.table.setItem(row, 0, QTableWidgetItem(name))
-            self.table.setItem(row, 1, QTableWidgetItem(student_id))
-            self.status.setText("✅ Student hinzugefügt")
-            self.clear_inputs()  # Clear input fields
+            self.send_to_rabbitmq("peregos.info", {
+                "name": name,
+                "Martikelnummer": int(student_id),
+                "programs": final_programs
+            })
+            self.send_to_rabbitmq("wyseflow.info", student)
 
-        except ValueError as e:
-            QMessageBox.critical(self, "Fehler", str(e))  # Show error message
+            self.status_label.setText("✅ Student erfolgreich gesendet.")
+            self.clear_inputs()
+        except Exception as e:
+            QMessageBox.critical(self, "Fehler", str(e))
 
     def clear_inputs(self):
-        # Clear all input fields
         self.name_input.clear()
         self.id_input.clear()
         self.programs_input.clear()
-        self.start_dates_input.clear()
-        self.credits_input.clear()
-
-    def remove_selected(self):
-        # Remove selected students from table and list
-        selected = self.table.selectionModel().selectedRows()
-        for index in sorted(selected, reverse=True):
-            del self.students[index.row()]
-            self.table.removeRow(index.row())
-        self.status.setText("❌ Student(en) entfernt")
-
-    def send_all_students(self):
-        try:
-            # Send each student to RabbitMQ with two different routing keys
-            for student in self.students:
-                self.send_to_rabbitmq("peregos.info", {
-                    "name": student["name"],
-                    "Martikelnummer": student["Martikelnummer"],
-                    "programs": student["programs"]
-                })
-                self.send_to_rabbitmq("wyseflow.info", student)
-
-            self.status.setText(f"✅ {len(self.students)} Studierende gesendet")
-            self.students.clear()  # Clear student list
-            self.table.setRowCount(0)  # Clear table
-        except Exception as e:
-            QMessageBox.critical(self, "Fehler beim Senden", str(e))  # Show error message
 
     def send_to_rabbitmq(self, routing_key, payload):
-        # Send a message to RabbitMQ using the given routing key and payload
         connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
         channel = connection.channel()
         channel.exchange_declare(exchange="student_exchange", exchange_type="topic")
