@@ -8,7 +8,6 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QFont
 from PyQt6.QtCore import QTimer
 
-
 class HISWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -18,7 +17,6 @@ class HISWindow(QWidget):
         self.status = {"wyseflow": False, "peregos": False}
         self.last_pongs = {"wyseflow": False, "peregos": False}
 
-        # Hardcoded Studienprogramme
         self.allowed_programs = {
             "Informatik": "01/10/2022",
             "Wirtschaft": "15/03/2023",
@@ -26,12 +24,11 @@ class HISWindow(QWidget):
         }
 
         self.program_credits = {k: 3 for k in self.allowed_programs}
-
-        # Studierende-Datenbank (Name+ID ➝ Programme)
         self.students = {}
 
         self.setup_ui()
         self.setup_rabbit_listener()
+        self.setup_error_listener()
         self.setup_heartbeat()
 
     def setup_ui(self):
@@ -93,6 +90,25 @@ class HISWindow(QWidget):
         thread = threading.Thread(target=listen, daemon=True)
         thread.start()
 
+    def setup_error_listener(self):
+        def callback(ch, method, properties, body):
+            data = json.loads(body.decode())
+            error_message = data.get("error", "Unknown error")
+            QMessageBox.critical(self, "Validation Error", error_message)
+
+        def listen():
+            connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
+            channel = connection.channel()
+            channel.exchange_declare(exchange="student_exchange", exchange_type="topic")
+            result = channel.queue_declare('', exclusive=True)
+            queue_name = result.method.queue
+            channel.queue_bind(exchange="student_exchange", queue=queue_name, routing_key="his.error")
+            channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
+            channel.start_consuming()
+
+        thread = threading.Thread(target=listen, daemon=True)
+        thread.start()
+
     def setup_heartbeat(self):
         def heartbeat():
             for service in ["wyseflow", "peregos"]:
@@ -122,14 +138,11 @@ class HISWindow(QWidget):
             if not requested_programs:
                 raise ValueError("Mindestens ein Studienprogramm angeben.")
 
-            # Validieren ob Programme erlaubt sind
             for p in requested_programs:
                 if p not in self.allowed_programs:
                     raise ValueError(f"Unbekanntes Studienprogramm: {p}")
 
             key = (name, student_id)
-
-            # Neuen Studenten einfügen oder Programme erweitern
             if key not in self.students:
                 self.students[key] = requested_programs
             else:
@@ -174,7 +187,6 @@ class HISWindow(QWidget):
         channel.exchange_declare(exchange="student_exchange", exchange_type="topic")
         channel.basic_publish(exchange="student_exchange", routing_key=routing_key, body=json.dumps(payload))
         connection.close()
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

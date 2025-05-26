@@ -1076,10 +1076,6 @@ It plays a crucial role in the business case by distributing the data to Peregos
         <sourceConnection xsi:type="archimate:Connection" id="id-d2642d8bc3a84926ab89e4e14f516c49" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-7eb4da25a436403d984490b82509d239" archimateRelationship="id-0a4069f1740a4b798443a79989a175a5"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-f35b40fccb6e40dc87548235cfffc084" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-7ddcf69cd049467f9b50f7976a7a4577" archimateRelationship="id-649b22e8e29048f081d6f88d5486c376"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-44fa1c1d228d4c7eb92808308f407db7" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-c8bc8831bd4d4078ac02beb94f1b1403" archimateRelationship="id-b79862681cf242f4b0ddd4f500cac45e"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-c6e2911698084603b5160fcd6a593d3e" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-7747a76868c74a4e97c1d691de760a01" archimateRelationship="id-5c0a2a29b4d54693b150f3afd2417994"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-97eb7f13fdf94e13bebce3ff101c36c3" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-b5c23e36da70498686b9a710526d2951" archimateRelationship="id-05a8307d23d348589b6e3ebd167a80d3">
-          <bendpoint startX="439" startY="-152" endX="-192" endY="119"/>
-        </sourceConnection>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-b5202d0b3bb24e01b3697193d899028a" archimateElement="id-4a8d4e6e815b4e4f9c56c619d41f01a6">
         <bounds x="1505" y="-5" width="711" height="63"/>
@@ -1094,14 +1090,12 @@ It plays a crucial role in the business case by distributing the data to Peregos
         <sourceConnection xsi:type="archimate:Connection" id="id-31049d95d21f42f0a37c4dabc18ebe8b" source="id-5dabe83819ff4e159ae28da13a7ace93" target="id-428c4db0680b4690ba612e63e1119c9a" archimateRelationship="id-c66e45ffb2a040a6b1ed21ebc70db140"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-620267b2aab04ac28670a9d0d9dc2c7d" archimateElement="id-69b9839333cf49bc95161675bdb68ab4">
-        <bounds x="168" y="-656" width="132" height="47"/>
+        <bounds x="130" y="-652" width="132" height="47"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-c4bd4d42e0724ab2a191d8a55b041b71" source="id-620267b2aab04ac28670a9d0d9dc2c7d" target="id-8c1ab5a7bf9a4649b571e84367cb2849" archimateRelationship="id-d84d62f250b3489190ee39249059addc">
           <bendpoint startX="1061" startY="18" endX="-2" endY="-214"/>
           <bendpoint startX="1061" startY="78" endX="-2" endY="-154"/>
         </sourceConnection>
-        <sourceConnection xsi:type="archimate:Connection" id="id-d56f0f82d6df44c493b091a002c243ba" source="id-620267b2aab04ac28670a9d0d9dc2c7d" target="id-d70a1870438844d7aad046386dc5c034" archimateRelationship="id-c4b87be9011b4c1da8d69a4687751b55">
-          <bendpoint startX="-150" startY="237" endX="-17" endY="-229"/>
-        </sourceConnection>
+        <sourceConnection xsi:type="archimate:Connection" id="id-d56f0f82d6df44c493b091a002c243ba" source="id-620267b2aab04ac28670a9d0d9dc2c7d" target="id-d70a1870438844d7aad046386dc5c034" archimateRelationship="id-c4b87be9011b4c1da8d69a4687751b55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-28fe747f810a48399dc990f54ce7d051" source="id-620267b2aab04ac28670a9d0d9dc2c7d" target="id-573bd3bf54e744dba0a0aa923a4a4c1e" archimateRelationship="id-746965eae4804123bc4680212bb9a039"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-66b10e19aba44eb5b65642da0106df6b" archimateElement="id-eb235323e27c4183a1c95cf822ddc107">
@@ -1213,19 +1207,17 @@ It plays a crucial role in the business case by distributing the data to Peregos
       <child xsi:type="archimate:DiagramObject" id="id-2be1faa3af86474191136a5ef68ede71" targetConnections="id-cbe52c59a00a461a9121cd892a0d91e4" archimateElement="id-9e704a1393e54038a68b397dbdd53383">
         <bounds x="1454" y="950" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-32b1282127424c0b91fe1fb833e3d042" source="id-2be1faa3af86474191136a5ef68ede71" target="id-8947d5d39f85492897dd55798505010b" archimateRelationship="id-d99c69295f914e9daa41ff29642933a8">
-          <bendpoint startX="-655" startY="-17" endX="-300" endY="1077"/>
+          <bendpoint startX="-554" startY="-17" endX="-421" endY="909"/>
           <bendpoint startX="-595" startY="-725" endX="-413" endY="357"/>
         </sourceConnection>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-a3d1781d86c64464ac63d093b69f0383" targetConnections="id-b26496decb88431abd9c83af09419e13" archimateElement="id-dea9d041baaa480fbe298a11427c27e9">
         <bounds x="2281" y="78" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-7c1378c210404d23a072a0bb5f2ce58c" source="id-a3d1781d86c64464ac63d093b69f0383" target="id-aae26d9d4e9b47df9966d393fae560bd" archimateRelationship="id-c52e78136fc748e881d313406fc0f05c"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-d9800cd057bb4ec0b61a586dc42e818c" source="id-a3d1781d86c64464ac63d093b69f0383" target="id-9ad4ec8906bc4af9864a5b7195acad09" archimateRelationship="id-02fbd797a4244de7a2d9814ff7e3e356"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-8947d5d39f85492897dd55798505010b" targetConnections="id-32b1282127424c0b91fe1fb833e3d042" archimateElement="id-e3297034fe98482f90b9e35bb7f0f75e">
         <bounds x="1321" y="24" width="120" height="55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-7fc213eb46de4b5f9baffc10434e0402" source="id-8947d5d39f85492897dd55798505010b" target="id-e6cb445b4a774e8c9a332191614056b7" archimateRelationship="id-ac1980872cce4502a83c75aaa7e0c18d"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-7b7c21ccc4ca453c8089e6768ce48877" source="id-8947d5d39f85492897dd55798505010b" target="id-dbeb3895e2824b019a39c7175cf3679e" archimateRelationship="id-d547aba6cd904ff8b8037499fa54d770"/>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-e6cb445b4a774e8c9a332191614056b7" targetConnections="id-4c2ab63b6afb42b3bcb44d94474bdad0 id-7fc213eb46de4b5f9baffc10434e0402" archimateElement="id-cc49227fb23a4d069eea1a7d9cc870e0">
         <bounds x="1428" y="-109" width="120" height="55"/>
@@ -1296,12 +1288,6 @@ It plays a crucial role in the business case by distributing the data to Peregos
         <sourceConnection xsi:type="archimate:Connection" id="id-4ccdf90bee764cd2af26a324bf783233" source="id-c26beb1d018745acb0b16eaf2f1292c3" target="id-ca06ded224a949fbb77dd2eb6626eda3" archimateRelationship="id-4a7bcff805f34c318209c3bbd3b14051"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-86269e4de14e4475b343ed3f29b817bf" source="id-c26beb1d018745acb0b16eaf2f1292c3" target="id-84de9dbbe9f8463f86d2a706f42f6938" archimateRelationship="id-0bc7c1c61a5144cc803376d1e8594ac8"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-7e2e193c43e64af297f8a94414d09e7b" source="id-c26beb1d018745acb0b16eaf2f1292c3" target="id-7d51628e2057425ea5239fcfc3f449a0" archimateRelationship="id-022d17fceb5449b385519ad72697b8f3"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-d290512e66404d8c85ba6ce7a211d34e" source="id-c26beb1d018745acb0b16eaf2f1292c3" target="id-7747a76868c74a4e97c1d691de760a01" archimateRelationship="id-fc8ce14101d94167bc8418da0cd4ce28">
-          <bendpoint startX="-144" startY="-146" endX="108" endY="167"/>
-        </sourceConnection>
-        <sourceConnection xsi:type="archimate:Connection" id="id-4ddbc1f0c89a42e69a618bfba7c6f451" source="id-c26beb1d018745acb0b16eaf2f1292c3" target="id-b5c23e36da70498686b9a710526d2951" archimateRelationship="id-e803acac13114105a5a7fd630842d46f">
-          <bendpoint startX="-108" startY="-182" endX="-12" endY="131"/>
-        </sourceConnection>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-c7d3ae6d1f5b4fa2a05093e6da5d32aa" targetConnections="id-7ae4a83752604ac4907cf85695bdc6bd" archimateElement="id-083408e47fa741d09e77857da09516a7">
         <bounds x="1128" y="24" width="120" height="55"/>
@@ -1350,41 +1336,6 @@ It plays a crucial role in the business case by distributing the data to Peregos
         <sourceConnection xsi:type="archimate:Connection" id="id-c8f9415e06da46198fbf83b45d83d8ed" source="id-c8bc8831bd4d4078ac02beb94f1b1403" target="id-c26beb1d018745acb0b16eaf2f1292c3" archimateRelationship="id-a3a3e655f2484c2988c7ce1807e892ef">
           <bendpoint startX="252" startY="-76" endX="-276" endY="-2"/>
         </sourceConnection>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-9ad4ec8906bc4af9864a5b7195acad09" targetConnections="id-d9800cd057bb4ec0b61a586dc42e818c" archimateElement="id-c9cddb48b5954ae5b03352754f55fc11">
-        <bounds x="2172" y="-109" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-e7429c32eefe46e89ce3ceebf7ce474f" source="id-9ad4ec8906bc4af9864a5b7195acad09" target="id-46fa5ef8f0a9478487b48213df9a85fe" archimateRelationship="id-ae98ffc14cc148ed95b228bf641afc2b"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-dbeb3895e2824b019a39c7175cf3679e" targetConnections="id-7b7c21ccc4ca453c8089e6768ce48877" archimateElement="id-553cf7e19c34447581ec03e35bfa00c3">
-        <bounds x="1328" y="-198" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-d1269814404c4afc81898411ca585922" source="id-dbeb3895e2824b019a39c7175cf3679e" target="id-f5ebd54b6bae480597d047164871f709" archimateRelationship="id-c41f8ec38136487294206b04c82a8c30"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-f5ebd54b6bae480597d047164871f709" targetConnections="id-d1269814404c4afc81898411ca585922" archimateElement="id-3508aef7480340b984478f55d86f730a">
-        <bounds x="1328" y="-289" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-67ca1b1f397040209ae876b815e0069e" source="id-f5ebd54b6bae480597d047164871f709" target="id-b5c23e36da70498686b9a710526d2951" archimateRelationship="id-babfc288ed60449f91876040bc207a52"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-46fa5ef8f0a9478487b48213df9a85fe" targetConnections="id-e7429c32eefe46e89ce3ceebf7ce474f" archimateElement="id-79c7aa25e45a442eb2fe9dd74c097fa0">
-        <bounds x="2184" y="-228" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-540cce7bd6b84a52bc8574fa3854f509" source="id-46fa5ef8f0a9478487b48213df9a85fe" target="id-7747a76868c74a4e97c1d691de760a01" archimateRelationship="id-47c478c2481f4b48828608d4d32b48c0">
-          <bendpoint startX="-84" startY="-122" endX="1308" endY="-28"/>
-          <bendpoint startX="-1320" startY="46" endX="-120" endY="-206"/>
-        </sourceConnection>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-7747a76868c74a4e97c1d691de760a01" targetConnections="id-540cce7bd6b84a52bc8574fa3854f509 id-d290512e66404d8c85ba6ce7a211d34e id-c6e2911698084603b5160fcd6a593d3e" archimateElement="id-8649a3adb4d04ad581dc70679e5a19df">
-        <bounds x="732" y="-289" width="120" height="55"/>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="id-b5c23e36da70498686b9a710526d2951" targetConnections="id-67ca1b1f397040209ae876b815e0069e id-4ddbc1f0c89a42e69a618bfba7c6f451 id-97eb7f13fdf94e13bebce3ff101c36c3" archimateElement="id-cdb60cd4986a4b23890ef179635d781e">
-        <bounds x="888" y="-289" width="120" height="55"/>
-      </child>
-      <child xsi:type="archimate:Note" id="id-d86e88ebf6a94447a2d97fef8b3ae5f9" textAlignment="1">
-        <bounds x="1848" y="626" width="185" height="80"/>
-        <content>Ergibt das Sinn?&#xD;
-</content>
-      </child>
-      <child xsi:type="archimate:Note" id="id-a88eae1645e944cc9374303c4b0f0f49" textAlignment="1">
-        <bounds x="788" y="-456" width="185" height="80"/>
-        <content>Passt die Ping/Pong Logik?&#xD;
-</content>
       </child>
     </element>
   </folder>
