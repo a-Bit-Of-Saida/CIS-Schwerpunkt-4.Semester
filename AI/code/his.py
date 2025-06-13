@@ -43,7 +43,7 @@ class HISWindow(QWidget):
 
         for text, widget in [
             ("Name", self.name_input),
-            ("Matrikelnummer", self.id_input),
+            ("Matrikelnumber", self.id_input),
             ("Study Programs (comma-separated)", self.programs_input)
         ]:
             label = QLabel(text)
