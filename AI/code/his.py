@@ -3,10 +3,11 @@ import json
 import pika
 import threading
 from PyQt6.QtWidgets import (
-    QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QMessageBox
+    QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QMessageBox
 )
 from PyQt6.QtGui import QFont
 from PyQt6.QtCore import QTimer
+
 
 class HISWindow(QWidget):
     def __init__(self):
@@ -18,9 +19,9 @@ class HISWindow(QWidget):
         self.last_pongs = {"wyseflow": False, "peregos": False}
 
         self.allowed_programs = {
-            "Informatik": "01/10/2022",
-            "Wirtschaft": "15/03/2023",
-            "Maschinenbau": "01/04/2024"
+            "Computer Science": "01/10/2022",
+            "Economics": "15/03/2023",
+            "AI": "01/04/2024"
         }
 
         self.program_credits = {k: 3 for k in self.allowed_programs}
@@ -40,7 +41,6 @@ class HISWindow(QWidget):
         self.id_input = QLineEdit()
         self.programs_input = QLineEdit()
 
-        form_layout = QVBoxLayout()
         for text, widget in [
             ("Name", self.name_input),
             ("Matrikelnummer", self.id_input),
@@ -50,10 +50,10 @@ class HISWindow(QWidget):
             label.setFont(font_label)
             widget.setFont(font_input)
             widget.setFixedHeight(30)
-            form_layout.addWidget(label)
-            form_layout.addWidget(widget)
+            layout.addWidget(label)
+            layout.addWidget(widget)
 
-        self.add_btn = QPushButton("+ Hinzufügen & Senden")
+        self.add_btn = QPushButton("Send")
         self.add_btn.setFixedHeight(30)
         self.add_btn.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
         self.add_btn.clicked.connect(self.add_and_send_student)
@@ -64,7 +64,6 @@ class HISWindow(QWidget):
         self.connection_status = QLabel("")
         self.connection_status.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
 
-        layout.addLayout(form_layout)
         layout.addWidget(self.add_btn)
         layout.addWidget(self.status_label)
         layout.addWidget(self.connection_status)
@@ -125,22 +124,34 @@ class HISWindow(QWidget):
         status_text = f"🩺 Peregos: {'✅' if self.status['peregos'] else '❌'} | WyseFlow: {'✅' if self.status['wyseflow'] else '❌'}"
         self.connection_status.setText(status_text)
 
+        # Sende-Button bleibt IMMER aktiv!
+
     def add_and_send_student(self):
         try:
+            if not all(self.status.values()):
+                offline = [s.capitalize() for s, ok in self.status.items() if not ok]
+                QMessageBox.critical(
+                    self,
+                    "Service is offline",
+                    f"❌ The following services are currently unavaliable:\n\n{', '.join(offline)}\n\n"
+                    "Please try again later."
+                )
+                return
+
             name = self.name_input.text().strip()
             student_id = self.id_input.text().strip()
             requested_programs = [p.strip() for p in self.programs_input.text().split(",") if p.strip()]
 
             if not name.replace(" ", "").isalpha():
-                raise ValueError("Name darf nur Buchstaben enthalten.")
+                raise ValueError("Name is only allowed to have characters.")
             if not student_id.isdigit():
-                raise ValueError("Matrikelnummer muss eine Ganzzahl sein.")
+                raise ValueError("Matrikelnumber has to be a number.")
             if not requested_programs:
-                raise ValueError("Mindestens ein Studienprogramm angeben.")
+                raise ValueError("Choose at least one stduy program.")
 
             for p in requested_programs:
                 if p not in self.allowed_programs:
-                    raise ValueError(f"Unbekanntes Studienprogramm: {p}")
+                    raise ValueError(f"Unknown study program: {p}")
 
             key = (name, student_id)
             if key not in self.students:
@@ -157,7 +168,7 @@ class HISWindow(QWidget):
 
             student = {
                 "name": name,
-                "Martikelnummer": int(student_id),
+                "martikelnumber": int(student_id),
                 "programs": final_programs,
                 "startDates": start_map,
                 "creditsPerProgram": credit_map,
@@ -166,15 +177,15 @@ class HISWindow(QWidget):
 
             self.send_to_rabbitmq("peregos.info", {
                 "name": name,
-                "Martikelnummer": int(student_id),
+                "martikelnumber": int(student_id),
                 "programs": final_programs
             })
             self.send_to_rabbitmq("wyseflow.info", student)
 
-            self.status_label.setText("✅ Student erfolgreich gesendet.")
+            self.status_label.setText("✅ Student succsessfully sent.")
             self.clear_inputs()
         except Exception as e:
-            QMessageBox.critical(self, "Fehler", str(e))
+            QMessageBox.critical(self, "Error", str(e))
 
     def clear_inputs(self):
         self.name_input.clear()
@@ -187,6 +198,7 @@ class HISWindow(QWidget):
         channel.exchange_declare(exchange="student_exchange", exchange_type="topic")
         channel.basic_publish(exchange="student_exchange", routing_key=routing_key, body=json.dumps(payload))
         connection.close()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
