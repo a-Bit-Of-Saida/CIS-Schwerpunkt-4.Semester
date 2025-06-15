@@ -2,8 +2,10 @@ import sys
 import json
 import pika
 import threading
+import os
+from datetime import datetime
 from PyQt6.QtWidgets import (
-    QApplication, QWidget, QLabel, QTextEdit, QVBoxLayout, QHBoxLayout
+    QApplication, QWidget, QLabel, QTextEdit, QVBoxLayout
 )
 from PyQt6.QtGui import QFont
 from PyQt6.QtCore import Qt
@@ -13,8 +15,12 @@ ALLOWED_PROGRAMS = {"Computer Science", "Economics", "AI"}
 class PeregosUI(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Peregos – Message Monitor")
+        self.setWindowTitle("Peregos - Message Monitor")
         self.setMinimumSize(700, 400)
+
+        self.data_file = "received_students_peregos.json"
+        self.received_data = {}
+        self.load_existing_data()
 
         self.program_log = QTextEdit()
         self.program_log.setReadOnly(True)
@@ -36,6 +42,24 @@ class PeregosUI(QWidget):
 
     def log_message(self, msg: str):
         self.program_log.append(msg)
+
+    def save_student_data(self, student: dict):
+        key = f"{student['name']}_{student['martikelnumber']}"
+        timestamp = datetime.now().isoformat()
+        self.received_data[key] = {
+            "timestamp": timestamp,
+            "data": student
+        }
+        with open(self.data_file, "w") as f:
+            json.dump(self.received_data, f, indent=4)
+
+    def load_existing_data(self):
+        if os.path.exists(self.data_file):
+            try:
+                with open(self.data_file, "r") as f:
+                    self.received_data = json.load(f)
+            except Exception:
+                self.received_data = {}
 
     def start_rabbitmq_listener(self):
         def callback(ch, method, properties, body):
@@ -59,6 +83,7 @@ class PeregosUI(QWidget):
                         ch.basic_publish(exchange="student_exchange", routing_key="his.error", body=error_msg)
                         self.status_label.setText(f"❌ Unknown program(s): {', '.join(unknown)}")
                     else:
+                        self.save_student_data(data)
                         self.status_label.setText(f"✅ All programs valid: {', '.join(programs)}")
                 else:
                     self.status_label.setText("ℹ️ Unknown message type.")
@@ -78,6 +103,7 @@ class PeregosUI(QWidget):
 
         thread = threading.Thread(target=listen, daemon=True)
         thread.start()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

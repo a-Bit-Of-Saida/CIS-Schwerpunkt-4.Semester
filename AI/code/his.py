@@ -2,11 +2,14 @@ import sys
 import json
 import pika
 import threading
+import os
 from PyQt6.QtWidgets import (
-    QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QMessageBox
+    QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout,
+    QMessageBox
 )
 from PyQt6.QtGui import QFont
 from PyQt6.QtCore import QTimer
+from PyQt6.QtWidgets import QDialog, QTextEdit, QDialogButtonBox, QVBoxLayout
 
 
 class HISWindow(QWidget):
@@ -26,6 +29,9 @@ class HISWindow(QWidget):
 
         self.program_credits = {k: 3 for k in self.allowed_programs}
         self.students = {}
+
+        self.data_file = "students.json"
+        self.load_data()
 
         self.setup_ui()
         self.setup_rabbit_listener()
@@ -58,6 +64,11 @@ class HISWindow(QWidget):
         self.add_btn.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
         self.add_btn.clicked.connect(self.add_and_send_student)
 
+        self.show_btn = QPushButton("Show All Student Data")
+        self.show_btn.setFixedHeight(30)
+        self.show_btn.setFont(QFont("Segoe UI", 10))
+        self.show_btn.clicked.connect(self.show_all_students)
+
         self.status_label = QLabel("")
         self.status_label.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
 
@@ -65,6 +76,7 @@ class HISWindow(QWidget):
         self.connection_status.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
 
         layout.addWidget(self.add_btn)
+        layout.addWidget(self.show_btn)
         layout.addWidget(self.status_label)
         layout.addWidget(self.connection_status)
         self.setLayout(layout)
@@ -124,8 +136,6 @@ class HISWindow(QWidget):
         status_text = f"🩺 Peregos: {'✅' if self.status['peregos'] else '❌'} | WyseFlow: {'✅' if self.status['wyseflow'] else '❌'}"
         self.connection_status.setText(status_text)
 
-        # Sende-Button bleibt IMMER aktiv!
-
     def add_and_send_student(self):
         try:
             if not all(self.status.values()):
@@ -133,7 +143,7 @@ class HISWindow(QWidget):
                 QMessageBox.critical(
                     self,
                     "Service is offline",
-                    f"❌ The following services are currently unavaliable:\n\n{', '.join(offline)}\n\n"
+                    f"❌ The following services are currently unavailable:\n\n{', '.join(offline)}\n\n"
                     "Please try again later."
                 )
                 return
@@ -147,7 +157,7 @@ class HISWindow(QWidget):
             if not student_id.isdigit():
                 raise ValueError("Matrikelnumber has to be a number.")
             if not requested_programs:
-                raise ValueError("Choose at least one stduy program.")
+                raise ValueError("Choose at least one study program.")
 
             for p in requested_programs:
                 if p not in self.allowed_programs:
@@ -155,11 +165,10 @@ class HISWindow(QWidget):
 
             key = (name, student_id)
             if key not in self.students:
-                self.students[key] = requested_programs
-            else:
-                for p in requested_programs:
-                    if p not in self.students[key]:
-                        self.students[key].append(p)
+                self.students[key] = []
+            for p in requested_programs:
+                if p not in self.students[key]:
+                    self.students[key].append(p)
 
             final_programs = self.students[key]
             start_map = {p: self.allowed_programs[p] for p in final_programs}
@@ -175,6 +184,8 @@ class HISWindow(QWidget):
                 "totalCredits": total_credits
             }
 
+            self.save_student(key, student)
+
             self.send_to_rabbitmq("peregos.info", {
                 "name": name,
                 "martikelnumber": int(student_id),
@@ -182,10 +193,66 @@ class HISWindow(QWidget):
             })
             self.send_to_rabbitmq("wyseflow.info", student)
 
-            self.status_label.setText("✅ Student succsessfully sent.")
+            self.status_label.setText("✅ Student successfully sent.")
             self.clear_inputs()
         except Exception as e:
             QMessageBox.critical(self, "Error", str(e))
+
+    def show_all_students(self):
+        try:
+            if not os.path.exists(self.data_file):
+                QMessageBox.information(self, "Info", "No student data available.")
+                return
+
+            with open(self.data_file, "r") as f:
+                data = json.load(f)
+
+            dialog = QDialog(self)
+            dialog.setWindowTitle("All Students")
+            dialog.setMinimumSize(800, 600)  # Größeres Fenster
+
+            layout = QVBoxLayout(dialog)
+
+            text_edit = QTextEdit()
+            text_edit.setReadOnly(True)
+            text_edit.setFont(QFont("Consolas", 10))
+            text_edit.setText(json.dumps(data, indent=4))
+
+            buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok)
+            buttons.accepted.connect(dialog.accept)
+            buttons.rejected.connect(dialog.reject)
+
+            layout.addWidget(text_edit)
+            layout.addWidget(buttons)
+
+            dialog.exec()
+        except Exception as e:
+            QMessageBox.critical(self, "Error", str(e))
+
+    def save_student(self, key, student):
+        all_data = {}
+        if os.path.exists(self.data_file):
+            with open(self.data_file, "r") as f:
+                try:
+                    all_data = json.load(f)
+                except json.JSONDecodeError:
+                    all_data = {}
+
+        all_data[f"{key[0]}_{key[1]}"] = student
+        with open(self.data_file, "w") as f:
+            json.dump(all_data, f, indent=4)
+
+    def load_data(self):
+        if os.path.exists(self.data_file):
+            try:
+                with open(self.data_file, "r") as f:
+                    raw_data = json.load(f)
+                    for key, value in raw_data.items():
+                        name = value["name"]
+                        student_id = str(value["martikelnumber"])
+                        self.students[(name, student_id)] = value["programs"]
+            except Exception:
+                pass
 
     def clear_inputs(self):
         self.name_input.clear()
