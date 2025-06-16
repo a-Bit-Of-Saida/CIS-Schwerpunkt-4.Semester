@@ -1,0 +1,22 @@
+{
+    "tghg_765765": {
+        "timestamp": "2025-06-15T14:41:49.847835",
+        "data": {
+            "name": "tghg",
+            "martikelnumber": 765765,
+            "programs": [
+                "AI"
+            ]
+        }
+    },
+    "Max Mustermann_123456": {
+        "timestamp": "2025-06-15T20:38:09.468675",
+        "data": {
+            "name": "Max Mustermann",
+            "martikelnumber": 123456,
+            "programs": [
+                "Computer Science"
+            ]
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "tghg_765765": {
+        "timestamp": "2025-06-15T14:41:49.874982",
+        "data": {
+            "name": "tghg",
+            "martikelnumber": 765765,
+            "programs": [
+                "AI"
+            ],
+            "startDates": {
+                "AI": "01/04/2024"
+            },
+            "creditsPerProgram": {
+                "AI": 3
+            },
+            "totalCredits": 3
+        }
+    },
+    "Max Mustermann_123456": {
+        "timestamp": "2025-06-15T20:38:09.511922",
+        "data": {
+            "name": "Max Mustermann",
+            "martikelnumber": 123456,
+            "programs": [
+                "Computer Science"
+            ],
+            "startDates": {
+                "Computer Science": "01/10/2022"
+            },
+            "creditsPerProgram": {
+                "Computer Science": 3
+            },
+            "totalCredits": 3
+        }
+    }
+}
