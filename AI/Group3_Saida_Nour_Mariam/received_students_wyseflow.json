@@ -1,0 +1,53 @@
+{
+    "Saida_5687489537": {
+        "timestamp": "2025-06-23T00:57:53.844770",
+        "data": {
+            "name": "Student Name",
+            "ID": 5687489537,
+            "programs": [
+                "AI"
+            ],
+            "startDates": {
+                "AI": "01/04/2024"
+            },
+            "creditsPerProgram": {
+                "AI": 3
+            },
+            "totalCredits": 3
+        }
+    },
+    "Saida Covrk_122346": {
+        "timestamp": "2025-06-23T11:02:46.709356",
+        "data": {
+            "name": "Saida Covrk",
+            "ID": 122346,
+            "programs": [
+                "AI"
+            ],
+            "startDates": {
+                "AI": "01/04/2024"
+            },
+            "creditsPerProgram": {
+                "AI": 3
+            },
+            "totalCredits": 3
+        }
+    },
+    "Nour_38753485": {
+        "timestamp": "2025-06-23T11:03:47.084513",
+        "data": {
+            "name": "Nour",
+            "ID": 38753485,
+            "programs": [
+                "Computer Science"
+            ],
+            "startDates": {
+                "Computer Science": "01/10/2022"
+            },
+            "creditsPerProgram": {
+                "Computer Science": 3
+            },
+            "totalCredits": 3
+        }
+    }
+}
