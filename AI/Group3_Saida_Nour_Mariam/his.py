@@ -23,7 +23,7 @@ class HISWindow(QWidget):
 
         self.allowed_programs = {
             "Computer Science": "01/10/2022",
-            "Economics": "15/03/2023",
+            "Economy": "15/03/2023",
             "AI": "01/04/2024"
         }
 
@@ -34,6 +34,7 @@ class HISWindow(QWidget):
         self.load_data()
 
         self.setup_ui()
+        #self.show_all_students()
         self.setup_rabbit_listener()
         self.setup_error_listener()
         self.setup_heartbeat()
@@ -49,7 +50,7 @@ class HISWindow(QWidget):
 
         for text, widget in [
             ("Name", self.name_input),
-            ("Matrikelnumber", self.id_input),
+            ("ID", self.id_input),
             ("Study Programs (comma-separated)", self.programs_input)
         ]:
             label = QLabel(text)
@@ -91,7 +92,7 @@ class HISWindow(QWidget):
         def listen():
             connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
             channel = connection.channel()
-            channel.exchange_declare(exchange="student_exchange", exchange_type="topic")
+            channel.exchange_declare(exchange="student_exchange", exchange_type="topic", durable=True)
             result = channel.queue_declare('', exclusive=True)
             queue_name = result.method.queue
             channel.queue_bind(exchange="student_exchange", queue=queue_name, routing_key="his.pong")
@@ -110,7 +111,7 @@ class HISWindow(QWidget):
         def listen():
             connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
             channel = connection.channel()
-            channel.exchange_declare(exchange="student_exchange", exchange_type="topic")
+            channel.exchange_declare(exchange="student_exchange", exchange_type="topic", durable=True)
             result = channel.queue_declare('', exclusive=True)
             queue_name = result.method.queue
             channel.queue_bind(exchange="student_exchange", queue=queue_name, routing_key="his.error")
@@ -138,15 +139,15 @@ class HISWindow(QWidget):
 
     def add_and_send_student(self):
         try:
-            if not all(self.status.values()):
-                offline = [s.capitalize() for s, ok in self.status.items() if not ok]
-                QMessageBox.critical(
-                    self,
-                    "Service is offline",
-                    f"❌ The following services are currently unavailable:\n\n{', '.join(offline)}\n\n"
-                    "Please try again later."
-                )
-                return
+            # if not all(self.status.values()):
+            #     offline = [s.capitalize() for s, ok in self.status.items() if not ok]
+            #     QMessageBox.critical(
+            #         self,
+            #         "Service is offline",
+            #         f"❌ The following services are currently unavailable:\n\n{', '.join(offline)}\n\n"
+            #         "Please try again later."
+            #     )
+            #     return
 
             name = self.name_input.text().strip()
             student_id = self.id_input.text().strip()
@@ -177,7 +178,7 @@ class HISWindow(QWidget):
 
             student = {
                 "name": name,
-                "martikelnumber": int(student_id),
+                "ID": int(student_id),
                 "programs": final_programs,
                 "startDates": start_map,
                 "creditsPerProgram": credit_map,
@@ -188,7 +189,7 @@ class HISWindow(QWidget):
 
             self.send_to_rabbitmq("peregos.info", {
                 "name": name,
-                "martikelnumber": int(student_id),
+                "ID": int(student_id),
                 "programs": final_programs
             })
             self.send_to_rabbitmq("wyseflow.info", student)
@@ -248,11 +249,17 @@ class HISWindow(QWidget):
                 with open(self.data_file, "r") as f:
                     raw_data = json.load(f)
                     for key, value in raw_data.items():
-                        name = value["name"]
-                        student_id = str(value["martikelnumber"])
-                        self.students[(name, student_id)] = value["programs"]
-            except Exception:
-                pass
+                        name = value.get("name")
+                        student_id = str(value.get("ID"))
+                        programs = value.get("programs", [])
+
+                        if name and student_id and programs:
+                            self.students[(name, student_id)] = programs
+                        else:
+                            print(f"⚠️ Incomplete entry: {key}")
+            except Exception as e:
+                print("⚠️ Failed to load students:", e)
+
 
     def clear_inputs(self):
         self.name_input.clear()
@@ -262,9 +269,19 @@ class HISWindow(QWidget):
     def send_to_rabbitmq(self, routing_key, payload):
         connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
         channel = connection.channel()
-        channel.exchange_declare(exchange="student_exchange", exchange_type="topic")
-        channel.basic_publish(exchange="student_exchange", routing_key=routing_key, body=json.dumps(payload))
+
+        # Exchange langlebig machen
+        channel.exchange_declare(exchange="student_exchange", exchange_type="topic", durable=True)
+
+        # Nachricht persistent machen
+        channel.basic_publish(
+            exchange="student_exchange",
+            routing_key=routing_key,
+            body=json.dumps(payload),
+            properties=pika.BasicProperties(delivery_mode=2)  # delivery_mode=2 -> persistent
+        )
         connection.close()
+
 
 
 if __name__ == "__main__":

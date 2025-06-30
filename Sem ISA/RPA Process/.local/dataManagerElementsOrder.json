@@ -12,6 +12,8 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "counter&Sequence_1",
+        "dtEmissionFactors&Sequence_1",
         "PromtChatGPT&Sequence_1",
         "Prompt&Sequence_5"
       ],
