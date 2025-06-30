@@ -1115,7 +1115,9 @@ It plays a crucial role in the business case by distributing the data to Peregos
           <bendpoint startX="246" startY="160" endX="-264" endY="-3"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-09c8c32c541644ec8da4d40c6fbd71a8" source="id-af941edbeb6c425da0b7748bde37cba2" target="id-92d2383f0b9440f393522538f650b030" archimateRelationship="id-d7602f55487d45e0800cf540a12edbfa">
-          <bendpoint startX="474" startY="-20" endX="-36" endY="70"/>
+          <bendpoint startX="354" startY="-8" endX="-120" endY="82"/>
+          <bendpoint startX="438" startY="-8" endX="-36" endY="82"/>
+          <bendpoint startX="438" startY="-32" endX="-36" endY="58"/>
         </sourceConnection>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-b5202d0b3bb24e01b3697193d899028a" targetConnections="id-f39d04a730764b789ec9b484eb118cc4" archimateElement="id-4a8d4e6e815b4e4f9c56c619d41f01a6">
@@ -1138,7 +1140,7 @@ It plays a crucial role in the business case by distributing the data to Peregos
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-d56f0f82d6df44c493b091a002c243ba" source="id-620267b2aab04ac28670a9d0d9dc2c7d" target="id-d70a1870438844d7aad046386dc5c034" archimateRelationship="id-c4b87be9011b4c1da8d69a4687751b55"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-28fe747f810a48399dc990f54ce7d051" source="id-620267b2aab04ac28670a9d0d9dc2c7d" target="id-573bd3bf54e744dba0a0aa923a4a4c1e" archimateRelationship="id-746965eae4804123bc4680212bb9a039">
-          <bendpoint startX="2551" startY="25" endY="-212"/>
+          <bendpoint startX="2455" startY="25" endY="-213"/>
         </sourceConnection>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-66b10e19aba44eb5b65642da0106df6b" archimateElement="id-eb235323e27c4183a1c95cf822ddc107">
@@ -1223,7 +1225,8 @@ It plays a crucial role in the business case by distributing the data to Peregos
           <bendpoint startX="24" startY="-158" endX="-192" endY="7"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-5453b868448d4d22a6cdc3c91766d69e" source="id-aae26d9d4e9b47df9966d393fae560bd" target="id-7ddcf69cd049467f9b50f7976a7a4577" archimateRelationship="id-132eee017d044428ac6a80df178b763a">
-          <bendpoint startX="-12" startY="274" endX="1560" endY="21"/>
+          <bendpoint startY="153" endX="1476" endY="-99"/>
+          <bendpoint startY="273" endX="1476" endY="21"/>
           <bendpoint startX="-336" startY="274" endX="1236" endY="21"/>
           <bendpoint startX="-780" startY="274" endX="792" endY="21"/>
         </sourceConnection>
@@ -1252,7 +1255,9 @@ It plays a crucial role in the business case by distributing the data to Peregos
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-e6cb445b4a774e8c9a332191614056b7" targetConnections="id-982e7ac798124444a60a789753abd50d id-108569e45210434c9886dea37ae86e2a" archimateElement="id-cc49227fb23a4d069eea1a7d9cc870e0">
         <bounds x="1428" y="-109" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="id-3646c6eb8a9c4b88b808d2edc6f28a08" source="id-e6cb445b4a774e8c9a332191614056b7" target="id-28f3ce90f71145e38bd8a93319871a3f" archimateRelationship="id-fc5a6c882e5a4f61b6f664a525d10faa"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-3646c6eb8a9c4b88b808d2edc6f28a08" source="id-e6cb445b4a774e8c9a332191614056b7" target="id-28f3ce90f71145e38bd8a93319871a3f" archimateRelationship="id-fc5a6c882e5a4f61b6f664a525d10faa">
+          <bendpoint startY="-98" endX="-209" endY="-4"/>
+        </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-7ffa55cf2de54670893c050d576a1aa5" source="id-e6cb445b4a774e8c9a332191614056b7" target="id-7ddcf69cd049467f9b50f7976a7a4577" archimateRelationship="id-5699c6df55b14c519cd002a4ef1b71d1">
           <bendpoint startX="-12" startY="250" endX="672" endY="-3"/>
           <bendpoint startX="-324" startY="250" endX="360" endY="-3"/>
@@ -1294,7 +1299,8 @@ It plays a crucial role in the business case by distributing the data to Peregos
           <bendpoint startX="276" startY="82" endX="-960" endY="81"/>
           <bendpoint startX="276" startY="202" endX="-960" endY="201"/>
           <bendpoint startX="708" startY="202" endX="-624" endY="202"/>
-          <bendpoint startX="1296" startY="202" endX="-36" endY="202"/>
+          <bendpoint startX="1200" startY="202" endX="-36" endY="201"/>
+          <bendpoint startX="1200" startY="118" endX="-36" endY="117"/>
         </sourceConnection>
         <sourceConnection xsi:type="archimate:Connection" id="id-1089c92e29134570918fb0d97c1d46d1" source="id-61abd772f6e6481f83d38295ff7c65e1" target="id-7ddcf69cd049467f9b50f7976a7a4577" archimateRelationship="id-63d0a81e426e46c686e8f8d13c2846be">
           <bendpoint startX="-36" startY="70" endX="204" endY="-183"/>
