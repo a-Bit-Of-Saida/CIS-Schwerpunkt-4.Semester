@@ -89,14 +89,14 @@
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_07n369j">
       <bpmndi:BPMNShape id="Participant_0v8l0jo_di" bpmnElement="Participant_0v8l0jo" isHorizontal="true">
-        <dc:Bounds x="130" y="80" width="1738" height="360" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_0cqkcq1_di" bpmnElement="Lane_0cqkcq1" isHorizontal="true">
-        <dc:Bounds x="160" y="80" width="1708" height="177" />
-        <bpmndi:BPMNLabel />
+        <dc:Bounds x="130" y="80" width="1670" height="360" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_02qkidk_di" bpmnElement="Lane_02qkidk" isHorizontal="true">
-        <dc:Bounds x="160" y="257" width="1708" height="183" />
+        <dc:Bounds x="160" y="257" width="1640" height="183" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0cqkcq1_di" bpmnElement="Lane_0cqkcq1" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1640" height="177" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
