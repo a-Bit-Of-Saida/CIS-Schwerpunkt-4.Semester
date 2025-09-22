@@ -1,0 +1,369 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="869.6,10970.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="784,10905.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="You are a highly precise data extraction assistant. Extract all tabular contents completely and line by line from the PDF file exactly as displayed in the table. Use only the visible table structure with the following column headers: Category 1, Category 2, Category 3, Title, Unit, Emission Factor (kg CO2eq per unit), Uncertainty. For each data row, generate exactly one CSV line, transferring each table cell exactly and in the correct order cell by cell, 1:1 cell to cell (co2_factors_structured.xlsx)." Name="PromtChatGPT" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtEmissionFactors" />
+      <Variable x:TypeArguments="x:Int32" Name="counter">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="2" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="ue:IChartRef" Name="myChartRef" />
+      <Variable x:TypeArguments="ue:IChartRef" Name="chart2" />
+      <Variable x:TypeArguments="ue:IChartRef" Name="chart3" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Rpa Challenge" sap:VirtualizedContainerService.HintSize="721.6,10793.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="688,10576.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="Prompt" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON upload-file-btn'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" DesignTimeRectangle="458, 641, 50, 50" DesignTimeScaleFactor="1.375" ElementType="Button" FriendlyName="'BUTTON upload-file-btn'" FullSelectorArgument="&lt;webctrl id='upload-file-btn' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='upload-file-btn' tag='BUTTON' type='button' class='composer-btn' aaname='' /&gt;" Guid="619a9647-51b4-464d-9569-978f5bf42821" InformativeScreenshot="6c1defc314cd2f17820874c64f06ea88.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Fotos und'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" DesignTimeRectangle="503, 716, 256, 27" DesignTimeScaleFactor="1.375" ElementType="Text" FriendlyName="'Fotos und'" FullSelectorArgument="&lt;webctrl aaname='Fotos und Dateien hinzufügen' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fotos und Dateien hinzufügen' tag='SPAN' type='' class='is-ios:inline-block touch:hidden' check:innerText='Fotos und Dateien hinzufügen' /&gt;" Guid="aa3bae06-a9c2-43af-9fad-854c57c4d1a8" InformativeScreenshot="350309e8ad87089cdd2a34f7c7dd2384.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Downloads (angeheftet)'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="75, 262, 79, 40" DesignTimeScaleFactor="1.25" FriendlyName="'Downloads (angeheftet)'" FullSelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Steuerelementhost' cls='NamespaceTreeControl' title='Namespacestruktursteuerelement' /&gt;&lt;wnd ctrlid='100' title='Navigationsbereich' /&gt;&lt;ctrl name='Downloads (angeheftet)' role='outline item' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Steuerelementhost' cls='NamespaceTreeControl' title='Namespacestruktursteuerelement' /&gt;&lt;wnd ctrlid='100' title='Navigationsbereich' /&gt;&lt;ctrl name='Downloads (angeheftet)' role='outline item' automationid='' check:text='Downloads (angeheftet)' /&gt;" Guid="2a38a5d0-a0cb-48fe-a944-7ceacfc60410" InformativeScreenshot="524f0b4e9d89a82e1278e8acb27145bd.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Öffnen' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Suchfeld'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="625.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_10" InteractionMode="HardwareEvents" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Text="appendix 7" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="692, 60, 198, 20" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Suchfeld'" FullSelectorArgument="&lt;wnd aaname='Downloads durchsuchen' cls='DirectUIHWND' /&gt;&lt;ctrl name='Downloads durchsuchen' role='pane' /&gt;&lt;ctrl automationid='SearchEditBox' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Downloads durchsuchen' cls='DirectUIHWND' /&gt;&lt;ctrl name='Downloads durchsuchen' role='pane' /&gt;&lt;ctrl automationid='SearchEditBox' role='editable text' /&gt;" Guid="52d8ab3c-d5a2-44e8-a57a-3959afa9aa5b" InformativeScreenshot="067ea8840476c6be30b172124f4424c4.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Öffnen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <Delay Duration="00:00:06" sap:VirtualizedContainerService.HintSize="625.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'appendix 7'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="255, 216, 294, 24" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'appendix 7'" FullSelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Elementansicht' cls='DirectUIHWND' /&gt;&lt;ctrl name='Elementansicht' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer-Fenster' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Elementansicht' cls='DirectUIHWND' /&gt;&lt;ctrl name='Elementansicht' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' role='editable text' check:text='appendix 7' /&gt;" Guid="e5f20080-00cf-4408-96ac-f916013d9e21" InformativeScreenshot="97c297fcf367628371d852c1c8b1e25c.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Öffnen' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'window.__oai_logHTML?wi…'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/c/682ee05a-4600-800c-91d8-f41363c76f6d" DesignTimeRectangle="449, 854, 1048, 66" DesignTimeScaleFactor="1.375" FriendlyName="'window.__oai_logHTML?wi…'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='thread-bottom' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='thread-bottom' tag='DIV' class='_prosemirror-parent_kfgfu_2 text-token-text-primary max-h-[25dvh] max-h-52 -mx-3 px-3 overflow-auto [scrollbar-width:thin] default-browser vertical-scroll-fade-mask min-h-12 pe-3' aaname='' check:text='window.__oai_logHTML?window.__oai_logHTML():window.__oai_SSR_HTML=window.__oai_SSR_HTML||Date.now()' /&gt;" Guid="fa1257e6-8158-4824-92f8-8f9d8070ca1b" InformativeScreenshot="241a34325b2bd29e3984d0abe2eeab6e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CO₂ Daten Extrahieren Excel' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'window.__oai_logHTML?wi…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="625.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Text="[PromtChatGPT]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" DesignTimeRectangle="449, 632, 1048, 66" DesignTimeScaleFactor="1.375" FriendlyName="'window.__oai_logHTML?wi…'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='thread-bottom' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='thread-bottom' tag='DIV' class='_prosemirror-parent_kfgfu_2 text-token-text-primary max-h-[25dvh] max-h-52 -mx-3 px-3 overflow-auto [scrollbar-width:thin] default-browser vertical-scroll-fade-mask min-h-12 pe-3' aaname='' check:text='window.__oai_logHTML?window.__oai_logHTML():window.__oai_SSR_HTML=window.__oai_SSR_HTML||Date.now()' /&gt;" Guid="2be31957-e4d3-4b6f-9034-b64f70cd51da" InformativeScreenshot="051c63bcdffa9d3be08316391396f071.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/c/682ee05a-4600-800c-91d8-f41363c76f6d" DesignTimeRectangle="1448, 934, 16, 19" DesignTimeScaleFactor="1.375" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl parentid='composer-submit-button' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='composer-submit-button' tag='path' type='' class='' aaname='' /&gt;" Guid="ecc0bb3c-3cb5-4b78-8bd0-bda4edb90c3d" InformativeScreenshot="17ef317e1e6734d7fb7283f680106b42.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='CO₂ Daten Extrahieren Excel' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:01:00" sap:VirtualizedContainerService.HintSize="625.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'window.__oai_logHTML?wi…'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="625.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Text="all" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" DesignTimeRectangle="59, 373, 872, 66" DesignTimeScaleFactor="1.375" FriendlyName="'window.__oai_logHTML?wi…'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='thread-bottom' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='thread-bottom' tag='DIV' class='_prosemirror-parent_kfgfu_2 text-token-text-primary max-h-[25dvh] max-h-52 -mx-3 px-3 overflow-auto [scrollbar-width:thin] default-browser vertical-scroll-fade-mask min-h-12 pe-3' aaname='' check:text='window.__oai_logHTML?window.__oai_logHTML():window.__oai_SSR_HTML=window.__oai_SSR_HTML||Date.now()' /&gt;" Guid="2d13819b-bed1-4c20-ad32-101b78a7e6b0" ImageBase64="" InformativeScreenshot="f3196693eab031fa4045aadbcb8540ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" DesignTimeRectangle="1629, 937, 16, 19" DesignTimeScaleFactor="1.375" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl parentid='composer-submit-button' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='composer-submit-button' tag='path' type='' class='' aaname='' /&gt;" Guid="33bbf47d-9d0e-4c33-a3a7-1e4d2362434e" ImageBase64="" InformativeScreenshot="0b672411a7b2dc29b38eae1036d72cb9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset X="1" Y="1" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:01:00" sap:VirtualizedContainerService.HintSize="625.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'window.__oai_logHTML?wi…'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="625.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Text="All, Emission Factor (kg CO2eq per unit) AS NUMBER, save as co2\_factors\_strucutred, THE DOWNLOAD OPTION MUST BE NAMED co2\_factors\_structured and not say download/here download, give it to me as an xlsx file for download, PROPER DOWNLOAD, THE DOWNLOAD LINK MUST BE NAMED co2\_factors\_strucutred, CLICKABLE!" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" DesignTimeRectangle="59, 373, 872, 66" DesignTimeScaleFactor="1.375" FriendlyName="'window.__oai_logHTML?wi…'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='thread-bottom' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='thread-bottom' tag='DIV' class='_prosemirror-parent_kfgfu_2 text-token-text-primary max-h-[25dvh] max-h-52 -mx-3 px-3 overflow-auto [scrollbar-width:thin] default-browser vertical-scroll-fade-mask min-h-12 pe-3' aaname='' check:text='window.__oai_logHTML?window.__oai_logHTML():window.__oai_SSR_HTML=window.__oai_SSR_HTML||Date.now()' /&gt;" Guid="2d13819b-bed1-4c20-ad32-101b78a7e6b0" ImageBase64="" InformativeScreenshot="f3196693eab031fa4045aadbcb8540ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/" DesignTimeRectangle="1626, 611, 16, 19" DesignTimeScaleFactor="1.375" ElementType="Icon" FriendlyName="'PATH'" FullSelectorArgument="&lt;webctrl parentid='composer-submit-button' tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='composer-submit-button' tag='path' type='' class='' aaname='' /&gt;" Guid="33bbf47d-9d0e-4c33-a3a7-1e4d2362434e" ImageBase64="" InformativeScreenshot="bdfcdcbc8e299f18e9bc2c28c0319993.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ChatGPT' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:20" sap:VirtualizedContainerService.HintSize="625.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_4" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'co2_factors_structured.…'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3883bfeb-dff7-4ce7-94f5-c7c88f54e4bb" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://chatgpt.com/c/6861a433-b3e8-800c-bece-bbe44496d4f6" DesignTimeRectangle="620, 244, 257, 30" DesignTimeScaleFactor="1.375" ElementType="Text" FriendlyName="'co2_factors_structured.…'" FullSelectorArgument="&lt;webctrl aaname='co2_factors_structured.xlsx' idx='3' parentid='thread' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='co2_factors_structured.xlsx' type='' parentid='thread' tag='A' class='cursor-pointer' check:innerText='co2_factors_structured.xlsx' /&gt;" Guid="e9f24436-61ee-477d-9731-75dcdb6c0564" ImageBase64="" InformativeScreenshot="480f2c26eff73f139b05b0125dd05060.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Data Extraction Request' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Delay Duration="00:00:20" sap:VirtualizedContainerService.HintSize="625.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_5" />
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="625.6,6997.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="C:\Users\covrk\Downloads\co2_factors_structured.xlsx">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="592,6728" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:InsertSheetX DisplayName="Insert Sheet" sap:VirtualizedContainerService.HintSize="529.6,188" sap2010:WorkflowViewState.IdRef="InsertSheetX_2" Name="Tabelle2" Workbook="[Excel]" />
+                    <ueab:CreatePivotTableXv2 DestinationRange="[Excel.Sheet(&quot;Tabelle2&quot;)]" DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="529.6,428.8" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_1" LayoutRowType="Compact" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" TableName="Tabelle2" ValuesMode="Columns">
+                      <ueab:CreatePivotTableXv2.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Ausführen" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:PivotTableFieldX DisplayName="Pivot-Feld" FieldName="Category 1" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_1" Type="Row" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot-Feld" FieldName="Emission Factor (kg CO2eq per unit)" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_2" Type="Value" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:CreatePivotTableXv2.Body>
+                    </ueab:CreatePivotTableXv2>
+                    <ueab:InsertSheetX DisplayName="Insert Sheet" sap:VirtualizedContainerService.HintSize="529.6,188" sap2010:WorkflowViewState.IdRef="InsertSheetX_1" Name="Diagramm1" Workbook="[Excel]" />
+                    <ueab:InsertExcelChartX ChartCategory="Pie" ChartHeight="211" ChartType="xlPie" ChartWidth="355" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="529.6,236.8" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_1" InsertIntoSheet="[Excel.Sheet(&quot;Diagramm1&quot;)]" InsertedChart="[myChartRef]" Left="60" Range="[Excel.Sheet(&quot;Tabelle2&quot;)]" Top="20" />
+                    <ueab:CopyChartToClipboardX FilePath="{x:Null}" Action="CopyToClipboard" Chart="[myChartRef]" DisplayName="Get Chart" sap:VirtualizedContainerService.HintSize="529.6,90.4" sap2010:WorkflowViewState.IdRef="CopyChartToClipboardX_1" ReplaceFile="True" />
+                    <ueab:InsertSheetX DisplayName="Insert Sheet" sap:VirtualizedContainerService.HintSize="529.6,188" sap2010:WorkflowViewState.IdRef="InsertSheetX_3" Name="Tabelle3" Workbook="[Excel]" />
+                    <ueab:CreatePivotTableXv2 DestinationRange="[Excel.Sheet(&quot;Tabelle3&quot;)]" DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="529.6,428.8" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_2" LayoutRowType="Compact" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" TableName="Tabelle3" ValuesMode="Columns">
+                      <ueab:CreatePivotTableXv2.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Ausführen" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:PivotTableFieldX DisplayName="Pivot-Feld" FieldName="Category 2" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_3" Type="Row" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot-Feld" FieldName="Emission Factor (kg CO2eq per unit)" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_4" Type="Value" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:CreatePivotTableXv2.Body>
+                    </ueab:CreatePivotTableXv2>
+                    <ueab:InsertSheetX DisplayName="Insert Sheet" sap:VirtualizedContainerService.HintSize="529.6,188" sap2010:WorkflowViewState.IdRef="InsertSheetX_4" Name="Diagramm2" Workbook="[Excel]" />
+                    <ueab:InsertExcelChartX ChartCategory="Bar" ChartHeight="211" ChartType="xlBarClustered" ChartWidth="355" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="529.6,236.8" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_2" InsertIntoSheet="[Excel.Sheet(&quot;Diagramm2&quot;)]" InsertedChart="[chart2]" Left="60" Range="[Excel.Sheet(&quot;Tabelle3&quot;)]" Top="20" />
+                    <ueab:InsertSheetX DisplayName="Insert Sheet" sap:VirtualizedContainerService.HintSize="529.6,188" sap2010:WorkflowViewState.IdRef="InsertSheetX_5" Name="Tabelle4" Workbook="[Excel]" />
+                    <ueab:CreatePivotTableXv2 DestinationRange="[Excel.Sheet(&quot;Tabelle4&quot;)]" DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="529.6,428.8" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_3" LayoutRowType="Compact" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" TableName="Tabelle4" ValuesMode="Columns">
+                      <ueab:CreatePivotTableXv2.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Ausführen" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ueab:PivotTableFieldX DisplayName="Pivot-Feld" FieldName="Category 3" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_5" Type="Row" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot-Feld" FieldName="Emission Factor (kg CO2eq per unit)" Function="Sum" sap:VirtualizedContainerService.HintSize="382.4,85.6" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_6" Type="Value" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:CreatePivotTableXv2.Body>
+                    </ueab:CreatePivotTableXv2>
+                    <ueab:InsertSheetX DisplayName="Insert Sheet" sap:VirtualizedContainerService.HintSize="529.6,188" sap2010:WorkflowViewState.IdRef="InsertSheetX_6" Name="Diagramm3" Workbook="[Excel]" />
+                    <ueab:InsertExcelChartX ChartCategory="Bar" ChartHeight="211" ChartType="xlBarClustered" ChartWidth="355" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="529.6,236.8" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_3" InsertIntoSheet="[Excel.Sheet(&quot;Diagramm3&quot;)]" InsertedChart="[chart3]" Left="60" Range="[Excel.Sheet(&quot;Tabelle4&quot;)]" Top="20" />
+                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="529.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: PowerPoint" sap:VirtualizedContainerService.HintSize="529.6,2747.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="50c05892-7577-46d4-9c3e-2f5bd632af63" Version="V2">
+                      <uix:NApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="496,2456" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Leere Präsentation'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50c05892-7577-46d4-9c3e-2f5bd632af63" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="234, 190, 225, 190" DesignTimeScaleFactor="1.25" FriendlyName="'Leere Präsentation'" FullSelectorArgument="&lt;uia automationid='PlaceTabHomeContent' cls='NetUIScrollViewer' name='Startseite' /&gt;&lt;uia automationid='HomePageSlabCreateNew' cls='NetUISlabContainer' name='Neu' /&gt;&lt;uia cls='NetUIListView' name='Vorlagen' /&gt;&lt;uia cls='NetUIListViewItem' name='Leere Präsentation' /&gt;" FuzzySelectorArgument="&lt;uia automationid='PlaceTabHomeContent' cls='NetUIScrollViewer' name='Startseite' /&gt;&lt;uia automationid='HomePageSlabCreateNew' cls='NetUISlabContainer' name='Neu' /&gt;&lt;uia cls='NetUIListView' name='Vorlagen' /&gt;&lt;uia cls='NetUIListViewItem' name='Leere Präsentation' role='Listenelement' automationid='' check:fulltext='Leere Präsentation' /&gt;" Guid="6c6625a7-67b3-4165-912b-0fd53bf75f71" ImageBase64="" InformativeScreenshot="c0c2aec59ad197574ce8f1e774ecc299.png" ScopeSelectorArgument="&lt;wnd app='powerpnt.exe' cls='PPTFrameClass' title='PowerPoint' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'textfeld Titeltextfeld'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_14" ScopeIdentifier="50c05892-7577-46d4-9c3e-2f5bd632af63" Text="Co2 Report 2025" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="638, 356, 934, 247" DesignTimeScaleFactor="1.25" FriendlyName="'textfeld Titeltextfeld'" FullSelectorArgument="&lt;uia name='Titeltextfeld' role='textfeld' /&gt;" FuzzySelectorArgument="&lt;uia name='Titeltextfeld' role='textfeld' automationid='' /&gt;" Guid="ac539d38-7537-40fd-9b64-0f46b1a732f7" ImageBase64="" InformativeScreenshot="b862a494ce5141f996a807f0ea13193f.png" ScopeSelectorArgument="&lt;wnd app='powerpnt.exe' cls='PPTFrameClass' title='Präsentation1 - PowerPoint' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Neue Folie'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50c05892-7577-46d4-9c3e-2f5bd632af63" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="179, 111, 52, 46" DesignTimeScaleFactor="1.25" FriendlyName="'Neue Folie'" FullSelectorArgument="&lt;uia cls='MsoCommandBar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Start' /&gt;&lt;uia cls='NetUIChunk' name='Folien' /&gt;&lt;uia cls='NetUIRibbonButton' name='Neue Folie' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Start' /&gt;&lt;uia cls='NetUIChunk' name='Folien' /&gt;&lt;uia cls='NetUIRibbonButton' name='Neue Folie' role='Schaltfläche' automationid='' check:fulltext='Neue Folie' /&gt;" Guid="9b52cf32-af6b-4882-a4e1-f99773949ead" ImageBase64="" InformativeScreenshot="9949976efe810d2344651e14cc4872ad.png" ScopeSelectorArgument="&lt;wnd app='powerpnt.exe' cls='PPTFrameClass' title='Präsentation1 - PowerPoint' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="433.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V3" />
+                            <ueab:CopyChartToClipboardX FilePath="{x:Null}" Action="CopyToClipboard" Chart="[chart2]" DisplayName="Get Chart" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="CopyChartToClipboardX_2" ReplaceFile="True" />
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Neue Folie'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50c05892-7577-46d4-9c3e-2f5bd632af63" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="179, 111, 52, 46" DesignTimeScaleFactor="1.25" FriendlyName="'Neue Folie'" FullSelectorArgument="&lt;uia cls='MsoCommandBar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Start' /&gt;&lt;uia cls='NetUIChunk' name='Folien' /&gt;&lt;uia cls='NetUIRibbonButton' name='Neue Folie' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Start' /&gt;&lt;uia cls='NetUIChunk' name='Folien' /&gt;&lt;uia cls='NetUIRibbonButton' name='Neue Folie' role='Schaltfläche' automationid='' check:fulltext='Neue Folie' /&gt;" Guid="9b52cf32-af6b-4882-a4e1-f99773949ead" ImageBase64="" InformativeScreenshot="9949976efe810d2344651e14cc4872ad.png" ScopeSelectorArgument="&lt;wnd app='powerpnt.exe' cls='PPTFrameClass' title='Präsentation1 - PowerPoint' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="433.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V3" />
+                            <ueab:CopyChartToClipboardX FilePath="{x:Null}" Action="CopyToClipboard" Chart="[chart3]" DisplayName="Get Chart" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="CopyChartToClipboardX_3" ReplaceFile="True" />
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Neue Folie'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50c05892-7577-46d4-9c3e-2f5bd632af63" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="179, 111, 52, 46" DesignTimeScaleFactor="1.25" FriendlyName="'Neue Folie'" FullSelectorArgument="&lt;uia cls='MsoCommandBar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Start' /&gt;&lt;uia cls='NetUIChunk' name='Folien' /&gt;&lt;uia cls='NetUIRibbonButton' name='Neue Folie' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' /&gt;&lt;uia cls='NetUIOrderedGroup' name='Start' /&gt;&lt;uia cls='NetUIChunk' name='Folien' /&gt;&lt;uia cls='NetUIRibbonButton' name='Neue Folie' role='Schaltfläche' automationid='' check:fulltext='Neue Folie' /&gt;" Guid="9b52cf32-af6b-4882-a4e1-f99773949ead" ImageBase64="" InformativeScreenshot="9949976efe810d2344651e14cc4872ad.png" ScopeSelectorArgument="&lt;wnd app='powerpnt.exe' cls='PPTFrameClass' title='Präsentation1 - PowerPoint' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="433.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V3" />
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="433.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(ctrl)]s[u(ctrl)][u(hk)]" Version="V3" />
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Speichern'" sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50c05892-7577-46d4-9c3e-2f5bd632af63" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="311, 552, 103, 30" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Speichern'" FullSelectorArgument="&lt;wnd aaname='Diese Datei speichern' cls='NetUIHWND' /&gt;&lt;ctrl name='Speichern' role='push button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Diese Datei speichern' cls='NetUIHWND' /&gt;&lt;ctrl name='Speichern' role='push button' automationid='' check:text='Speichern' /&gt;" Guid="faaaf231-5713-4d30-810f-3cac716f2620" ImageBase64="" InformativeScreenshot="4600f7c37621ef535e8b122eae339e55.png" ScopeSelectorArgument="&lt;wnd app='powerpnt.exe' cls='NUIDialog' idx='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NApplicationCard.Body>
+                      <uix:NApplicationCard.TargetApp>
+                        <uix:TargetApp Area="-9, -9, 1938, 1038" FilePath="C:\Program Files\Microsoft Office\root\Office16\powerpnt.exe" IconBase64="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" InformativeScreenshot="5c49b0affa833a71cfc65133cdaeaeec.png" Selector="&lt;wnd app='powerpnt.exe' cls='PPTFrameClass' title='PowerPoint' /&gt;" Title="Program Manager" />
+                      </uix:NApplicationCard.TargetApp>
+                    </uix:NApplicationCard>
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="33e45d5abf74c33fe4fab45163c21057.jpg" Selector="&lt;html app='chrome.exe' url='https://chatgpt.com/' /&gt;" Title="Rpa Challenge" Url="https://chatgpt.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
