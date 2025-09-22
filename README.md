@@ -3,6 +3,14 @@
 ---
 ## 📚 Inhaltsverzeichnis
 - [Sem ISA](#sem-isa)
+- [Kurzbeschreibung](#kurzbeschreibung)
+- [Architektur & Workflow](#architektur--workflow)
+- [Tech-Stack](#tech-stack)
+- [Setup (lokal)](#setup-lokal)
+- [Nutzung](#nutzung)
+- [Ergebnisse](#ergebnisse)
+- [Herausforderungen & Learnings](#herausforderungen--learnings)
+
 - [Architecture-and-Integration](#architecture-and-integration)
 - [Projektbeschreibung](#projektbeschreibung)
 - [Architekturüberblick](#architekturüberblick)
@@ -21,7 +29,7 @@
 # Architecture-and-Integration
 # 🧩 HIS Middleware Integration – Student Data Distribution
 
-## 📘 Projektbeschreibung
+## Projektbeschreibung
 
 In diesem Projekt wird eine Middleware-Lösung zur automatisierten Verteilung von Studierendendaten umgesetzt. Aktuell werden Daten manuell in drei Systeme eingetragen:
 
@@ -33,7 +41,7 @@ Ziel: **Automatisierte, fehlerfreie Weiterleitung** der HIS-Daten an beide Ziels
 
 ---
 
-## ⚙️ Architekturüberblick
+##Architekturüberblick
 
 ### Komponenten
 
@@ -52,7 +60,7 @@ Ziel: **Automatisierte, fehlerfreie Weiterleitung** der HIS-Daten an beide Ziels
 
 ---
 
-## 🧰 Voraussetzungen
+## Voraussetzungen
 
 - Python 3.10+
 - Lokale Installation von RabbitMQ (Standard-Ports: 5672)
@@ -62,7 +70,7 @@ Ziel: **Automatisierte, fehlerfreie Weiterleitung** der HIS-Daten an beide Ziels
 
 ---
 
-## 🧪 Installation
+## Installation
 
 ### 1. RabbitMQ installieren
 
@@ -80,7 +88,7 @@ pip install pika PyQt6
 
 ---
 
-## ▶️ Ausführung
+## Ausführung
 
 In **drei separaten Terminals** folgende Dateien starten:
 
@@ -97,7 +105,7 @@ python his.py
 
 ---
 
-## 👨‍🎓 Anwendung
+## Anwendung
 
 In der HIS-GUI:
 
@@ -108,7 +116,7 @@ In der HIS-GUI:
 
 ---
 
-## ✅ Beispielausgabe (Konsolen)
+## Beispielausgabe (Konsolen)
 
 **Peregos:**
 ```
@@ -126,17 +134,6 @@ In der HIS-GUI:
 
 > Automatisierte Extraktion und Visualisierung von CO₂-Daten aus PDFs mit RPA (UiPath) und OCR.  
 > Projektkontext: Seminar *Information Systems Architecture* 
-
----
-
-## Inhaltsverzeichnis
-- [Kurzbeschreibung](#kurzbeschreibung)
-- [Architektur & Workflow](#architektur--workflow)
-- [Tech-Stack](#tech-stack)
-- [Setup (lokal)](#setup-lokal)
-- [Nutzung](#nutzung)
-- [Ergebnisse](#ergebnisse)
-- [Herausforderungen & Learnings](#herausforderungen--learnings)
 
 ---
 
