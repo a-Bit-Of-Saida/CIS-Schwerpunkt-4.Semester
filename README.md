@@ -41,7 +41,7 @@ Ziel: **Automatisierte, fehlerfreie Weiterleitung** der HIS-Daten an beide Ziels
 
 ---
 
-#Architekturüberblick
+## Architekturüberblick
 
 ### Komponenten
 
