@@ -10,7 +10,7 @@
 - [Nutzung](#nutzung)
 - [Ergebnisse](#ergebnisse)
 - [Herausforderungen & Learnings](#herausforderungen--learnings)
-
+---
 - [Architecture-and-Integration](#architecture-and-integration)
 - [Projektbeschreibung](#projektbeschreibung)
 - [Architekturüberblick](#architekturüberblick)
@@ -41,7 +41,7 @@ Ziel: **Automatisierte, fehlerfreie Weiterleitung** der HIS-Daten an beide Ziels
 
 ---
 
-##Architekturüberblick
+#Architekturüberblick
 
 ### Komponenten
 
